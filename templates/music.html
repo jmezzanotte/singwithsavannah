@@ -10,13 +10,10 @@
 		<div class="nav-btn toggle-nav">
 			<span class="glyphicon glyphicon-menu-hamburger font-black"></span>
 		</div>
-		<a href="{% url 'home' %}"><img class="center img-responsive" src='{% static "images/sws-logo-black.png" %}'></a>
-	</div>
-	<div id="music-page-header">
-		<h1>MUSIC</h1>
+		<a href="{% url 'home' %}"><img id="sws-black"  class="center" src='{% static "images/sws-logo-black.png" %}'></a>
 	</div>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row" id="artist-info">
 			<div class="col-lg-12 text-center">
 				<h1>ALBUMN NAME</h1>
 				<h2>ALBUMN ARTIST</h2>
@@ -28,7 +25,7 @@
 				<div id="audio-player-wrapper">
 				
 					<div id="albumn-cover">
-						<img id="footer-bird" class="img-responsive" src='{% static "images/create_your_own_sunshine.jpg" %}'>
+						<img id="footer-bird" class="img-responsive" src='{% static "images/create_your_own_sunshine_763x622.jpg" %}'>
 					</div>
 					<div id="trackbox">	
 						<!-- Track names will need to be read in from the database. Track names need to be unique

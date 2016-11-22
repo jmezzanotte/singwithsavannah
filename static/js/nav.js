@@ -9,10 +9,6 @@ $(function() {
   
 });
 
-
-/*========================================
-=            CUSTOM FUNCTIONS            =
-========================================*/
 function toggleNav() {
     if ($('#site-wrapper').hasClass('show-nav')) {
         // Do things on Nav Close

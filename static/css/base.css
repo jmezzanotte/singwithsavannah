@@ -7,6 +7,9 @@
 
 	SWS-LOGO : 
 	SIZE : 800px wide; 242 tall
+
+	icon logos 
+	SIZE : 360 X 360;
 */
 
 /*COLOR SPECS*/
@@ -41,11 +44,13 @@ ul{
 
 
 h1{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 42px;
 }
 
 p{
 	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
 }
 
 
@@ -53,6 +58,14 @@ p{
 	color: #000;
 }
 
+
+.header{
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	padding: 0 ;
+	margin: 0 0 20px 0;
+	
+}
 /************************************/
 
 
@@ -160,18 +173,13 @@ p{
   	color: #fff;
   	font-family: 'Raleway', sans-serif;
   	background-color: #000;
-  	
-
 }
-
 
 
 #sing-from-your-heart{
 	width: 400px;
 	padding: 10px;
 	margin: 10px auto;
-
-
 }
 
 
@@ -186,7 +194,6 @@ p{
 #nav-list li{
 	list-style: none;
 	font-size: 24px;
-	
 }
 
 .soc-media{
@@ -316,16 +323,17 @@ p{
 	text-align: center;
 	width: 100% ;
 	height: 850px;
+	margin-bottom: 100px;
 }
 
 
 .secondary-topbanner{
-	/*padding: 50px 0 20px 0;*/
 	border-bottom: solid 1px #d0d0d0;
 	-webkit-box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
     -moz-box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
 	box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
 	background-color: #fff;
+
 }
 
 
@@ -344,7 +352,7 @@ p{
 
 
 #sub-headline{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 28px;
 	color: #fff;
 
@@ -354,7 +362,7 @@ p{
 #listen-btn{
 	width: 200px;
 	font-size: 24px;
-	font-family: 'Raleway';
+	font-family: 'Quicksand', sans-serif;
 	text-decoration: none;
 	margin-top: 75px;
 	display: block;

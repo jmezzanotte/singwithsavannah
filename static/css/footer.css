@@ -11,8 +11,10 @@
 
 #footer-social-wrapper{
 	padding: 0;
-	margin-bottom: 50px;
-	background-color: #d0d0d0;
+	margin-bottom: 10px;
+	background-color: #FBFBFB;
+	border-bottom: solid 1px #F3EBEB;
+	border-top : solid 1px #F3EBEB;
 }
 
 

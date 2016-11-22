@@ -22,7 +22,7 @@
 		<div class="row center-text">
 			<div class="col-lg-12">
 				<div class="header">
-					<h1>BEING A MOTHER INSPIRES MY MUSIC</h1>
+					<h1>BEING A MOTHER INSPIRES MUSIC.</h1>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,8 @@
 			</div>
 		</div>
 	</div>
-
+ 	<!-- These Div blocks will eventually be read in from a database, we will loop for each element 
+ 	in the template so these blocks will not be repeated -->
 	<div id="black-bg">
 		<div class="container">
 			<div class="row" id="services-row">
@@ -64,6 +65,13 @@
 					<img class="service-img" src='{% static "images/sessions.png" %}'>
 					<div class="overlay">
 						<a href="#" id="gallery-title">Classroom Sessions</a>
+					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{% static "images/events.png" %}'>
+					<div class="overlay">
+						<a href="#" id="gallery-title">Community and Corporate Events</a>
 					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
 	        		</div>
 				</div>
