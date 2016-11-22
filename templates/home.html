@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}SING WITH SAVANNAH | SING FROM YOUR HEART {% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/home.css" %}'>
+{% endblock %}
+{% block content %}
+	<div id="topbanner">
+	<div class="nav-btn toggle-nav font-white">
+		<span class="glyphicon glyphicon-menu-hamburger"></span>
+	</div>
+		<div id="headline-wrapper">
+			<div><img class="center img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'></div>
+			<div id="sub-headline">"Create Your Own Sunshine", the new albumn available Fall 2016</div>
+			<a id="listen-btn" class="btn-outline-white center" href="{% url 'music' %}">LISTEN NOW</a>
+			
+		</div>
+
+	</div>
+
+	<div class="container">
+		<div class="row center-text">
+			<div class="col-lg-12">
+				<div class="header">
+					<h1>BEING A MOTHER INSPIRES MY MUSIC</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<img class="img-responsive filigree" src='{% static "images/filigree-heart.png" %}'>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="about-content-home">
+					<p>I'm a parent, music educator, and  singer/song writer, based in the North Bay
+					   During my time as a nanny and after school activities coordinator I cultivated my passion for music in child education. I compose music influenced by multiple genres including, traditional children’s folk music, world music, and nursery rhymes.
+					</p>
+					<a href="#" class="more-btn btn">READ MORE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="black-bg">
+		<div class="container">
+			<div class="row" id="services-row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="header">
+						<h1 id="services-header">SERVICES I OFFER</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="gallery-row">		
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{% static "images/cake.png" %}'>
+					<div class="overlay">
+						<a href="#" id="gallery-title">Birthday Parties</a>
+					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{% static "images/sessions.png" %}'>
+					<div class="overlay">
+						<a href="#" id="gallery-title">Classroom Sessions</a>
+					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="spacer"></div>
+			
+	
+
+
+{% endblock %}
+
+
