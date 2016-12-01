@@ -10,8 +10,6 @@ $(function(){
 		zIndex: 999
 	});
 
-
-
 });
 
 
