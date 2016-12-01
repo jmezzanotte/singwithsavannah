@@ -5,6 +5,10 @@
 
 */
 
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+	background-color: #000;
+}
+
 .nav-btn {
 	color: #000;
 }
@@ -27,10 +31,6 @@
 	padding: 10px;
 }
 
-#sws-black{
-	width: 450px;
-	display: block;
-}
 
 #artist-info{
 	margin-top : 100px;

@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}SING WITH SAVANNAH | MUSIC {% endblock %}
+{% block title %}SING WITH SAVANNAH | MUSIC{% endblock  %}
 {% block css_adds %}
 	<link rel="stylesheet" type="text/css" href='{% static "css/music.css" %}'>
 {% endblock %}
 
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+
 {% block content %}
-	<div class="secondary-topbanner">
-		<div class="nav-btn toggle-nav">
-			<span class="glyphicon glyphicon-menu-hamburger font-black"></span>
-		</div>
-		<a href="{% url 'home' %}"><img id="sws-black"  class="center" src='{% static "images/sws-logo-black.png" %}'></a>
-	</div>
 	<div class="container-fluid">
 		<div class="row" id="artist-info">
 			<div class="col-lg-12 col-md-12 col-sm-12 text-center">

@@ -24,18 +24,11 @@
 	src: url(../fonts/ClickerScript-Regular.ttf);
 }
 
-/*BUTTON CLASSES*/
-
-.btn-outline-white{
-	/*You have to specify width and font size used by this button*/
-	color : #fff;
-	border: solid 3px #fff;
-	padding: 15px;
-}
-
-
-
 /*GLOBAL STYLES*/
+
+li {
+	list-style-type: none;
+}
 
 ul{
 	margin: 0 ;
@@ -53,6 +46,32 @@ p{
 	font-family: 'Raleway', sans-serif;
 }
 
+/*BUTTON CLASSES*/
+
+.hamburger{
+	float:left;
+	margin: 20px;
+}
+	.hamburger:focus{
+	outline: none;
+	}
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+		background-color: #fff;
+	}
+
+	.is-active{
+		border:none;
+	}
+
+
+
+.btn-outline-white{
+	/*You have to specify width and font size used by this button*/
+	color : #fff;
+	border: solid 3px #fff;
+	padding: 15px;
+}
+
 
 .font-black{
 	color: #000;
@@ -68,39 +87,40 @@ p{
 }
 /************************************/
 
-
+/*#hamburger{
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}*/
 
 .nav-btn{
 	color: #fff;
-	font-size: 24px;
-	font-family: 'Raleway', sans-serif;
-	padding: 10px;
-	width: 50px;
-	text-align: center;
 	float: left;
-	margin: 20px 50px 0 30px;
+	height: auto;
+	margin: 0 auto;
+	margin: 50px;
 }
+	.nav-btn span{
+
+		font-size: 36px;
+	}
+	#nav-close{
+	margin: 20px;
+	font-size: 24px;
+	}
+	#nav-close:hover{
+		cursor:pointer;
+		color : #e95e6b;
+	}
+
 
 .font-white{
 	color: #fff;
 }
-.nav-btn span{
 
-	font-size: 36px;
-}
 
 .toggle-nav:hover{
 	cursor:pointer;
-}
-
-#nav-close{
-	margin: 20px;
-	font-size: 24px;
-}
-
-#nav-close:hover{
-	cursor:pointer;
-	color : #e95e6b;
 }
 
 
@@ -113,19 +133,22 @@ p{
 
 
 .side-by-side {
-	display: flex;
-	display: -webkit-flex; /* Safari */
-	flex-flow: row;
-	justify-content: space-between;
-	align-items: center;
-	white-space: nowrap;
-
+	display: -webkit-flex;
+   	display: flex;
+    -webkit-flex-direction: row;
+   	flex-direction: row;
+    -webkit-align-items: center;
+   	align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
+.spacer::after{
+	height: 100px; 
+	width: 100px;
+	background-color: red;
 
-
-/*NAVIGATION*/
-
+}
 
 
 /*SITE WRAPPER FOR THE OFF-CANVAS NAV*/
@@ -134,7 +157,6 @@ p{
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	/*height: 1000px;*/
 }
 
 #site-canvas{
@@ -328,26 +350,22 @@ p{
 
 
 .secondary-topbanner{
-	border-bottom: solid 1px #d0d0d0;
-	-webkit-box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
-    -moz-box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
-	box-shadow: 0px 14px 47px -5px rgba(117,113,117,1);
-	background-color: #fff;
-
+	border-bottom: solid 3px #d0d0d0;
+	background-color: #fff;	
 }
-
 
 .secondary-topbanner img{
 	padding: 20px;
-
 }
 
 #headline-wrapper{
 	position: absolute;
 	width: 100%;
-  	top: 50%;
+	display: none;
+  	top: 0;
   	left: 50%;
   	transform: translate(-50%, -50%);
+
 }
 
 
@@ -355,7 +373,6 @@ p{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 28px;
 	color: #fff;
-
 
 }
 
@@ -372,25 +389,29 @@ p{
 	cursor: pointer;
 	color: #e95e6b;
 	border-color: #e95e6b;
-
 }
 
 
 #sws-logo{
 	width: 800px;
 	margin: 20px auto;
-	
-
 }
 
 
+.box {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
 
+.left {
+    /*padding: 10px;*/
+}
 
-
-
-
-
-
+.nav-center {
+   
+    margin: 0 auto;
+}
 
 
 
