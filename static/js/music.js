@@ -16,35 +16,37 @@
 	audioIcon.addClass(playbtnGlyph); 
 
 
-
 	function switchTrack(event){
 		if(isPlaying){
-			alert(playingTrack);
+		
 			if(playingTrack != event.target.parentNode.id){
 				isPlaying = true;
 				// playing track will be the id of the dive 
-				console.log('here');
+				
 				$('#playingTrack').addClass(playbtnGlyph); 
 				$(event.target).removeClass(playbtnGlyph).addClass(pausebtnGlyph); 
 				audio.src = '/static/audio/' + event.target.parentNode.id+audioExt; 
 				audio.play();
 			}else{
-				alert('pause');
+				console.log('pause');
 				audio.pause();
 				isPlaying = false; 
-				$(event.target).removeClass(playbtnGlyph).addClass(pausebtnGlyph);
+				$(event.target).removeClass(pausebtnGlyph);
+				$(event.target).addClass(playbtnGlyph);
 			}
 		}else{
 			// This condition switches the audio track on if nothing is playing
 			
 			isPlaying = true;
+			
 			// if the track is playing put the pause button up
-			alert(event.target.parentNode.id);
+			console.log(event.target.parentNode.id);
 			$(event.target).removeClass(playbtnGlyph); 
 			$(event.target).addClass(pausebtnGlyph);
 
 			if(playingTrack != event.target.parentNode.id){
 				audio.src = '/static/audio/' + event.target.parentNode.id+audioExt;
+				playingTrack = event.target.parentNode.id;
 			}
 
 			audio.play();

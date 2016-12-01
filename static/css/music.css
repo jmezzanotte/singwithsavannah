@@ -23,13 +23,7 @@
 	color: #e95e6b;
 }
 
-.trackbar{
-	background-color: #ddd; 
-	
-	font-family: 'Raleway';
-	font-size: 16px;
-	padding: 10px;
-}
+
 
 
 #artist-info{
@@ -105,3 +99,19 @@
 	font-size: 18px;
 	text-decoration: none;
 }
+
+
+
+.trackbar{
+	background-color: #ddd; 
+	font-family: 'Raleway';
+	font-size: 16px;
+	overflow: hidden;
+}
+	.trackbar .audio-icon ,.trackbar .progress, .trackbar p{float:left;}
+	.trackbar p{margin: 10px;}
+	.trackbar .progress{margin: 13px; width: 75%;}
+
+
+
+
