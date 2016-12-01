@@ -13,18 +13,6 @@
 	color: #000;
 }
 
-.audio-icon{
-	font-size: 24px;
-	padding: 10px;
-}
-
-.audio-icon:hover{
-	cursor: pointer;
-	color: #e95e6b;
-}
-
-
-
 
 #artist-info{
 	margin-top : 100px;
@@ -69,48 +57,37 @@
 	background-color: #000;
 }
 
-#playlist{
-	margin: 0 auto;
-	border-radius: 10px;
-	padding: 10px;
-	list-style: none;
-}
-
-#playlist li{
-	padding: 10px;
 
 
-}
 
 /*Use a shadow on the active track*/
-#playlist li:nth-child(even){
+#trackbox .trackbar:nth-child(even){
 	background-color: #fff;
 	border: solid 1px #e95e6b;
-	-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-    -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-	box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
 }
 
-#playlist li:nth-child(odd){
-	background-color: #d0d0d0;
-}
-#playlist li a {
-	font-family: 'Raleway'; 
-	font-size: 18px;
-	text-decoration: none;
-}
+	#trackbox .trackbar:nth-child(odd){background-color: #d0d0d0;}
+	.active-song{
+		-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    border: solid 2px  #e95e6b;
+	    color: #e95e6b;
+	    z-index: 999;
 
-
+	}
 
 .trackbar{
 	background-color: #ddd; 
 	font-family: 'Raleway';
-	font-size: 16px;
-	overflow: hidden;
+	font-size: 16px;	
 }
-	.trackbar .audio-icon ,.trackbar .progress, .trackbar p{float:left;}
-	.trackbar p{margin: 10px;}
-	.trackbar .progress{margin: 13px; width: 75%;}
+	.trackbar:hover{cursor:pointer;}
+	.trackbar p{
+		margin: 10px; 
+		display: inline-block;
+	
+	}
 
 
 

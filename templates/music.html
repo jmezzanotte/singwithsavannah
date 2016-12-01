@@ -19,22 +19,21 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-
 				<div id="audio-player-wrapper">
-				
 					<div id="albumn-cover">
 						<img id="footer-bird" class="img-responsive" src='{% static "images/create_your_own_sunshine_763x622.jpg" %}'>
 					</div>
+					<audio id="audio-player" controls></audio>
 					<div id="trackbox">	
 						<!-- Track names will need to be read in from the database. Track names need to be unique
 							At least for the id
 						 -->
 						<div class="trackbar" id="Butterfly">
-							<span class="audio-icon"></span>
 							<p>Track 1</p>
-							<progress class="progress"></progress>
 						</div>
-				
+						<div class="trackbar" id="Butterfly">
+							<p>Track 2</p>
+						</div>
 					</div>
 				</div>
 			</div>
