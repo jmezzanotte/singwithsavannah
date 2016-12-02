@@ -52,7 +52,7 @@
 
 #audio-player{
 	width :100%;
-	margin: 0 auto;
+	margin: 10px auto;
 	display: block;
 	background-color: #000;
 }
@@ -61,24 +61,7 @@
 
 
 /*Use a shadow on the active track*/
-#trackbox .trackbar:nth-child(even){
-	background-color: #fff;
-	border: solid 1px #e95e6b;
-}
-
-	#trackbox .trackbar:nth-child(odd){background-color: #d0d0d0;}
-	.active-song{
-		-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-	    -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-	    box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-	    border: solid 2px  #e95e6b;
-	    color: #e95e6b;
-	    z-index: 999;
-
-	}
-
 .trackbar{
-	background-color: #ddd; 
 	font-family: 'Raleway';
 	font-size: 16px;	
 }
@@ -86,8 +69,22 @@
 	.trackbar p{
 		margin: 10px; 
 		display: inline-block;
-	
 	}
+	.active-song{
+		-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    border: solid 5px #aF4654;
+	    color: #fff;
+	    background-color: #e95e6b !important;
+	    border-radius: 10px;
+	}
+		.trackbar:nth-child(even){background-color: #fff;}
+		.trackbar:nth-child(odd){background-color: #d0d0d0;}
+
+
+
+
 
 
 
