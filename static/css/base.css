@@ -1,7 +1,7 @@
 /*SING WITH SAVANNAH BASE STYLES*/
 
-/*IMG SPECS*/
 /*
+	IMG SPECS
 	LARGE FULL PAGE IMAGE : 1920px x 1165px 
 	LIGHTNESS : -50
 
@@ -12,8 +12,8 @@
 	SIZE : 360 X 360;
 */
 
-/*COLOR SPECS*/
 /*
+	COLOR SPECS
 	LIGHT-RED: #e95e6b; (HIGHLIGHT COLOR)
 	MAROON : #aF4654
 */
@@ -41,9 +41,14 @@ h1{
 	font-size: 42px;
 }
 
+h2{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 32px;
+}
+
 p{
 	font-size: 20px;
-	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Raleway', sans-serif;*/
 }
 
 /*BUTTON CLASSES*/
@@ -64,7 +69,6 @@ p{
 	}
 
 
-
 .btn-outline-white{
 	/*You have to specify width and font size used by this button*/
 	color : #fff;
@@ -72,11 +76,9 @@ p{
 	padding: 15px;
 }
 
-
 .font-black{
 	color: #000;
 }
-
 
 .header{
 	font-family: 'Raleway', sans-serif;
@@ -195,6 +197,7 @@ p{
   	color: #fff;
   	font-family: 'Raleway', sans-serif;
   	background-color: #000;
+
 }
 
 
@@ -348,10 +351,14 @@ p{
 	margin-bottom: 100px;
 }
 
-
 .secondary-topbanner{
 	border-bottom: solid 3px #d0d0d0;
-	background-color: #fff;	
+	background-color: #FBFBFB;	
+}
+
+#hidden-spacer{
+	margin: 10px;
+	width: 100px;
 }
 
 .secondary-topbanner img{
@@ -365,15 +372,19 @@ p{
   	top: 0;
   	left: 50%;
   	transform: translate(-50%, -50%);
-
 }
 
+.filigree{
+	width: 400px;
+	padding: 0 ;
+	display: block; 
+	margin: 50px auto;
+}
 
 #sub-headline{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 28px;
 	color: #fff;
-
 }
 
 #listen-btn{
@@ -391,12 +402,10 @@ p{
 	border-color: #e95e6b;
 }
 
-
 #sws-logo{
 	width: 800px;
 	margin: 20px auto;
 }
-
 
 .box {
     display: flex;

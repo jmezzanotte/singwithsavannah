@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/footer.css" %}'>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 
 	{% block css_adds %}{% endblock %}
 </head>
@@ -30,7 +30,8 @@
 				<img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart.png" %}'>
 
 				<ul id="nav-list">
-					<li class="nav-item sliding-border"><a>ABOUT</a></li>
+					<li class="nav-item sliding-border"><a href="{% url 'home' %}">HOME</a></li>
+					<li class="nav-item sliding-border"><a href="{% url 'about' %}">ABOUT</a></li>
 					<li class="nav-item"><a href="{% url 'music' %}" class="sliding-border">MUSIC</a></li>
 					<li class="nav-item"><a class="sliding-border">SERVICES</a></li>
 					<li class="nav-item sliding-border"><a>CONTACT</a></li>
@@ -77,14 +78,14 @@
 
 		<div class="container" id="footer-nav-wrapper">
 			<div class="row" id="footer-nav">
-				<div class="col-lg-1">
-					<span></span>
+				<div class="col-lg-2">
+					<a href="{% url 'home' %}">HOME</a>
 				</div>
 				<div class="col-lg-2">
-					<a href="#">ABOUT</a>
+					<a href="{% url 'about' %}">ABOUT</a>
 				</div>
 				<div class="col-lg-2">
-					<a href="#">MUSIC</a>
+					<a href="{% url 'music' %}">MUSIC</a>
 				</div>
 				<div class="col-lg-2">
 					<a href="#">SERVICES</a>
@@ -94,9 +95,6 @@
 				</div>
 				<div class="col-lg-2">
 					<a href="#">BLOG</a>
-				</div>
-				<div class="col-lg-1">
-					<span></span>
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,24 @@
 /*CSS STYLES FOR FOOTER*/
 
-
-
-#footer-nav{
-	text-align: center;
+#footer-nav-wrapper{
+	margin: 15px auto;
+	padding: 20px;
+	border-bottom: solid 1px #000;
+	border-top: solid 1px #000;
 }
+
+#footer-nav{text-align: center;}
+	#footer-nav a {
+		font-family: 'Raleway', sans-serif;
+		text-decoration: none;
+		font-size: 24px;
+		color: #000;
+	}
+
+	#footer-nav a:hover{
+		color: #808080;
+	}
+
 
 
 #footer-social-wrapper{
@@ -13,22 +27,6 @@
 	background-color: #FBFBFB;
 	border-bottom: solid 1px #F3EBEB;
 	border-top : solid 1px #F3EBEB;
-}
-
-
-#footer-nav-wrapper{
-	margin: 15px auto;
-	padding: 20px;
-	border-bottom: solid 1px #000;
-	border-top: solid 1px #000;
-}	
-
-
-#footer-nav a {
-	font-family: 'Raleway', sans-serif;
-	text-decoration: none;
-	font-size: 24px;
-	color: #000;
 }
 
 
@@ -121,4 +119,5 @@
 #builder p {
 	font-size: 14px; 
 }
+
 
