@@ -14,7 +14,7 @@
 
 /*
 	COLOR SPECS
-	LIGHT-RED: #e95e6b; (HIGHLIGHT COLOR)
+	LIGHT-RED: #e95e6b; 
 	MAROON : #aF4654
 */
 
@@ -114,6 +114,33 @@ p{
 		cursor:pointer;
 		color : #e95e6b;
 	}
+
+.submenu{
+	color: #fff;
+	border-radius: 10px;
+	height: 0px;
+	overflow: hidden;
+	-webkit-transition: 600ms ease all;
+  	transition: 600ms ease all;
+}
+	.submenu-parent:hover .submenu{
+		height: 300px;
+		
+	}
+
+	.submenu li{
+		background-color: #e95e6b; 
+		border: solid 4px #aF4654; 
+		padding: 10px; 
+		border-radius: 10px;
+		margin: 10px;
+		-webkit-transition: 400ms ease all;
+  		transition: 400ms ease all;
+	}
+		.submenu li:hover{
+			margin: 0px;
+		}
+
 
 
 .font-white{
@@ -324,10 +351,7 @@ p{
 	text-align:center;
 }
 
-#test{
-	background-color: #d0d0d0;
-	padding: 10px;
-}
+
 
 #mini-miss{
 	color: #000;

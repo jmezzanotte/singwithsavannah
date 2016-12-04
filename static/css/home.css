@@ -41,12 +41,14 @@
 	margin: 0 auto;
 	background-color: #e95e6b;
 	border: solid 1px #e95e6b;
+
 	
 }
 
 
 .more-btn:hover{ 
 	background-color: #fff;
+	text-decoration: none;
 	color: #fff !important;
 	background-image: -webkit-linear-gradient(top, #e95e6b, #AF4654);
   	background-image: -moz-linear-gradient(top, #e95e6b, #AF4654);

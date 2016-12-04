@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
   
     // Toggle Nav on Click
     $('.toggle-nav').click(function() {
@@ -7,10 +7,7 @@ $(function() {
         $('.hamburger').toggleClass('is-active');
     });
 
-  
-});
-
-function toggleNav() {
+    function toggleNav() {
     if ($('#site-wrapper').hasClass('show-nav')) {
         // Do things on Nav Close
         $('#site-wrapper').removeClass('show-nav');
@@ -21,3 +18,6 @@ function toggleNav() {
 
     //$('#site-wrapper').toggleClass('show-nav');
 }
+  
+})(jQuery);
+
