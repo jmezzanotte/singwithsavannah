@@ -5,12 +5,9 @@
 
 .slick-prev:before, .slick-next:before { 
     color: #d0d0d0 !important;
-
-    
 }
 
 #slider{
-
 	width: 100%;
 	margin: 20px;
 }
@@ -19,17 +16,19 @@
 	.slider-overlay-left{
 		position: absolute;
 		top: 50%;
-		color: #fff;
+		color: #fff !important;
 		transform: translate(15%, -50%);
 		z-index: 2;
 	}
 	.slider-overlay{
 		position: absolute;
 		top: 50%;
-		color: #fff;
+		
 		transform: translate(50%, -50%);
 		z-index: 2;
 	}
+
+	.slider-overlay h1, .slider-overlay-left h1{color: #fff !important;}
 	
 .center{
 	text-align: center;
@@ -40,7 +39,6 @@
 #service-headline{
 	text-align: center;	
 }
-
 
 .service-btn{
 	display: inline-block;
