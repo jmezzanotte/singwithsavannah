@@ -16,6 +16,15 @@
 	COLOR SPECS
 	LIGHT-RED: #e95e6b; 
 	MAROON : #aF4654
+
+	SECOND THEME 
+	light purple: #FAD5E5;
+	purple : CEA2CB;
+	light blue : #CFD9EF;
+	dark-blue: 23519F
+
+
+
 */
 
 /*FONTS*/
@@ -38,7 +47,12 @@ ul{
 
 h1{
 	font-family: 'Quicksand', sans-serif;
-	font-size: 42px;
+	/*font-family: 'Chewy', cursive;*/
+	/*font-family: 'Fredoka One', cursive;*/
+	/*font-size: 42px;*/
+	font-size:42px;
+	/*color: #23519F;*/
+	color: #000;
 }
 
 h2{
@@ -117,6 +131,7 @@ p{
 
 .submenu{
 	color: #fff;
+	/*color: #23519F;*/
 	border-radius: 10px;
 	height: 0px;
 	overflow: hidden;
@@ -130,7 +145,9 @@ p{
 
 	.submenu li{
 		background-color: #e95e6b; 
+		/*background-color: #FAD5E5;*/
 		border: solid 4px #aF4654; 
+		/*border: solid 4px #cea2cb;*/ 
 		padding: 10px; 
 		border-radius: 10px;
 		margin: 10px;
@@ -224,9 +241,13 @@ p{
   	color: #fff;
   	font-family: 'Raleway', sans-serif;
   	background-color: #000;
+  	/*background-color: #23519F;*/
 
 }
-
+	#site-nav h1{
+		text-align: center;
+		color:#FAD5E5;
+	}
 
 #sing-from-your-heart{
 	width: 400px;
@@ -311,14 +332,13 @@ p{
 	color: #fff;
 }
 
-
-
 .sliding-border::after{
 	content:'';
 	display: block;
     width: 0;
     height: 5px;
     background:  #e95e6b;
+    /*background: #FAD5E5;*/ /*light pink */
     transition: width .5s;
 }
 
@@ -423,7 +443,9 @@ p{
 #listen-btn:hover{
 	cursor: pointer;
 	color: #e95e6b;
+	/*color : #FAD5E5;*/
 	border-color: #e95e6b;
+	/*border-color: #FAD5E5;*/
 }
 
 #sws-logo{
