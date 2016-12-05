@@ -9,7 +9,8 @@
 
 #footer-nav{text-align: center;}
 	#footer-nav a {
-		font-family: 'Raleway', sans-serif;
+		/*font-family: 'Raleway', sans-serif;*/
+		font-family: 'Quicksand', sans-serif;
 		text-decoration: none;
 		font-size: 24px;
 		color: #000;
@@ -86,16 +87,14 @@
 
 
 #service-location-header{
-	font-family: 'clicker-script';
-	/*font-family: 'Fredoka One', cursive;*/
+	/*font-family: 'clicker-script';*/
+	font-family: 'Fredoka One', cursive;
 	font-size: 42px;
-	/*color: #23519F;*/
-	color : #000;
-}
+	color: #23519F;
+/*	color : #000;
+*/}
 
-#service-location-content{
-	font-family: 'Raleway'
-}
+#service-location-content{font-family: 'Quicksand', sans-serif;}
 
 #footer-bird{
 	display: block; 
@@ -106,21 +105,9 @@
 
 #copyright{
 	text-align: center;
-	font-family: 'Raleway';
+	font-family: 'Quicksand', sans-serif;
 	margin: 20px auto;
 }
 
-#builder{
-	background-color: #000;
-	color: #fff;
-
-	font-family: 'Raleway';
-	padding: 10px;
-
-}
-
-#builder p {
-	font-size: 14px; 
-}
 
 
