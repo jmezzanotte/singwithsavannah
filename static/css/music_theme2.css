@@ -1,0 +1,96 @@
+/*STYLES FOR music.html*/
+.nav-btn {
+	color: #000;
+}
+
+.audio-icon{
+	font-size: 24px;
+	padding: 10px;
+}
+
+.audio-icon:hover{
+	cursor: pointer;
+	color: #e95e6b;
+}
+
+.trackbar{
+	background-color: #ddd; 
+	
+	font-family: 'Raleway';
+	font-size: 16px;
+	padding: 10px;
+}
+
+
+#music-page-header{
+	margin-top: 5px;
+	border-bottom: solid 1px #ddd;
+	background-color: #d0d0d0; 
+	color: #fff;
+	width: 100%;
+	padding: 20px;
+	z-index: 1;
+}
+#music-page-header h1{
+	font-family: 'Raleway';
+
+
+}
+
+
+#audio-player-wrapper{
+	margin: 50px auto;
+	border: solid 1px #d0d0d0;
+	border-radius: 10px;
+	width: 50%;
+	padding: 10px;
+
+}
+
+#albumn-title {
+	text-align: center;
+}
+
+#albumn-title h1{
+	font-family: 'clicker-script';
+	font-size:62px;
+}
+
+
+#audio-player{
+	width :100%;
+	margin: 0 auto;
+	display: block;
+	background-color: #000;
+}
+
+#playlist{
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 10px;
+	list-style: none;
+}
+
+#playlist li{
+	padding: 10px;
+
+
+}
+
+/*Use a shadow on the active track*/
+#playlist li:nth-child(even){
+	background-color: #fff;
+	border: solid 1px #e95e6b;
+		-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+-moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+}
+
+#playlist li:nth-child(odd){
+	background-color: #d0d0d0;
+}
+#playlist li a {
+	font-family: 'Raleway'; 
+	font-size: 18px;
+	text-decoration: none;
+}
