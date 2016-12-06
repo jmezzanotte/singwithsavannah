@@ -1,0 +1,28 @@
+h1{
+	text-align: center;
+}
+
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+	background-color: #000;
+}
+
+#about-profile{
+	position: relative;
+	background: url("../images/about_profile.jpg") center center;
+	background-size: cover;
+	overflow: hidden;
+	text-align: center;
+	height: 600px;
+	margin: 50px;
+	border-radius: 10px;
+}
+
+#about-headline-wrapper{
+	position: absolute;
+	display: none;
+  	top: 0;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+	#about-headline{color: #fff;}	

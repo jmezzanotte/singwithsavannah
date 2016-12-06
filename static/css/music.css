@@ -1,26 +1,19 @@
 /*STYLES FOR music.html*/
+
+/*
+	Specs albumn-cover size : 763px x 622px;
+
+*/
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+	background-color: #000;
+}
+
 .nav-btn {
 	color: #000;
 }
 
-.audio-icon{
-	font-size: 24px;
-	padding: 10px;
-}
-
-.audio-icon:hover{
-	cursor: pointer;
-	color: #e95e6b;
-}
-
-.trackbar{
-	background-color: #ddd; 
-	
-	font-family: 'Raleway';
-	font-size: 16px;
-	padding: 10px;
-}
-
+#artist-info{margin-top : 100px;}
 
 #music-page-header{
 	margin-top: 5px;
@@ -31,12 +24,7 @@
 	padding: 20px;
 	z-index: 1;
 }
-#music-page-header h1{
-	font-family: 'Raleway';
-
-
-}
-
+	#music-page-header h1{font-family: 'Raleway';}
 
 #audio-player-wrapper{
 	margin: 50px auto;
@@ -44,53 +32,64 @@
 	border-radius: 10px;
 	width: 50%;
 	padding: 10px;
-
 }
 
-#albumn-title {
-	text-align: center;
-}
+#albumn-title {text-align: center;}
 
-#albumn-title h1{
-	font-family: 'clicker-script';
-	font-size:62px;
-}
+	#albumn-title h1{
+		font-family: 'clicker-script';
+		font-size:62px;
+	}
 
 
 #audio-player{
 	width :100%;
-	margin: 0 auto;
+	margin: 10px auto;
 	display: block;
 	background-color: #000;
 }
 
-#playlist{
-	margin: 0 auto;
-	border-radius: 10px;
-	padding: 10px;
-	list-style: none;
-}
-
-#playlist li{
-	padding: 10px;
 
 
-}
 
 /*Use a shadow on the active track*/
-#playlist li:nth-child(even){
-	background-color: #fff;
-	border: solid 1px #e95e6b;
+.trackbar{
+	font-family: 'Quicksand', sans-serif;
+    -webkit-transition: 300ms ease all;
+  	transition: 300ms ease all;
+}
+	.trackbar:hover{
+		cursor:pointer;
+        -webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	    -moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	    box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	    margin: 10px;
+	    font-weight: 700;
+	}
+	.trackbar p{
+		margin: 10px; 
+		display: inline-block;
+	}
+	.active-song{
 		-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
--moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
-}
+	    -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	    border: solid 5px #aF4654;
+	    /*border: solid 5px #CEA2CB;*/
+	    color: #fff;
+	    /*color: #23519F;*/
+	    background-color: #e95e6b !important;
+	   	/*background-color:  #FAD5E5 !important; */
+	    border-radius: 10px;
+	    font-weight: 700;
+	}
+		.trackbar:nth-child(even){background-color: #fff;}
+		.trackbar:nth-child(odd){background-color: #d0d0d0;}
 
-#playlist li:nth-child(odd){
-	background-color: #d0d0d0;
-}
-#playlist li a {
-	font-family: 'Raleway'; 
-	font-size: 18px;
-	text-decoration: none;
-}
+
+
+
+
+
+
+

@@ -4,25 +4,36 @@
 {% block css_adds %}
 	<link rel="stylesheet" type="text/css" href='{% static "css/home.css" %}'>
 {% endblock %}
-{% block content %}
-	<div id="topbanner">
-	<div class="nav-btn toggle-nav font-white">
-		<span class="glyphicon glyphicon-menu-hamburger"></span>
-	</div>
-		<div id="headline-wrapper">
-			<div><img class="center img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'></div>
-			<div id="sub-headline">"Create Your Own Sunshine", the new albumn available Fall 2016</div>
-			<a id="listen-btn" class="btn-outline-white center" href="{% url 'music' %}">LISTEN NOW</a>
-			
-		</div>
 
+
+{% block banner %}
+	<div id="topbanner">
+
+		{% include "hamburger.html" %}
+
+		<div id="headline-wrapper">
+			<div>
+				<img class="center img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'>
+				<!-- <img class="center img-responsive" id="sws-logo" src='{% static "images/sws_logo_two.png" %}'> -->
+			</div>
+			<div id="sub-headline">
+				<p>"Create Your Own Sunshine", the new albumn available Fall 2016</p>
+			</div>
+			<a id="listen-btn" class="btn-outline-white center" href="{% url 'music' %}">LISTEN NOW</a>
+		</div>
 	</div>
+
+
+{% endblock %}
+
+{% block content %}
+	
 
 	<div class="container">
 		<div class="row center-text">
 			<div class="col-lg-12">
 				<div class="header">
-					<h1>BEING A MOTHER INSPIRES MY MUSIC</h1>
+					<h1>BEING A MOTHER INSPIRES MUSIC.</h1>
 				</div>
 			</div>
 		</div>
@@ -37,12 +48,13 @@
 					<p>I'm a parent, music educator, and  singer/song writer, based in the North Bay
 					   During my time as a nanny and after school activities coordinator I cultivated my passion for music in child education. I compose music influenced by multiple genres including, traditional children’s folk music, world music, and nursery rhymes.
 					</p>
-					<a href="#" class="more-btn btn">READ MORE</a>
+					<a href="{% url 'about' %}" class="more-btn btn">READ MORE</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
+ 	<!-- These Div blocks will eventually be read in from a database, we will loop for each element 
+ 	in the template so these blocks will not be repeated -->
 	<div id="black-bg">
 		<div class="container">
 			<div class="row" id="services-row">
@@ -64,6 +76,13 @@
 					<img class="service-img" src='{% static "images/sessions.png" %}'>
 					<div class="overlay">
 						<a href="#" id="gallery-title">Classroom Sessions</a>
+					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{% static "images/events.png" %}'>
+					<div class="overlay">
+						<a href="#" id="gallery-title">Community and Corporate Events</a>
 					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
 	        		</div>
 				</div>

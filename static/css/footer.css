@@ -1,34 +1,32 @@
 /*CSS STYLES FOR FOOTER*/
 
-#footer{
-	
-}
-
-#footer-nav{
-	text-align: center;
-}
-
-
-#footer-social-wrapper{
-	padding: 0;
-	margin-bottom: 50px;
-	background-color: #d0d0d0;
-}
-
-
 #footer-nav-wrapper{
 	margin: 15px auto;
 	padding: 20px;
 	border-bottom: solid 1px #000;
 	border-top: solid 1px #000;
-}	
+}
+
+#footer-nav{text-align: center;}
+	#footer-nav a {
+		font-family: 'Raleway', sans-serif;
+		text-decoration: none;
+		font-size: 24px;
+		color: #000;
+	}
+
+	#footer-nav a:hover{
+		color: #808080;
+	}
 
 
-#footer-nav a {
-	font-family: 'Raleway', sans-serif;
-	text-decoration: none;
-	font-size: 24px;
-	color: #000;
+
+#footer-social-wrapper{
+	padding: 0;
+	margin-bottom: 10px;
+	background-color: #FBFBFB;
+	border-bottom: solid 1px #F3EBEB;
+	border-top : solid 1px #F3EBEB;
 }
 
 
@@ -89,7 +87,10 @@
 
 #service-location-header{
 	font-family: 'clicker-script';
+	/*font-family: 'Fredoka One', cursive;*/
 	font-size: 42px;
+	/*color: #23519F;*/
+	color : #000;
 }
 
 #service-location-content{
@@ -121,4 +122,5 @@
 #builder p {
 	font-size: 14px; 
 }
+
 

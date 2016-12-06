@@ -1,68 +1,41 @@
 (function($){
+
+	var audio = $('#audio-player')[0];
+	var audioExt = '.mp3'; 
+	var isPlayer = false;
+	var currentSong = '';
+	var currentSongObj = null;
 	
-	// creates a private scope
-	var playbtnGlyph = 'glyphicon glyphicon-play';
-	var pausebtnGlyph = 'glyphicon glyphicon-pause';
+	$('.trackbar').on('click', function(e){
+		
+		'use strict'; 
 
-
-	var audio = new Audio(); 
-	var audioIndex = 1; 
-	var isPlaying = false;
-	var trackbox = $('#trackbox');
-	var trackbar = $('.trackbar');
-	var audioIcon = $('.audio-icon');
-	var playingTrack = '';
-	var audioExt = '.mp3';
-	audioIcon.addClass(playbtnGlyph); 
-
-
-
-	function switchTrack(event){
-		if(isPlaying){
-			alert(playingTrack);
-			if(playingTrack != event.target.parentNode.id){
-				isPlaying = true;
-				// playing track will be the id of the dive 
-				console.log('here');
-				$('#playingTrack').addClass(playbtnGlyph); 
-				$(event.target).removeClass(playbtnGlyph).addClass(pausebtnGlyph); 
-				audio.src = '/static/audio/' + event.target.parentNode.id+audioExt; 
-				audio.play();
-			}else{
-				alert('pause');
-				audio.pause();
-				isPlaying = false; 
-				$(event.target).removeClass(playbtnGlyph).addClass(pausebtnGlyph);
-			}
-		}else{
-			// This condition switches the audio track on if nothing is playing
-			
-			isPlaying = true;
-			// if the track is playing put the pause button up
-			alert(event.target.parentNode.id);
-			$(event.target).removeClass(playbtnGlyph); 
-			$(event.target).addClass(pausebtnGlyph);
-
-			if(playingTrack != event.target.parentNode.id){
-				audio.src = '/static/audio/' + event.target.parentNode.id+audioExt;
-			}
-
-			audio.play();
-
+		if(currentSongObj){
+			currentSongObj.removeClass('active-song');
 		}
-	}
 
-	$('.audio-icon').on('click', switchTrack);
+		if(currentSong != e.target.id) {
+			audio.src = '/static/audio/' + e.target.id+audioExt; 
+			audio.play();
+			currentSong = e.target.id;
+			
+			console.log(currentSongObj);
+			$(e.target).addClass('active-song');
+			console.log("Current Song" + currentSong);
+		}else{
+			audio.pause();
+			currentSong = '';
+			console.log("Current Song" + currentSong);
+			console.log(currentSongObj);
+		}
+
+		currentSongObj = $(e.target);
+
+	});
+
+	// This will prevent the event from propagating down to the child element.
+	$('.trackbar p').click(function(e){
+		e.stopPropagation();
+	});
 	
-	audio.ontimeupdate =  function(){
-		$('.progress').attr('value', this.currentTime/this.duration);
-	};
-
-
-
-
-
-
-
-
 })(jQuery);

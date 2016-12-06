@@ -1,48 +1,25 @@
-.container{
-	margin-top: 100px;
-}
-
-
 #services-header{
 	color: #000;
 	margin:100px 0 50px 0;
 }
 
-#black-bg{
-	background-color: #d3d3d3;
+#black-bg{	
 	width: 100%;
 }
 
-.header{
-	font-family: 'Raleway', sans-serif;
-	text-align: center;
-	padding: 0 ;
-}
-
-
-.filigree{
-	width: 400px;
-	padding: 0 ;
-	display: block; 
-	margin: 0 auto;
-}
-
-
-#vocal{
-	width: 200px;
-}
 
 #about-content-home{
-	margin: 20px;
+	margin: 50px ;
 }
 
 #about-content-home p {
-	margin: 20px 0  50px 0 ;
+	margin-bottom: 125px;
 }
 
 #about-content-home a {
 	display: block;
 	width: 150px;
+
 }
 
 .service-img{
@@ -58,18 +35,22 @@
 .more-btn{
 	padding: 10px;
 	color: #fff;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	border-radius: 10px;
 	font-size: 18px;
 	margin: 0 auto;
+	background-color: #23519F;
 	background-color: #e95e6b;
+	/*background-color: #FAD5E5;*/
 	border: solid 1px #e95e6b;
-	
+	/*border: solid 1px #FAD5E5;	*/
+	b/*order: solid 1px #23519F;*/
 }
 
 
 .more-btn:hover{ 
 	background-color: #fff;
+	text-decoration: none;
 	color: #fff !important;
 	background-image: -webkit-linear-gradient(top, #e95e6b, #AF4654);
   	background-image: -moz-linear-gradient(top, #e95e6b, #AF4654);

@@ -1,19 +1,13 @@
-$(function() {
+(function($) {
   
     // Toggle Nav on Click
     $('.toggle-nav').click(function() {
         // Calling a function in case you want to expand upon this.
         toggleNav();
+        $('.hamburger').toggleClass('is-active');
     });
 
-  
-});
-
-
-/*========================================
-=            CUSTOM FUNCTIONS            =
-========================================*/
-function toggleNav() {
+    function toggleNav() {
     if ($('#site-wrapper').hasClass('show-nav')) {
         // Do things on Nav Close
         $('#site-wrapper').removeClass('show-nav');
@@ -24,3 +18,6 @@ function toggleNav() {
 
     //$('#site-wrapper').toggleClass('show-nav');
 }
+  
+})(jQuery);
+
