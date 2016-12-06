@@ -7,4 +7,5 @@ class BlogPost(models.Model):
 	usr = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=250)
 	blog_text = models.TextField(max_length=10000)
-	date_created = models.DateTimeField(auto_now_add=True)
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
