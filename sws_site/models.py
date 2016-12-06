@@ -16,7 +16,9 @@ class ServicesLandingPage(models.Model):
 			entries but also be able only to use the newest ones. 
 			Specifying get latest by will allow us to use only the 
 			latest record later on. 
-			
+
+			test
+
 		'''
 		verbose_name = "Services Landing Page"
 		verbose_name_plural="Services Landing Page"
