@@ -39,10 +39,12 @@
 	border-radius: 10px;
 	font-size: 18px;
 	margin: 0 auto;
+	background-color: #23519F;
 	background-color: #e95e6b;
+	/*background-color: #FAD5E5;*/
 	border: solid 1px #e95e6b;
-
-	
+	/*border: solid 1px #FAD5E5;	*/
+	b/*order: solid 1px #23519F;*/
 }
 
 
