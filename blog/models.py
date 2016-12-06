@@ -3,6 +3,7 @@ from datetime import datetime
 from django.contrib.auth.models import User
 
 # Create your models here.
+#user refrences User.id as foreign key
 class BlogPost(models.Model):
 	usr = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=250)
