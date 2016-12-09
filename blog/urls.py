@@ -3,10 +3,10 @@ from . import views
 
 
 urlpatterns = [
-	#singwithsavannah.com/music
-    url(r'^$', views.index, name='index'),
+	#singwithsavannah.com/blog
+    url(r'^$', views.blog, name='blog'),
 
-    #routes for blog  show functionality
-    #singwithsavannah.com/music/1234...n
+    #routes for blog show functional
+    #singwithsavannah.com/blog/1234...n
     url(r'^(?P<blogpost_id>[0-9]+)/$', views.show, name='show'),
 ]

@@ -1,14 +1,29 @@
 #from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import Http404
 from .models import BlogPost
-# Create your views here.
-def index(request):
-	all_blog_posts = BlogPost.objects.all()
-	html = ''
-	for blog_post in all_blog_posts:
-		url='/blog/' + str(blog_post.id)
-		html += '<a href="' + url + '"> '+ blog_post.title +'</a>'
-	return HttpResponse(html)
+from django.shortcuts import render
+from django.template import loader
 
+# Create your views here.
+def blog(request):
+	#reverse the order of blog posts by created at
+	#the '-' in front of created_at tells python to filter in reverse order
+	all_blog_posts = BlogPost.objects.filter(usr=1).order_by('-created_at')
+	#context dictionary standard practice for transfering necessary data to the template view
+	#this makes all_blog_posts accessable from the template view
+	context= {'all_blog_posts': all_blog_posts,}
+	#unlike the template loader style, context needs to be the 3rd argument, not the first
+	return render(request, 'blog.html', context)
+#for individual 
 def show(request, blogpost_id):
-	return HttpResponse("<h1>This page is to check blog_post link to database. id: " + str(blogpost_id) + "</h1>")
+	try:
+		#cant simply pass blogpost_id to get method. MUST USE 'pk =' to tell django to get by primary key 
+		blog_post = BlogPost.objects.get(pk=blogpost_id)
+
+	except BlogPost.DoesNotExist:
+		raise Http404("requested blog post does not exist.")
+
+
+
+	return render(request, 'show.html', {'blog_post': blog_post})

@@ -12,6 +12,8 @@ class BlogPost(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
+
+
 	#following function is sort of a to_string function for the admin page
 	#	admin will see BlogPost objects displayed like below
 	def __str__(self):
