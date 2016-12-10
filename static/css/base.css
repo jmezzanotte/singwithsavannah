@@ -21,7 +21,8 @@
 	light purple: #FAD5E5;
 	purple : CEA2CB;
 	light blue : #CFD9EF;
-	dark-blue: 23519F
+	skyblue : #8ED8F8;
+	dark-blue: #23519F
 
 
 
@@ -46,13 +47,12 @@ ul{
 
 
 h1{
-	font-family: 'Quicksand', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
 	/*font-family: 'Chewy', cursive;*/
-	/*font-family: 'Fredoka One', cursive;*/
-	/*font-size: 42px;*/
+	font-family: 'Fredoka One', cursive;
 	font-size:42px;
-	/*color: #23519F;*/
-	color: #000;
+	color: #23519f;
+	/*color: #000;*/
 }
 
 h2{
@@ -130,24 +130,27 @@ p{
 	}
 
 .submenu{
-	color: #fff;
-	/*color: #23519F;*/
+	/*color: #fff;*/
+	color: #23519F;
 	border-radius: 10px;
 	height: 0px;
 	overflow: hidden;
 	-webkit-transition: 600ms ease all;
   	transition: 600ms ease all;
+  	
+  	width: 100%;
 }
 	.submenu-parent:hover .submenu{
 		height: 300px;
+
 		
 	}
 
 	.submenu li{
-		background-color: #e95e6b; 
-		/*background-color: #FAD5E5;*/
-		border: solid 4px #aF4654; 
-		/*border: solid 4px #cea2cb;*/ 
+		/*background-color: #e95e6b; */
+		background-color: #FAD5E5;
+		/*border: solid 4px #aF4654;*/ 
+		border: solid 4px #cea2cb; 
 		padding: 10px; 
 		border-radius: 10px;
 		margin: 10px;
@@ -155,7 +158,10 @@ p{
   		transition: 400ms ease all;
 	}
 		.submenu li:hover{
-			margin: 0px;
+			margin: 1px;
+			-webkit-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	        -moz-box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
+	        box-shadow: -2px 9px 47px -1px rgba(105,105,105,1);
 		}
 
 
@@ -239,9 +245,10 @@ p{
   	top: 0;
   	left: -400px;
   	color: #fff;
-  	font-family: 'Raleway', sans-serif;
-  	background-color: #000;
-  	/*background-color: #23519F;*/
+  	/*font-family: 'Raleway', sans-serif;*/
+  	font-family: 'Quicksand', sans-serif;
+  	/*background-color: #000;*/
+  	background-color: #23519F;
 
 }
 	#site-nav h1{
@@ -260,13 +267,17 @@ p{
 	border-top: solid 1px #fff;
 	border-bottom: solid 1px #fff;
 	margin: 20px 0 20px 0;
+	background-color: #8ED8F8;
 }
-
 
 
 #nav-list li{
 	list-style: none;
 	font-size: 24px;
+}
+
+#nav-list li a {
+	color: #23519F;
 }
 
 .soc-media{
@@ -337,8 +348,9 @@ p{
 	display: block;
     width: 0;
     height: 5px;
-    background:  #e95e6b;
-    /*background: #FAD5E5;*/ /*light pink */
+    /*background:  #e95e6b;*/
+
+    background: #23519F; /*light pink */
     transition: width .5s;
 }
 
@@ -373,12 +385,6 @@ p{
 
 
 
-#mini-miss{
-	color: #000;
-	text-align: center;
-	margin: 0 auto;
-}
-
 /*CONTENT*/
 
 
@@ -398,6 +404,7 @@ p{
 .secondary-topbanner{
 	border-bottom: solid 3px #d0d0d0;
 	background-color: #FBFBFB;	
+	
 }
 
 #hidden-spacer{
@@ -438,14 +445,15 @@ p{
 	text-decoration: none;
 	margin-top: 75px;
 	display: block;
+	border-radius: 10px;
 }
 
 #listen-btn:hover{
 	cursor: pointer;
-	color: #e95e6b;
-	/*color : #FAD5E5;*/
-	border-color: #e95e6b;
-	/*border-color: #FAD5E5;*/
+	/*color: #e95e6b;*/
+	color : #FAD5E5;
+	/*border-color: #e95e6b;*/
+	border-color: #FAD5E5;
 }
 
 #sws-logo{

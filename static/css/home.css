@@ -32,36 +32,41 @@
 	
 }
 
+
+
+
 .more-btn{
 	padding: 10px;
-	color: #fff;
+	color:#23519F;
 	font-family: 'Quicksand', sans-serif;
 	border-radius: 10px;
 	font-size: 18px;
 	margin: 0 auto;
-	background-color: #23519F;
-	background-color: #e95e6b;
-	/*background-color: #FAD5E5;*/
-	border: solid 1px #e95e6b;
+	/*background-color: #23519F;*/
+	/*background-color: #e95e6b;*/
+	background-color: #FAD5E5;
+	/*border: solid 1px #e95e6b;*/
 	/*border: solid 1px #FAD5E5;	*/
-	b/*order: solid 1px #23519F;*/
+	border: solid 1px #23519F;
 }
 
 
-.more-btn:hover{ 
-	background-color: #fff;
-	text-decoration: none;
-	color: #fff !important;
-	background-image: -webkit-linear-gradient(top, #e95e6b, #AF4654);
-  	background-image: -moz-linear-gradient(top, #e95e6b, #AF4654);
-  	background-image: -ms-linear-gradient(top, #e95e6b, #AF4654);
-  	background-image: -o-linear-gradient(top, #e95e6b, #AF4654);
-  	background-image: linear-gradient(to bottom, #e95e6b, #AF4654);
-	
+
+.more-btn:hover {
+	  background: #ffbad9;
+	  color: #23519F !important;
+	  background-image: -webkit-linear-gradient(top, #ffbad9, #FAD5E5);
+	  background-image: -moz-linear-gradient(top, #ffbad9, #FAD5E5);
+	  background-image: -ms-linear-gradient(top, #ffbad9, #FAD5E5);
+	  background-image: -o-linear-gradient(top, #ffbad9, #FAD5E5);
+	  background-image: linear-gradient(to bottom, #ffbad9, #FAD5E5);
+	  text-decoration: none;
 }
+
+
 
 .more-btn:visited{
-	color: #fff;
+	color: #23519F;
 }
 
 #read-more-parent{
@@ -92,7 +97,7 @@
 
 #gallery-row{
 	margin: 20px;
-	border: solid 10px #000;
+	border: solid 10px #23519F;
 	border-radius: 10px;
 }
 
@@ -169,6 +174,9 @@ a.expand {
   	cursor: pointer;
 }
 
+.header{
+	margin-bottom: 50px;
+}
 
 
 #services-header-row h1{
