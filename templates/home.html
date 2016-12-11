@@ -45,16 +45,13 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div id="about-content-home">
-					<p>I'm a parent, music educator, and  singer/song writer, based in the North Bay
-					   During my time as a nanny and after school activities coordinator I cultivated my passion for music in child education. I compose music influenced by multiple genres including, traditional children’s folk music, world music, and nursery rhymes.
-					</p>
+					<p>{{ about.summary }}</p>
 					<a href="{% url 'about' %}" class="more-btn btn">READ MORE</a>
 				</div>
 			</div>
 		</div>
 	</div>
- 	<!-- These Div blocks will eventually be read in from a database, we will loop for each element 
- 	in the template so these blocks will not be repeated -->
+
 	<div id="black-bg">
 		<div class="container">
 			<div class="row" id="services-row">
@@ -64,28 +61,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="row" id="gallery-row">		
-				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-					<img class="service-img" src='{% static "images/cake.png" %}'>
-					<div class="overlay">
-						<a href="#" id="gallery-title">Birthday Parties</a>
-					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
-	        		</div>
-				</div>
-				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-					<img class="service-img" src='{% static "images/sessions.png" %}'>
-					<div class="overlay">
-						<a href="#" id="gallery-title">Classroom Sessions</a>
-					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
-	        		</div>
-				</div>
-				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-					<img class="service-img" src='{% static "images/events.png" %}'>
-					<div class="overlay">
-						<a href="#" id="gallery-title">Community and Corporate Events</a>
-					    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
-	        		</div>
-				</div>
+			{% for i in services %}
+				<div class="row" id="gallery-row">		
+					<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+						<img class="service-img" src='{{ i.icon.url }}'>
+						<div class="overlay">
+							<a href="#" id="gallery-title">{{ i.service }}</a>
+						    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+		        		</div>
+					</div>
+			{% endfor %}
 			</div>
 		</div>
 	</div>
