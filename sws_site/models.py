@@ -2,6 +2,15 @@ from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 import uuid
+import os
+
+def get_upload_path(instance, filename):
+    """ creates unique-Path & filename for upload """
+
+    return os.path.join('audio', 'albums', instance.name, filename)
+
+def get_track_upload_path(instance, filename):
+	return os.path.join('audio', 'albums', instance.album.name, filename)
 
 # Create your models here.
 class ServicesLandingPage(models.Model):
@@ -37,8 +46,8 @@ class Services(models.Model):
 	slug = models.SlugField(unique=True, default=uuid.uuid4)
 	description = models.TextField()
 	headline = models.CharField(max_length=250)
-	image = models.ImageField()
-	icon = models.ImageField()
+	image = models.ImageField(upload_to='services')
+	icon = models.ImageField(upload_to='services')
 	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -73,7 +82,30 @@ class About(models.Model):
 
 
 
+class Album(models.Model):
 
+	name = models.CharField(max_length=200)
+	image = models.ImageField(upload_to=get_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.name
+
+	def __str__(self):
+		return self.name
+
+class AlbumTrack(models.Model):
+	name = models.CharField(max_length=200)
+	album = models.ForeignKey(Album, on_delete=models.CASCADE)
+	track = models.FileField(upload_to=get_track_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+
+	def __unicode__(self):
+		return self.name
+
+	def __str__(self):
+		return self.name
 
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):

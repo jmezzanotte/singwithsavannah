@@ -7,23 +7,28 @@ h1{text-align: center;}
 
 #about-profile{
 	position: relative;  
-	width: 75%;
-	margin: 0 auto;
+	/*width: 75%;*/
+	/*margin: 0 auto;*/
 	
 	margin: 50px 0 50px 0;
 }	
-
+	
 	#about-profile img{
 		width: 100%;
 		border-radius: 10px;
 		margin: 0 auto;
+		display: block;
+		border : solid 8px #d0d0d0;
 	}
 
 	#about-overlay{
 		position: absolute;
 		top: 0;
-		left: 40% ;
-		transform: translate(50%, -50%);
+		left: 0 ;
+		right: 0 ;
+		margin-left: auto;
+		margin-right: auto;
+	/*	transform: translate(50%, -50%);*/
 		z-index: 2;
 	}
 
