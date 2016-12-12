@@ -21,22 +21,20 @@ class AboutAdmin(admin.ModelAdmin):
 	class Meta:
 		model = About
 
-class AlbumnAdmin(admin.ModelAdmin):
+class AlbumAdmin(admin.ModelAdmin):
 	list_display = ['__unicode__']
 
 	class Meta: 
 		model = Album
 
-class AlbumnTrackAdmin(admin.ModelAdmin):
-	list_display = ['__unicode__']
+class AlbumTrackAdmin(admin.ModelAdmin):
 
 	class Meta: 
 		model = AlbumTrack
 
 
-
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(ServicesLandingPage, ServicesLandingPageAdmin)
 admin.site.register(About, AboutAdmin)
-admin.site.register(Album, AlbumnAdmin)
-admin.site.register(AlbumTrack, AlbumnTrackAdmin)
+admin.site.register(Album, AlbumAdmin)
+admin.site.register(AlbumTrack, AlbumTrackAdmin)

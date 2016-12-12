@@ -1,16 +1,23 @@
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.conf import settings
 import uuid
+import shutil
 import os
+
 
 def get_upload_path(instance, filename):
     """ creates unique-Path & filename for upload """
-
-    return os.path.join('audio', 'albums', instance.name, filename)
+    return os.path.join('audio', 'albums', slugify(instance.name), filename)
 
 def get_track_upload_path(instance, filename):
-	return os.path.join('audio', 'albums', instance.album.name, filename)
+	return os.path.join('audio', 'albums', slugify(instance.album.name), filename)
+
+def get_file_name(instance, filename):
+	return filename
 
 # Create your models here.
 class ServicesLandingPage(models.Model):
@@ -80,8 +87,6 @@ class About(models.Model):
 		verbose_name_plural = 'About'
 		get_latest_by = 'timestamp'
 
-
-
 class Album(models.Model):
 
 	name = models.CharField(max_length=200)
@@ -95,19 +100,27 @@ class Album(models.Model):
 		return self.name
 
 class AlbumTrack(models.Model):
-	name = models.CharField(max_length=200)
-	album = models.ForeignKey(Album, on_delete=models.CASCADE)
+
+	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
 	track = models.FileField(upload_to=get_track_upload_path)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
+@receiver(pre_delete, sender=AlbumTrack)
+def post_delete_album_track(sender, instance, *args, **kwargs):
+	instance.track.delete(False)
+	
 
-	def __unicode__(self):
-		return self.name
+@receiver(pre_delete, sender=Album)
+def post_delete_album_folder(sender, instance, *args, **kwargs):
+	'''This function will remove the directory of the album if the user deletes it.
+		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
+		associated with an album.'''
+	try:
+		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
+	except FileNotFoundError as e :
+		print(e)
 
-	def __str__(self):
-		return self.name
-
-
+@receiver(pre_save, sender=Services)
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
 	
 	# slugify ther service title
@@ -121,6 +134,6 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 	instance.slug = slug
 
 
-
-pre_save.connect(pre_save_post_receiver, sender=Services)
+# The decorator is replacint this step
+#pre_save.connect(pre_save_post_receiver, sender=Services)
 

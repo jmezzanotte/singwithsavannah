@@ -1,6 +1,6 @@
 (function($){
 
-	var audio = $('#audio-player')[0];
+	var audio = $('.audio-player')[0];
 	var audioExt = '.mp3'; 
 	var isPlayer = false;
 	var currentSong = '';

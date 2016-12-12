@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from .models import Services
-from .models import ServicesLandingPage
-from .models import About
+from .models import Services, ServicesLandingPage, About, Album
+
 
 # Create your views here.
 
@@ -18,7 +17,21 @@ def home(request):
 	return render(request, 'home.html', context)
 
 def music(request):
-	return render(request, 'music.html')
+
+	# We are going to have to get all the related objects from Album
+	# Get all objects from the database
+	# I think you can get the related items within the template using this 
+	#{% for album in album.albumtrack_set.all %}
+	#album.albumtrack_set.all()#
+	albums = Album.objects.all()
+
+
+	context = {
+		'albums' : albums,
+
+	}
+
+	return render(request, 'music.html', context)
 
 def about(request):
 
