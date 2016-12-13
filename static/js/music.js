@@ -1,6 +1,6 @@
 (function($){
 
-	var audio = $('.audio-player')[0];
+	//var audio = $('.audio-player')[0];	
 	var audioExt = '.mp3'; 
 	var isPlayer = false;
 	var currentSong = '';
@@ -9,7 +9,9 @@
 	$('.trackbar').on('click', function(e){
 		
 		'use strict'; 
-
+		// This line will get you to the appropriate audio player
+		console.log($(e.target).parent().prev()[0]);
+		var audio = $(e.target).parent().prev()[0];
 		if(currentSongObj){
 			currentSongObj.removeClass('active-song');
 		}
@@ -34,8 +36,8 @@
 	});
 
 	// This will prevent the event from propagating down to the child element.
-	$('.trackbar p').click(function(e){
-		e.stopPropagation();
-	});
+	// $('.trackbar p').click(function(e){
+	// 	e.stopPropagation();
+	// });
 	
 })(jQuery);
