@@ -106,18 +106,35 @@ class AlbumTrack(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 @receiver(pre_delete, sender=AlbumTrack)
-def post_delete_album_track(sender, instance, *args, **kwargs):
+def pre_delete_album_track(sender, instance, *args, **kwargs):
 	instance.track.delete(False)
 	
 
 @receiver(pre_delete, sender=Album)
-def post_delete_album_folder(sender, instance, *args, **kwargs):
+def pre_delete_album_folder(sender, instance, *args, **kwargs):
 	'''This function will remove the directory of the album if the user deletes it.
 		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
 		associated with an album.'''
 	try:
 		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
 	except FileNotFoundError as e :
+		print(e)
+
+@receiver(pre_delete, sender=Services)
+def pre_delete_service_image(sender, instance, *args, **kwargs):
+	'''Method to delete the images from the server when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+		os.remove(instance.icon.path)
+	except FileNotFoundError as e:
+		print(e)
+
+@receiver(pre_delete, sender=About)
+def pre_delete_about_image(sender, instance, *args, **kwargs):
+	'''Method to delete images from the about folder when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+	except FileNotFoundError as e:
 		print(e)
 
 @receiver(pre_save, sender=Services)
