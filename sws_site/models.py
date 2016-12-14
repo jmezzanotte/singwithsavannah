@@ -1,3 +1,156 @@
 from django.db import models
+from django.utils.text import slugify
+from django.db.models.signals import pre_save
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.conf import settings
+import uuid
+import shutil
+import os
+
+
+def get_upload_path(instance, filename):
+    """ creates unique-Path & filename for upload """
+    return os.path.join('audio', 'albums', slugify(instance.name), filename)
+
+def get_track_upload_path(instance, filename):
+	return os.path.join('audio', 'albums', slugify(instance.album.name), filename)
+
+def get_file_name(instance, filename):
+	return filename
 
 # Create your models here.
+class ServicesLandingPage(models.Model):
+	services_headline=models.CharField(max_length=250)
+	services_desc=models.TextField()
+	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.services_headline
+
+	def __str__(self):
+		return self.services_headline
+
+
+	class Meta:
+		'''	
+			The reason we need get latest by is because the user 
+			can ultimately enter many different headlines or content 
+			text to this table. We want them to have record of the old 
+			entries but also be able only to use the newest ones. 
+			Specifying get latest by will allow us to use only the 
+			latest record later on. 
+
+			test
+
+		'''
+		verbose_name = 'Services Landing Page'
+		verbose_name_plural = 'Services Landing Page'
+		get_latest_by = 'timestamp'
+
+class Services(models.Model):
+	service = models.CharField(max_length=50, unique=True, blank=True, default=uuid.uuid4)
+	slug = models.SlugField(unique=True, default=uuid.uuid4)
+	description = models.TextField()
+	headline = models.CharField(max_length=250)
+	image = models.ImageField(upload_to='services')
+	icon = models.ImageField(upload_to='services')
+	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.service
+
+	def __str__(self):
+		return self.service
+
+	class Meta:
+		verbose_name = 'Services'
+		verbose_name_plural = 'Services'
+
+
+class About(models.Model):
+	headline = models.CharField(max_length=500)
+	summary = models.TextField()
+	description = models.TextField()
+	image = models.ImageField(upload_to='about')
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.headline
+
+	def __str__(self):
+		return self.headline
+
+
+	class Meta:
+		verbose_name = 'About'
+		verbose_name_plural = 'About'
+		get_latest_by = 'timestamp'
+
+class Album(models.Model):
+
+	name = models.CharField(max_length=200)
+	image = models.ImageField(upload_to=get_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.name
+
+	def __str__(self):
+		return self.name
+
+class AlbumTrack(models.Model):
+
+	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
+	track = models.FileField(upload_to=get_track_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+@receiver(pre_delete, sender=AlbumTrack)
+def pre_delete_album_track(sender, instance, *args, **kwargs):
+	instance.track.delete(False)
+	
+
+@receiver(pre_delete, sender=Album)
+def pre_delete_album_folder(sender, instance, *args, **kwargs):
+	'''This function will remove the directory of the album if the user deletes it.
+		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
+		associated with an album.'''
+	try:
+		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
+	except FileNotFoundError as e :
+		print(e)
+
+@receiver(pre_delete, sender=Services)
+def pre_delete_service_image(sender, instance, *args, **kwargs):
+	'''Method to delete the images from the server when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+		os.remove(instance.icon.path)
+	except FileNotFoundError as e:
+		print(e)
+
+@receiver(pre_delete, sender=About)
+def pre_delete_about_image(sender, instance, *args, **kwargs):
+	'''Method to delete images from the about folder when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+	except FileNotFoundError as e:
+		print(e)
+
+@receiver(pre_save, sender=Services)
+def pre_save_post_receiver(sender, instance, *args, **kwargs):
+	
+	# slugify ther service title
+	slug = slugify(instance.service)
+	exists = Services.objects.filter(slug=slug).exists()
+	# If the slug already exists append the slug with the id. This ensures we have no duplicate slugs
+	
+	if exists:
+		slug = "%s-%s" % (slugify(instance.service), instance.id)
+	
+	instance.slug = slug
+
+
+# The decorator is replacint this step
+#pre_save.connect(pre_save_post_receiver, sender=Services)
+

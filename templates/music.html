@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}SING WITH SAVANNAH | MUSIC{% endblock  %}
+{% load filename %}
+{% block title %}SING WITH SAVANNAH | MUSIC {% endblock  %}
 {% block css_adds %}
 	<link rel="stylesheet" type="text/css" href='{% static "css/music.css" %}'>
 {% endblock %}
@@ -11,35 +12,32 @@
 
 {% block content %}
 	<div class="container-fluid">
-		<div class="row" id="artist-info">
-			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-				<hr>
-				<h1>Create Your Own Sunshine</h1>
-				<hr>
-				<h2>Savannah Austin</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
-				<div id="audio-player-wrapper">
-					<div id="albumn-cover">
-						<img id="footer-bird" class="img-responsive" src='{% static "images/create_your_own_sunshine_763x622.jpg" %}'>
-					</div>
-					<audio id="audio-player" controls></audio>
-					<div id="trackbox">	
-						<!-- Track names will need to be read in from the database. Track names need to be unique
-							At least for the id
-						 -->
-						<div class="trackbar" id="Butterfly">
-							<p>Butterfly</p>
-						</div>
-						<div class="trackbar" id="Gonna_Have_A_Race">
-							<p>Gonna Have a Race</p>
-						</div>
-					</div>
+		{% for i in albums %}
+			<div class="row" class="artist-info">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+					<h1>{{i.name}}</h1>
+					<hr>
 				</div>
 			</div>
-		</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="audio-player-wrapper">
+						<div class="albumn-cover">
+							<!-- image size 763x622  -->
+							<img id="footer-bird" class="img-responsive" src='{{i.image.url}}'>
+						</div>
+						<audio class="audio-player" id={{i.name|slugify}} controls></audio>
+						<div class="trackbox">	
+							{% for j in i.album.all %}
+								<div class="trackbar" id="{{j.track.name|filename|slugify}}">
+									<p>{{j.track.name|filename}}</p>
+								</div>
+							{% endfor %}
+						</div>
+					</div>			
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 
 {% endblock %}

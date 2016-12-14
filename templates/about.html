@@ -12,12 +12,16 @@
 	<!-- TESTING MERGE  -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="col-lg-2 col-md-12 col-sm-12"></div>
+			<div class="col-lg-8 col-md-12 col-sm-12">
+				
 				<div id="about-profile">
-					<div id="about-headline-wrapper">
-						<h1 id="about-headline">ABOUT ME INTRODUCTION</h1>
+					<div id="about-overlay">
+						<h1>{{about.headline}}</h1>
 					</div>
+					<img width="500" src='{{ about.image.url }}'>
 				</div>
+				<div class="col-lg-2 col-md-12 col-sm-12"></div>
 			</div>
 		</div>
 	</div>
@@ -29,22 +33,7 @@
 		</div>
 		<div class="row">
 			<div clas="col-lg-12 col-md-12 col-sm-12">
-				<p>
-					Savannah is a fellow parent and former music major, and is currently a singer/song writer, and music teacher in the North Bay. Savannah teaches with Mini Music and previously taught musical theory and ear training for the San Francisco Girls Chorus School. She studied at Sonoma State University, and Santa Rosa Junior College. During her time there, she studied classical/jazz voice, piano, choir, child development, dance, and American Sign Language. With her background in these concentrated areas, she has achieved a great knowledge and appreciation of music with emphasis on child development.
-
-					In her younger adult years, she wrote and performed her own original songs in the folk/rock genre. Alongside with her musical partner, and now husband, she has performed professionally for weddings and charity events. They both teach private lessons for all ages. Given their classically trained background, Savannah and Dave continue to emphasize all they’ve learned as the foundation for their lessons.
-
-					Savannah’s personal musical journey all started when she joined the San Francisco Girls Chorus at age nine. There, her musicianship and passion for music grew. With the chorus’ performing and recording group, Chorissima, Savannah performed in productions with the San Francisco Symphony, The San Francisco Opera, and in John Adams’ Grammy Award-winning musical Transmigration of Souls in 2002, and toured in Japan at the World Choral Symposium in 2005.
-
-					In the many years spent in Marin County as both a nanny and after school activities coordinator, Savannah developed a passion for music in child education.
-					Savannah started composing music influenced by multiple genres such as: traditional children’s folk music, world music, and nursery rhymes. When her first child was born, Savannah’s appreciation for implementing music at home commenced. She began singing, playing guitar, dancing, and singing with her daughter from infancy into toddler-hood.
-
- 
-
-
-
-
-				</p>
+				<p>{{about.description}}</p>
 			</div>
 		</div>
 
