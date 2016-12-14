@@ -1,6 +1,4 @@
-h1{
-	text-align: center;
-}
+h1{text-align: center;}
 
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
@@ -8,15 +6,30 @@ h1{
 }
 
 #about-profile{
-	position: relative;
-	background: url("../images/about_profile.jpg") center center;
-	background-size: cover;
-	overflow: hidden;
-	text-align: center;
-	height: 600px;
-	margin: 50px;
-	border-radius: 10px;
-}
+	position: relative;  
+	width: 75%;
+	margin: 0 auto;
+	
+	margin: 50px 0 50px 0;
+}	
+
+	#about-profile img{
+		width: 100%;
+		border-radius: 10px;
+		margin: 0 auto;
+	}
+
+	#about-overlay{
+		position: absolute;
+		top: 0;
+		left: 40% ;
+		transform: translate(50%, -50%);
+		z-index: 2;
+	}
+
+	#about-overlay h1{color: #fff !important;}
+	
+
 
 #about-headline-wrapper{
 	position: absolute;

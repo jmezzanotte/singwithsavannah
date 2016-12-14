@@ -17,7 +17,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-
 	{% block css_adds %}{% endblock %}
 </head>
 <body>
@@ -37,9 +36,9 @@
 					<li class="nav-item"><a href="{% url 'music' %}" class="sliding-border">MUSIC</a></li>
 					<li class="nav-item submenu-parent"><a class="sliding-border" href="{% url 'services' %}">SERVICES</a>
 						<ul class="submenu">
-							<li>Birthday Parties</li>
-							<li>Classroom Sessions</li>
-							<li>Community Events</li>
+							{% for i in services %}
+								<li>{{i.service}}</li>
+							{% endfor %}
 						</ul>
 					</li>
 					<li class="nav-item sliding-border"><a>CONTACT</a></li>
