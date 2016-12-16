@@ -20,6 +20,9 @@ def home(request):
 def music(request):
 	return render(request, 'music.html')
 
+def contact(request):
+	return render(request, 'contact.html')
+
 def about(request):
 
 	# Give us the latest entry, based on the timestamp of when the record was added
