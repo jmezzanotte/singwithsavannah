@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.utils.safestring import mark_safe
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -18,3 +19,7 @@ class BlogPost(models.Model):
 	#	admin will see BlogPost objects displayed like below
 	def __str__(self):
 		return 'Title: ' + self.title + ', ID: ' + str(self.id) 
+
+	def save(self, *args, **kwargs):
+		self.blog_text = mark_safe(self.blog_text.replace("\n", "<br/>"))
+		super(BlogPost, self).save(*args, **kwargs)

@@ -1,12 +1,55 @@
 h1{
+	font-family: 'Quicksand', sans-serif;
+	font-size:42px;
+
+	color: #000;
 	text-align: center;
 }
 
+h2{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 32px;
+}
+
+p, ul, li, ul > li, .blog-content{
+
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+}
+ul{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+li{
+	margin-bottom: 2%;
+}
+.center-it{
+	align: center;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
 	background-color: #000;
 }
-
+.blog-box{
+	margin-top: 5%;
+	padding-top: 1%;
+	padding-bottom: 3%;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+/*
+.post-title{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 32px;
+	padding-bottom: 1%;
+	border-bottom: 2px solid gray;
+}
+*/
 #blog-profile{
 	position: relative;
 	background: url("../images/about_profile.jpg") center center;

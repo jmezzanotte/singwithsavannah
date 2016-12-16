@@ -32,44 +32,54 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				<h2 align = "center">Please select a link below to view post</h2>
+				<h2 class="center-it">Please select a link below to view post</h2>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
-				{% if all_blog_posts %}
-				<ul align="center">
-					{% for blog_post in all_blog_posts %}
-						<li style= "margin-bottom: 3%;"><b>{{blog_post.title}}</b>, {{blog_post.created_at}} <a class = "btn btn-primary" href="/blog/{{blog_post.id}}">View Post</a></li>
-					{% endfor %}
-				</ul>
-				{% else %}
-					<h3 align="center">There are currently no blog posts.</h3>
-				{% endif %}
+		<div class="blog-box">
+			<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						{% if all_blog_posts %}
+							{% for blog_post in all_blog_posts %}
+							<div style="margin-top: 5%;">
+								<div class="row center-it">
+									<div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
+									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 blog-content">
+										<p><b>{{blog_post.title}}</b>, {{blog_post.created_at}} </p>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blog-content">
+										<div align="left">
+											<a class = "btn btn-primary" href="/blog/{{blog_post.id}}">View Post</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						{% else %}
+							<h3 align="center">There are currently no blog posts.</h3>
+						{% endif %}
+					</div>
 			</div>
-		</div>
-		<div class = "row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
-				<div align="center">
-					<div class="pagination">
-					    <span class="step-links">
-					        {% if all_blog_posts.has_previous %}
-					            <a class = "btn btn-default" href="?page={{ all_blog_posts.previous_page_number }}">previous</a>
-					        {% endif %}
+			<div class = "row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div align="center">
+						<div class="pagination">
+						    <span class="step-links">
+						        {% if all_blog_posts.has_previous %}
+						            <a class = "btn btn-default" href="?page={{ all_blog_posts.previous_page_number }}">previous</a>
+						        {% endif %}
 
-					        <span class="current">
-					            Page {{ all_blog_posts.number }} of {{ all_blog_posts.paginator.num_pages }}.
-					        </span>
+						        <span class="current">
+						            Page {{ all_blog_posts.number }} of {{ all_blog_posts.paginator.num_pages }}.
+						        </span>
 
-					        {% if all_blog_posts.has_next %}
-					            <a class = "btn btn-default" href="?page={{ all_blog_posts.next_page_number }}">next</a>
-					        {% endif %}
-					    </span>
+						        {% if all_blog_posts.has_next %}
+						            <a class = "btn btn-default" href="?page={{ all_blog_posts.next_page_number }}">next</a>
+						        {% endif %}
+						    </span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 	</div>
 {% endblock %}

@@ -11,7 +11,7 @@ def blog(request):
 	#the '-' in front of created_at tells python to filter in reverse order
 	all_blog_posts_list = BlogPost.objects.order_by('-created_at')
 	#pagination for index of blog_posts
-	paginator = Paginator(all_blog_posts_list, 2)
+	paginator = Paginator(all_blog_posts_list, 5)
 	page = request.GET.get('page')
 	try:
 		all_blog_posts = paginator.page(page)
