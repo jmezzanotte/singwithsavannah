@@ -7,12 +7,18 @@ from django.http import Http404
 
 def home(request):
 
-	services = Services.objects.all()
-
+	services = None
+	about = None
+	
 	try:
 		about = About.objects.latest()
+		services = Services.objects.all()
 	except About.DoesNotExist:
-		raise Http404("Cannot find data") 
+		#raise Http404("Cannot find data") 
+		about = None
+	except Services.DoesNotExist:
+		services = None
+
 	context ={
 		'services' : services,
 		'about' : about
@@ -39,17 +45,20 @@ def music(request):
 
 def about(request):
 
-	# Give us the latest entry, based on the timestamp of when the record was added
-	services = Services.objects.all()
+	about = None
+	services = None
 	
 	try:
 		about = About.objects.latest()
+		services = Services.objects.all()
 	except About.DoesNotExist:
-		raise Http404("Cannot find data")
-
+		#raise Http404("Cannot find data")
+		about = None
+	except Services.DoesNotExist:
+		services = None
 
 	context = {
-		'services' : services,
+		'services' : services, 
 		'about' : about
 	}
 
@@ -57,9 +66,16 @@ def about(request):
 
 def services(request):
 
-	services = Services.objects.all()
-	services_details = ServicesLandingPage.objects.latest()
-	
+	services = None
+	services_details = None
+
+	try:
+		services = Services.objects.all()
+		services_details = ServicesLandingPage.objects.latest()
+	except Services.DoesNotExist:
+		services = None
+	except ServicesLandingPage.DoesNotExist:
+		services_details = None
 
 	context={
 		'services' : services,
