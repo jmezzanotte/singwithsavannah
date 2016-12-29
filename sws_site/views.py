@@ -1,14 +1,18 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Services, ServicesLandingPage, About, Album
-
+from django.http import Http404
 
 # Create your views here.
 
 def home(request):
 
 	services = Services.objects.all()
-	about = About.objects.latest()
 
+	try:
+		about = About.objects.latest()
+	except About.DoesNotExist:
+		raise Http404("Cannot find data") 
 	context ={
 		'services' : services,
 		'about' : about
@@ -37,7 +41,12 @@ def about(request):
 
 	# Give us the latest entry, based on the timestamp of when the record was added
 	services = Services.objects.all()
-	about = About.objects.latest()
+	
+	try:
+		about = About.objects.latest()
+	except About.DoesNotExist:
+		raise Http404("Cannot find data")
+
 
 	context = {
 		'services' : services,
