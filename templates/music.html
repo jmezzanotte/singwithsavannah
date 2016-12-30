@@ -30,7 +30,9 @@
 						<div class="trackbox">	
 							{% for j in i.album.all %}
 								<div class="trackbar" id="{{j.track.name|filename|slugify}}">
+									<!-- hidden div to hold the audio url -->
 									<p>{{j.track.name|filename}}</p>
+									<p class="hidden">{{j.track.url}}</p>
 								</div>
 							{% endfor %}
 						</div>
