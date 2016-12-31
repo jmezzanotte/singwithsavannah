@@ -12,7 +12,7 @@
 	margin: 20px;
 }
 
-#slide{position: relative; }	
+#slide{position: relative;}	
 
 	.slider-overlay-left{
 		position: absolute;
@@ -24,8 +24,7 @@
 	.slider-overlay{
 		position: absolute;
 		top: 50%;
-		
-		transform: translate(50%, -50%);
+		transform: translate(100%, -50%);
 		z-index: 2;
 	}
 
@@ -37,7 +36,7 @@
 	margin: 0 auto;
 }
 
-#service-headline{
+.service-headline{
 	text-align: center;	
 }
 
@@ -70,3 +69,6 @@
 .service-btn:visited{
 	color: #fff;
 }
+
+#service-img-container{margin: 20px;}
+

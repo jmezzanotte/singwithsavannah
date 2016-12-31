@@ -10,6 +10,10 @@
 
 	icon logos 
 	SIZE : 360 X 360;
+
+	Service Page images
+	1140 x 500 
+	Lightness : -50;
 */
 
 /*
@@ -49,7 +53,7 @@ h1{
 	font-family: 'Quicksand', sans-serif;
 	/*font-family: 'Chewy', cursive;*/
 	/*font-family: 'Fredoka One', cursive;*/
-	/*font-size: 42px;*/
+	
 	font-size:42px;
 	/*color: #23519F;*/
 	color: #000;
@@ -86,6 +90,9 @@ p{
 		border:none;
 	}
 
+#mobile-hamburger{
+	visibility: hidden;
+}
 
 .btn-outline-white{
 	/*You have to specify width and font size used by this button*/
@@ -212,6 +219,7 @@ p{
 #site-canvas{
 	width: 100%;
 	height: 100%; 
+
 	position:relative;
 	
 	-webkit-transform: translateX(0);
@@ -229,19 +237,19 @@ p{
 
 
 .show-nav #site-canvas {
-    -webkit-transform: translateX(400px);
-  	transform: translateX(400px);
-    -webkit-transform: translate3d(400px, 0, 0);
-  	transform: translate3d(400px, 0, 0);
+    -webkit-transform: translateX(500px);
+  	transform: translateX(500px);
+    -webkit-transform: translate3d(500px, 0, 0);
+  	transform: translate3d(500px, 0, 0);
 }
 
 
 #site-nav {
-	width: 400px;
+	width: 500px;
   	height: 100%;
   	position: absolute;
   	top: 0;
-  	left: -400px;
+  	left: -500px;
   	color: #fff;
   	font-family: 'Raleway', sans-serif;
   	background-color: #000;
@@ -442,6 +450,7 @@ p{
 	text-decoration: none;
 	margin-top: 75px;
 	display: block;
+	border-radius: 10px;
 }
 
 #listen-btn:hover{

@@ -20,9 +20,9 @@
 				<div id="slider">
 					{% for i in services %}
 						<div class="slide">
-							<div class="slider-overlay-left">
-								<h1>{{i.headline}}</h1>
-								<a class="service-btn" href="#" >LEARN MORE</a>
+							<div class="slider-overlay">
+								<h1>{{ i.headline }}</h1>
+								<a class="service-btn" href="/{{ i.slug }}" >LEARN MORE</a>
 							</div>
 							<img class="img-responsive" src='{{ i.image.url }}'>
 						</div>
@@ -32,8 +32,8 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				<h1 id="service-headline">{{services_details.services_headline | upper}}</h1>
-				<div id="services_description"><p>{{services_details.services_desc}}</p></div>
+				<h1 class="service-headline">{{services_details.services_headline | upper}}</h1>
+				<div class="services_description"><p>{{services_details.services_desc}}</p></div>
 			</div>
 		</div>
 	</div>

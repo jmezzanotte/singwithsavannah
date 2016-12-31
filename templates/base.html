@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/hamburgers.min.css"%}'>
 	<link rel="stylesheet" type="text/css" href='{% static "css/base.css" %}'>
 	<link rel="stylesheet" type="text/css" href='{% static "css/footer.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "css/mobile.css" %}'>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
@@ -28,6 +29,7 @@
 	<div id="site-wrapper">
 		<div id="site-canvas">
 			<div id="site-nav">
+				<div id="mobile-hamburger">{% include "hamburger.html" %}</div>
 				<img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart.png" %}'>
 				<!-- <h1>Sing from your Heart!</h1> -->
 				<ul id="nav-list">
@@ -37,7 +39,7 @@
 					<li class="nav-item submenu-parent"><a class="sliding-border" href="{% url 'services' %}">SERVICES</a>
 						<ul class="submenu">
 							{% for i in services %}
-								<li>{{i.service}}</li>
+								<a href="/{{ i.slug }}"><li>{{i.service}}</li></a>
 							{% endfor %}
 						</ul>
 					</li>
@@ -95,7 +97,7 @@
 					<a href="{% url 'music' %}">MUSIC</a>
 				</div>
 				<div class="col-lg-2">
-					<a href="#">SERVICES</a>
+					<a href="{% url 'services' %}">SERVICES</a>
 				</div>
 				<div class="col-lg-2">
 					<a href="#">CONTACT</a>

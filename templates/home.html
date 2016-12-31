@@ -17,23 +17,20 @@
 				<!-- <img class="center img-responsive" id="sws-logo" src='{% static "images/sws_logo_two.png" %}'> -->
 			</div>
 			<div id="sub-headline">
-				<p>"Create Your Own Sunshine", the new albumn available Fall 2016</p>
+				<p>{{ home.homepage_headline }}</p>
 			</div>
 			<a id="listen-btn" class="btn-outline-white center" href="{% url 'music' %}">LISTEN NOW</a>
 		</div>
 	</div>
-
-
 {% endblock %}
 
 {% block content %}
 	
-
 	<div class="container">
 		<div class="row center-text">
 			<div class="col-lg-12">
 				<div class="header">
-					<h1>BEING A MOTHER INSPIRES MUSIC.</h1>
+					<h1>{{ about.homepage_headline }}</h1>
 				</div>
 			</div>
 		</div>
@@ -61,16 +58,16 @@
 					</div>
 				</div>
 			</div>
-			{% for i in services %}
-				<div class="row" id="gallery-row">		
-					<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-						<img class="service-img" src='{{ i.icon.url }}'>
-						<div class="overlay">
-							<a href="#" id="gallery-title">{{ i.service }}</a>
-						    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
-		        		</div>
-					</div>
-			{% endfor %}
+			<div class="row" id="gallery-row">		
+				{% for i in services %}
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{{ i.icon.url }}'>
+					<div class="overlay">
+						<a href="/{{ i.slug }}" id="gallery-title">{{ i.service }}</a>
+					    <a href="/{{ i.slug }}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

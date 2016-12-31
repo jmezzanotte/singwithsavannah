@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^music', views.music, name='music'), 
     url(r'^about', views.about, name='about'), 
     url(r'^services', views.services, name='services'),
+    url(r'^(?P<slug>[\w-]+)/$', views.service_detail, name='service_detail')
 ]

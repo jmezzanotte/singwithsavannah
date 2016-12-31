@@ -19,7 +19,23 @@ def get_track_upload_path(instance, filename):
 def get_file_name(instance, filename):
 	return filename
 
-# Create your models here.
+
+class Home(models.Model):
+	homepage_headline = models.CharField(max_length=500)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.homepage_headline
+
+	def __str__(self):
+		return self.homepage_headline
+
+	class Meta:
+		verbose_name = 'Home Page'
+		verbose_name_plural = 'Home Page'
+		get_latest_by = 'timestamp'
+
+
 class ServicesLandingPage(models.Model):
 	services_headline=models.CharField(max_length=250)
 	services_desc=models.TextField()
@@ -40,8 +56,6 @@ class ServicesLandingPage(models.Model):
 			entries but also be able only to use the newest ones. 
 			Specifying get latest by will allow us to use only the 
 			latest record later on. 
-
-			test
 
 		'''
 		verbose_name = 'Services Landing Page'
@@ -70,6 +84,7 @@ class Services(models.Model):
 
 class About(models.Model):
 	headline = models.CharField(max_length=500)
+	homepage_headline = models.CharField(max_length=500)
 	summary = models.TextField()
 	description = models.TextField()
 	image = models.ImageField(upload_to='about')
@@ -80,7 +95,6 @@ class About(models.Model):
 
 	def __str__(self):
 		return self.headline
-
 
 	class Meta:
 		verbose_name = 'About'
@@ -104,6 +118,12 @@ class AlbumTrack(models.Model):
 	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
 	track = models.FileField(upload_to=get_track_upload_path)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.track.name
+
+	def __str__(self):
+		return self.track.name
 
 @receiver(pre_delete, sender=AlbumTrack)
 def pre_delete_album_track(sender, instance, *args, **kwargs):
