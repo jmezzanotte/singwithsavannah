@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home
+from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home, Contact
 
 # Register your models here.
 
@@ -16,6 +16,13 @@ class ServicesAdmin(admin.ModelAdmin):
 
 	class Meta:
 		model = Services
+
+class ContactAdmin(admin.ModelAdmin):
+	
+	list_display = ['timestamp']
+
+	class Meta:
+		model = Contact
 
 class ServicesLandingPageAdmin(admin.ModelAdmin):
 	list_display = ['__unicode__', 'timestamp']
@@ -44,6 +51,7 @@ class AlbumTrackAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Home, HomeAdmin)
+admin.site.register(Contact, ContactAdmin)
 admin.site.register(Services, ServicesAdmin)
 admin.site.register(ServicesLandingPage, ServicesLandingPageAdmin)
 admin.site.register(About, AboutAdmin)

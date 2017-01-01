@@ -43,7 +43,7 @@
 							{% endfor %}
 						</ul>
 					</li>
-					<li class="nav-item sliding-border"><a>CONTACT</a></li>
+					<li class="nav-item sliding-border"><a href="{% url 'contact' %}">CONTACT</a></li>
 					<li class="nav-item sliding-border"><a href="{% url 'blog' %}">BLOG</a></li>
 				</ul>
 
@@ -100,7 +100,7 @@
 					<a href="{% url 'services' %}">SERVICES</a>
 				</div>
 				<div class="col-lg-2">
-					<a href="#">CONTACT</a>
+					<a href="{% url 'contact' %}">CONTACT</a>
 				</div>
 				<div class="col-lg-2">
 					<a href="{% url 'blog' %}">BLOG</a>

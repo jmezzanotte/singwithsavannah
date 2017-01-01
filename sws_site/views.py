@@ -1,9 +1,27 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from .models import Services, ServicesLandingPage, About, Album, Home
+from .models import Services, ServicesLandingPage, About, Album, Home, Contact
 from django.http import Http404
+from .forms import ContactForm
+
 
 # Create your views here.
+
+
+def process_contact_form(request, contact_form, redirect_target):
+
+	form_class = contact_form
+
+	form = form_class(data=request.POST)
+
+	if form.is_valid():
+		contact_name = request.POST.get('name', '')
+		contact_email = request.POST.get('email', '')
+		message_subject = request.POST.get('subject', '')
+		email_message = request.POST.get('message', '')
+		message_format = 'Email from %s\nEmail: %s\nMessage\n%s\n'
+
+		final_message = message_format % (contact_name, contact_email, email_message)
 
 
 def get_services():
@@ -17,11 +35,26 @@ def get_services():
 
 	return services
 
+def contact(request):
+
+	try:
+		contact = Contact.objects.latest()
+	except Contact.DoesNotExist: 
+		contact = None
+
+	form = ContactForm()
+
+	context = {
+		'contact' : contact,
+		'form' : form
+	}
+
+	return render(request, 'contact.html', context)
+
+
 def home(request):
 
-	about = None
-	home = None
-	
+
 	try:
 		about = About.objects.latest()
 		home = Home.objects.latest()
@@ -59,8 +92,7 @@ def music(request):
 
 def about(request):
 
-	about = None
-	
+
 	try:
 		about = About.objects.latest()
 	except About.DoesNotExist:
@@ -76,7 +108,6 @@ def about(request):
 
 def services(request):
 
-	services_details = None
 
 	try:
 		services_details = ServicesLandingPage.objects.latest()

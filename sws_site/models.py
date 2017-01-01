@@ -81,6 +81,18 @@ class Services(models.Model):
 		verbose_name = 'Services'
 		verbose_name_plural = 'Services'
 
+class Contact(models.Model):
+	headline = models.CharField(max_length=200)
+	description = models.TextField()
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	
+	class Meta:
+		verbose_name = 'Contact'
+		verbose_name_plural = 'Contact'
+		get_latest_by = 'timestamp'
+
+
 
 class About(models.Model):
 	headline = models.CharField(max_length=500)

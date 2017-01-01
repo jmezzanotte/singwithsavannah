@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/contact.css" %}'>
+{% endblock %}
+
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1 id="contact-header">{{ contact.headline }}</h1>
+				<p id="contact-info">{{ contact.description }}</p>
+				<hr>
+				<form method="POST" action="" id="contact-form">{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Send" id="send-email" class="more-btn" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block js_adds %}
+	<script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}
