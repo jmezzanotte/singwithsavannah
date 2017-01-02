@@ -46,7 +46,8 @@ def contact(request):
 
 	context = {
 		'contact' : contact,
-		'form' : form
+		'form' : form, 
+		'services' : get_services()
 	}
 
 	return render(request, 'contact.html', context)

@@ -119,8 +119,28 @@
 
 }
 
-#builder p {
-	font-size: 14px; 
+#company-footer {
+	background-color: #000; 
+}
+
+#company p{
+	font-size: 14px;
+	color: #fff;
+}
+
+
+#sub-footer{
+	padding: 35px;
+	background-color: #FBFBFB;
+	border-bottom: solid 1px #F3EBEB;
+	border-top : solid 1px #F3EBEB;
+}
+
+#email-footer, #phone-footer{
+	width: 275px;
+	display: block;
+	margin: 20px;
+	text-align: center;
 }
 
 

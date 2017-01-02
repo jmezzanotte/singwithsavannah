@@ -3,7 +3,7 @@
 label {
 	display: block;
 	width: 200px; 
-	text-align: right;
+	text-align: left;
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -11,7 +11,7 @@ label {
 input[type="text"],
 input[type="email"], 
 textarea {
-	width: 45%;
+	width: 100%;
 	border: none;
 	border-bottom: solid 1px #d0d0d0;
 }
@@ -47,12 +47,11 @@ textarea:focus{
 }
 
 #contact-info{margin: 50px auto;}
-#phone{
-	margin: 30px;
-}
-	#phone a{
-		margin: 0 auto;
-	}
+
+#phone p, #phone a {margin: 30px auto; text-align: center }
+#phone a{ display: block; width: 200px;}
+
+	
 
 
 
