@@ -8,7 +8,7 @@
 
 		$(this).animate({
 			// borderBottomColor : '#99ccff', 
-			'border-bottom-width' : '6px'
+			'border-bottom-width' : '10px'
 
 		}, 300);
 	}
@@ -19,7 +19,6 @@
 
 	}
 
-	
 	$('input[type="text"], input[type="email"], textarea').focus(labelHighlight);
 	$('input[type="text"], input[type="email"], textarea').focusout(labelNoHighlight);
 

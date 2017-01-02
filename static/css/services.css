@@ -12,7 +12,10 @@
 	margin: 20px;
 }
 
-#slide{position: relative;}	
+#slide{
+	position: relative;
+	width: 100%; 
+}	
 
 	.slider-overlay-left{
 		position: absolute;

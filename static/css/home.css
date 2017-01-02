@@ -83,7 +83,7 @@
   	transition: all 0.5s;
 }
 
-#gallery-title {
+.gallery-title {
 	font-family: 'clicker-script';
 	font-size: 52px;
 	text-decoration: none;
@@ -100,6 +100,16 @@
 	margin: 0 auto -20px auto;
 	padding: 10px;	
 }
+	.gallery-title:visited{
+		text-decoration: none;
+		color: #ffffff;
+	}
+
+	.gallery-title:hover{
+		text-decoration: none; 
+		color: #ffffff;
+	}
+
 
 
 a.expand {

@@ -16,8 +16,6 @@ textarea {
 	border-bottom: solid 1px #d0d0d0;
 }
 
-
-
 textarea{
 	height: 100px;
 }
@@ -48,10 +46,15 @@ textarea:focus{
 	width: 200px;
 }
 
-#contact-info{
-	margin: 50px auto;
-	
+#contact-info{margin: 50px auto;}
+#phone{
+	margin: 30px;
 }
+	#phone a{
+		margin: 0 auto;
+	}
+
+
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
 	background-color: #000;

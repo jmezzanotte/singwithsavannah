@@ -2,7 +2,7 @@ $(function(){
 	
 	// onload animation
 	$('#headline-wrapper').show().animate({'top' : '50%', 'visibility' : 'visible'}, 1000);
-	$('#about-overlay').show().animate({'top' : '35%', 'visibility' : 'visible'}, 1000);
+	$('#about-overlay').show().animate({'top' : '50%', 'visibility' : 'visible'}, 1000);
 	
 
 

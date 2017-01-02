@@ -26,9 +26,6 @@
 	purple : CEA2CB;
 	light blue : #CFD9EF;
 	dark-blue: 23519F
-
-
-
 */
 
 /*FONTS*/
@@ -91,7 +88,8 @@ p{
 	}
 
 #mobile-hamburger{
-	visibility: hidden;
+	/*visibility: hidden;*/
+	display: none;
 }
 
 .btn-outline-white{
@@ -132,8 +130,8 @@ p{
 		font-size: 36px;
 	}
 	#nav-close{
-	margin: 20px;
-	font-size: 24px;
+		margin: 20px;
+		font-size: 24px;
 	}
 	#nav-close:hover{
 		cursor:pointer;
@@ -319,7 +317,6 @@ p{
 #twitter:hover{
 	background-position: 0 100%;
 	cursor: pointer;
-
 }
 
 #facebook:hover{
@@ -434,7 +431,8 @@ p{
 	width: 400px;
 	padding: 0 ;
 	display: block; 
-	margin: 50px auto;
+	margin: 30px auto;
+	padding: 20px;
 }
 
 #sub-headline{
@@ -497,6 +495,7 @@ p{
 #sws-logo{
 	width: 800px;
 	margin: 20px auto;
+	padding: 20px;
 }
 
 .box {

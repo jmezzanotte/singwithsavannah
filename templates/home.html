@@ -13,7 +13,7 @@
 
 		<div id="headline-wrapper">
 			<div>
-				<img class="center img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'>
+				<img class="img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'>
 				<!-- <img class="center img-responsive" id="sws-logo" src='{% static "images/sws_logo_two.png" %}'> -->
 			</div>
 			<div id="sub-headline">
@@ -63,7 +63,7 @@
 				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
 					<img class="service-img" src='{{ i.icon.url }}'>
 					<div class="overlay">
-						<a href="/{{ i.slug }}" id="gallery-title">{{ i.service }}</a>
+						<a href="/{{ i.slug }}" class="gallery-title">{{ i.service }}</a>
 					    <a href="/{{ i.slug }}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
 	        		</div>
 				</div>
