@@ -7,27 +7,42 @@
     color: #d0d0d0 !important;
 }
 
+
+#slider-container{
+	position: relative;
+	overflow: hidden;
+	width: 100%
+
+}
+
+
+
+
 #slider{
 	width: 100%;
-	margin: 20px;
+	margin: 20px 0px 20px 0px;
+
+	/*position : relative;*/
+	
 }
+
 
 #slide{
 	position: relative;
-	width: 100%; 
+
 }	
 
 	.slider-overlay-left{
 		position: absolute;
 		top: 50%;
 		color: #fff !important;
-		transform: translate(15%, -50%);
+		transform: translate(50%, -50%);
 		z-index: 2;
 	}
 	.slider-overlay{
 		position: absolute;
 		top: 50%;
-		transform: translate(100%, -50%);
+		transform: translate(50%, -50%);
 		z-index: 2;
 	}
 

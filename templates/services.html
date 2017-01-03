@@ -16,18 +16,20 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12" id="slider" >
-				<!-- <div id="slider"> -->
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div id="slider-container">
+				<div id="slider">
 					{% for i in services %}
 						<div class="slide">
 							<div class="slider-overlay">
 								<h1>{{ i.headline }}</h1>
 								<a class="service-btn" href="/{{ i.slug }}" >LEARN MORE</a>
 							</div>
-							<img  src='{{ i.image.url }}' class="img-responsive">
+							<img src='{{ i.image.url }}' class="img-responsive" />
 						</div>
 					{% endfor %}
-				<!-- </div> -->
+				</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">

@@ -407,6 +407,7 @@ p{
 .secondary-topbanner{
 	border-bottom: solid 3px #d0d0d0;
 	background-color: #FBFBFB;	
+	margin-bottom : 50px;
 }
 
 #hidden-spacer{
@@ -469,10 +470,7 @@ p{
 	margin: 0 auto;
 	background-color: #23519F;
 	background-color: #e95e6b;
-	/*background-color: #FAD5E5;*/
 	border: solid 1px #e95e6b;
-	/*border: solid 1px #FAD5E5;	*/
-	/*border: solid 1px #23519F;*/
 }
 
 
