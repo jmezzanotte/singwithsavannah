@@ -7,25 +7,21 @@ h1{
 	background-color: #000;
 }
 
-#blog-profile{
-	position: relative;
-	background: url("../images/about_profile.jpg") center center;
-	background-size: cover;
-	overflow: hidden;
-	text-align: center;
-	height: 600px;
-	margin: 50px;
-	border-radius: 10px;
+.fb-share-button{
+	margin: 20px;
 }
 
-#about-headline-wrapper{
-	position: absolute;
-	display: none;
-  	top: 0;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
+#blog-header{
+	margin: 75px;
 }
-#blog-headline{color: #fff;}	
+
+.blog-text-container{
+	border:solid 1px #d0d0d0;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 20px;
+}
+
 
 .blog-post-info{
 	background-color: #F3EBEB;
@@ -43,12 +39,21 @@ h1{
 	border-radius: 10px;
 	padding:10px;
 	margin: 20px;
+	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	   /* margin: 10px;*/
 }
 
 	.blog-post h1{
 		font-family: 'clicker-script';
 		font-size: 60px;
+		margin: 70px 0 0 0;
 	}
+
+.blog-post .filigree{
+	margin: 0 auto;
+}
 	
 
 .blog-content{
@@ -62,5 +67,31 @@ h1{
 	padding:10px;
 	margin: 20px;
 }
+	#blog-archive h1{
+		font-family: 'clicker-script';
+		font-size: 60px;
+		text-align: center;
+	}
+
+	#blog-archive li a{
+		font-family: 'Raleway', sans-serif;
+		font-size: 16px;
+		display: block;
+		padding: 5px;
+		color: #000;
+		border:solid 5px #d0d0d0;
+		text-decoration: none;
+	}
+
+	#blog-archive li:nth-child(even){background-color: #fff;}
+	#blog-archive li:nth-child(odd){background-color: #d0d0d0;}
+
+	#blog-archive li a:hover {
+		background-color:  #e95e6b; 
+		border:solid 5px #aF4654;
+		cursor:pointer;
+		color: #fff;
+	    font-weight: 700;
+	}
 
 
