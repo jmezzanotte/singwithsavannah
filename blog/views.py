@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.template import loader
 from sws_site.models import Services
 from sws_site.views import get_services
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 def blog(request):
@@ -31,5 +32,10 @@ def show(request, blogpost_id):
 	except BlogPost.DoesNotExist:
 		raise Http404("requested blog post does not exist.")
 
+	context = {
+		'blog_post': blog_post, 
+		'services' : get_services(), 
+		}
 
-	return render(request, 'show.html', {'blog_post': blog_post, 'services' : get_services()})
+
+	return render(request, 'show.html', context)
