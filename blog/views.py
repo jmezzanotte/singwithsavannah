@@ -23,12 +23,12 @@ def blog(request):
 	return render(request, 'blog.html', context)
 
 #for individual 
-def show(request, blogpost_id):
+def show(request, slug=None):
 
 	try:
 		#cant simply pass blogpost_id to get method. MUST USE 'pk =' to tell django to get by primary key 
-		blog_post = BlogPost.objects.get(pk=blogpost_id)
-
+		# blog_post = BlogPost.objects.get(pk=blogpost_id)
+		blog_post = BlogPost.objects.get(slug=slug)
 	except BlogPost.DoesNotExist:
 		raise Http404("requested blog post does not exist.")
 
