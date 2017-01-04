@@ -12,6 +12,7 @@ class BlogPost(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
+	#you are going want to set up the urls as slugs
 
 
 	#following function is sort of a to_string function for the admin page
