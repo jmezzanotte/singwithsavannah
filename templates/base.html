@@ -38,7 +38,7 @@
 					<li class="nav-item submenu-parent"><a class="sliding-border" href="{% url 'services' %}">SERVICES</a>
 						<ul class="submenu">
 							{% for i in services %}
-								<a href="/{{ i.slug }}"><li>{{i.service}}</li></a>
+								<a href="/services/{{ i.slug }}"><li>{{i.service}}</li></a>
 							{% endfor %}
 						</ul>
 					</li>

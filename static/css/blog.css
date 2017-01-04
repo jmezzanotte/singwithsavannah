@@ -26,3 +26,41 @@ h1{
   	transform: translate(-50%, -50%);
 }
 #blog-headline{color: #fff;}	
+
+.blog-post-info{
+	background-color: #F3EBEB;
+	padding: 10px;
+	border-radius: 10px;
+}
+	.blog-post-info p {
+		font-size:16px;
+		font-family: 'Raleway', sans-serif;
+	}
+
+
+.blog-post{
+	border: solid 1px #d0d0d0;
+	border-radius: 10px;
+	padding:10px;
+	margin: 20px;
+}
+
+	.blog-post h1{
+		font-family: 'clicker-script';
+		font-size: 60px;
+	}
+	
+
+.blog-content{
+	margin: 20px;
+
+}
+
+#blog-archive{
+	border: solid 1px #d0d0d0;
+	border-radius: 10px;
+	padding:10px;
+	margin: 20px;
+}
+
+
