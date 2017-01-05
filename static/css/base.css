@@ -390,8 +390,6 @@ p{
 
 /*CONTENT*/
 
-
-
 #topbanner{
 	position: relative;
 	background: url("../images/singer_songwriter.jpg") center center;
@@ -408,6 +406,7 @@ p{
 	border-bottom: solid 3px #d0d0d0;
 	background-color: #FBFBFB;	
 	margin-bottom : 50px;
+	z-index: 100;
 }
 
 #hidden-spacer{
