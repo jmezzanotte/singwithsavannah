@@ -52,7 +52,9 @@
 	
 							</div>
 						</div>
-						<div class="fb-share-button" id="facebook-share" data-href="http://{{request.META.HTTP_HOST}}{% url 'show' slug=blog_post.slug %}" data-layout="box_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Share this post</a></div>
+						<div class="fb-share-button" id="facebook-share" data-href="http://{{request.META.HTTP_HOST}}{% url 'show' slug=blog_post.slug %}" data-layout="box_count" data-mobile-iframe="true">
+							<a class="fb-xfbml-parse-ignore" target="_blank" href="">Share this post</a>
+						</div>
 						<a class="twitter-share-button"
   							href="https://twitter.com/intent/tweet"
   							data-url="http://{{request.META.HTTP_HOST}}{% url 'show' slug=blog_post.slug %}"

@@ -5,6 +5,10 @@
 
 #black-bg{	
 	width: 100%;
+	margin: 100px auto;
+	background-color: #e95e6b;
+	border-top: solid 10px #aF4654;
+	border-bottom: solid 10px #aF4654;
 }
 
 
@@ -61,10 +65,11 @@
 }
 
 #gallery-row{
-	margin: 20px;
+	margin: 20px 50px 100px 50px;
 	border: solid 10px #000;
 	border-radius: 10px;
 }
+
 
 
 #effect img{
@@ -156,11 +161,23 @@ a.expand {
 	margin-top:50px;
 }
 
+#services-header{
+	color: #fff;
+}
+
 
 .spacer{
 	height: 200px;
 }
 
+
+#music-edu-header {
+	margin: 50px auto;
+}
+
+#mini-music{
+	margin: 50px auto;
+}
 
 
 

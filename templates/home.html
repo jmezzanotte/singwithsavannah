@@ -65,8 +65,8 @@
 				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
 					<img class="service-img" src='{{ i.icon.url }}'>
 					<div class="overlay">
-						<a href="/{{ i.slug }}" class="gallery-title">{{ i.service }}</a>
-					    <a href="/{{ i.slug }}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+						<a href="{% url 'service_detail' slug=i.slug %}" class="gallery-title">{{ i.service }}</a>
+					    <a href="{% url 'service_detail' slug=i.slug %}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
 	        		</div>
 				</div>
 				{% endfor %}
@@ -74,7 +74,27 @@
 		</div>
 	</div>
 
-	<div class="spacer"></div>
+	<div class="container" id="mini-music">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="header">
+					<h1>{{ home.mini_music_headline }}</h1>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<p>{{ home.mini_music_description }}</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<a href="{{ home.mini_music_url }}">
+					<img class="img-responsive" src='{{ home.mini_music_img.url }}'>
+				</a>
+			</div>
+		</div>
+	</div>
+
 			
 	
 

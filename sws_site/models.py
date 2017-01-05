@@ -22,6 +22,10 @@ def get_file_name(instance, filename):
 
 class Home(models.Model):
 	homepage_headline = models.CharField(max_length=500)
+	mini_music_headline = models.CharField(max_length=500)
+	mini_music_description = models.TextField()
+	mini_music_url = models.CharField(max_length=500)
+	mini_music_img = models.ImageField(upload_to='home')
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
