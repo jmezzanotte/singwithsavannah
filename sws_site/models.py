@@ -132,10 +132,10 @@ class AlbumTrack(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
-		return self.track.name
+		return os.path.basename(self.track.name)
 
 	def __str__(self):
-		return self.track.name
+		return os.path.basename(self.track.name)
 
 @receiver(pre_delete, sender=AlbumTrack)
 def pre_delete_album_track(sender, instance, *args, **kwargs):

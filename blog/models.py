@@ -16,6 +16,7 @@ class BlogPost(models.Model):
 	blog_text = models.TextField(max_length=10000)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
+	image = models.ImageField(upload_to='blog',blank=True)
 
 	#you are going want to set up the urls as slugs
 
