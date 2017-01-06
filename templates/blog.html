@@ -79,5 +79,26 @@
 				</div>
 			</div>
 		</div>
+		<div class = "row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div align="center">
+					<div class="pagination">
+					    <span class="step-links">
+					        {% if all_blog_posts.has_previous %}
+					            <a class = "btn btn-default" href="?page={{ all_blog_posts.previous_page_number }}">previous</a>
+					        {% endif %}
+
+					        <span class="current">
+					            Page {{ all_blog_posts.number }} of {{ all_blog_posts.paginator.num_pages }}.
+					        </span>
+
+					        {% if all_blog_posts.has_next %}
+					            <a class = "btn btn-default" href="?page={{ all_blog_posts.next_page_number }}">next</a>
+					        {% endif %}
+					    </span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}
