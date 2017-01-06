@@ -15,13 +15,22 @@ def blog(request):
 	#reverse the order of blog posts by created at
 	#the '-' in front of created_at tells python to filter in reverse order
 
-  all_blog_posts_list = BlogPost.objects.order_by('-created_at')
-	#all_blog_posts = BlogPost.objects.filter(usr=1).order_by('-created_at')
+	all_blog_posts_list = BlogPost.objects.order_by('-created_at')
 	archive = BlogPost.objects.filter(usr=1).order_by('-created_at')
-	#all_blog_posts_list = BlogPost.objects.order_by('-created_at')
+
 	#pagination for index of blog_posts
+
+	query = request.GET.get("q")
+
+	if query:
+		all_blog_posts_list = all_blog_posts_list.filter(
+			Q(title__icontains=query) | 
+			Q(blog_text__icontains=query) 
+			).distinct()
+
 	paginator = Paginator(all_blog_posts_list, 2)
 	page = request.GET.get('page')
+	
 	try:
 		all_blog_posts = paginator.page(page)
 	except PageNotAnInteger:
@@ -35,13 +44,7 @@ def blog(request):
 	#context dictionary standard practice for transfering necessary data to the template view
 	#this makes all_blog_posts accessable from the template view
 	
-	query = request.GET.get("q")
 
-	if query:
-		all_blog_posts = all_blog_posts.filter(
-			Q(title__icontains=query) | 
-			Q(blog_text__icontains=query) 
-			).distinct()
 
 	context= {
 		'all_blog_posts': all_blog_posts,
