@@ -36,9 +36,23 @@
       height: 700px;
     }
 
+    #about-overlay h1{
+      font-size: 24px;
+    }
+
     .overlay a {
       font-size: 30px;
     }
+
+    .slider-overlay h1{
+      font-size: 18px;
+    }
+
+    .slider-overlay a{ 
+      font-size: 10px;
+    }
+
+
 
 
 

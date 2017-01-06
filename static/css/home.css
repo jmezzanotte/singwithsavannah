@@ -13,7 +13,7 @@
 
 
 #about-content-home{
-	margin: 50px ;
+	margin-bottom: 50px ;
 }
 
 #about-content-home p {
@@ -179,6 +179,10 @@ a.expand {
 	margin: 50px auto;
 }
 
+#mini-music-img{
+	
+	margin: 0 auto;
+}
 
 
 
