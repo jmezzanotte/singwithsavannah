@@ -7,23 +7,41 @@
     color: #d0d0d0 !important;
 }
 
+
+#slider-container{
+	position: relative;
+	overflow: hidden;
+	width: 100%
+
+}
+
+
+
+
 #slider{
 	width: 100%;
-	margin: 20px;
+	margin: 20px 0px 20px 0px;
+
+	/*position : relative;*/
+	
 }
-#slide{position: relative; }	
+
+
+#slide{
+	position: relative;
+
+}	
 
 	.slider-overlay-left{
 		position: absolute;
 		top: 50%;
 		color: #fff !important;
-		transform: translate(15%, -50%);
+		transform: translate(50%, -50%);
 		z-index: 2;
 	}
 	.slider-overlay{
 		position: absolute;
 		top: 50%;
-		
 		transform: translate(50%, -50%);
 		z-index: 2;
 	}
@@ -36,7 +54,7 @@
 	margin: 0 auto;
 }
 
-#service-headline{
+.service-headline{
 	text-align: center;	
 }
 
@@ -69,3 +87,6 @@
 .service-btn:visited{
 	color: #fff;
 }
+
+#service-img-container{margin: 20px;}
+

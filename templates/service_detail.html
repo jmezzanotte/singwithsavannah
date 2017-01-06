@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ target_service.service }} {% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/services.css" %}'>
+{% endblock %}
+
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="service-img-container">
+				<img class="img-responsive" src='{{ target_service.image.url }}'>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1 class="service-headline">{{ target_service.headline }}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<p>{{ target_service.description }}</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -13,7 +13,7 @@
 	color: #000;
 }
 
-#artist-info{margin-top : 100px;}
+
 
 #music-page-header{
 	margin-top: 5px;
@@ -26,23 +26,15 @@
 }
 	#music-page-header h1{font-family: 'Raleway';}
 
-#audio-player-wrapper{
-	margin: 50px auto;
+.audio-player-wrapper{
+	margin: 40px auto;
 	border: solid 1px #d0d0d0;
 	border-radius: 10px;
-	width: 50%;
+	width: 100%;
 	padding: 10px;
 }
 
-#albumn-title {text-align: center;}
-
-	#albumn-title h1{
-		font-family: 'clicker-script';
-		font-size:62px;
-	}
-
-
-#audio-player{
+.audio-player{
 	width :100%;
 	margin: 10px auto;
 	display: block;

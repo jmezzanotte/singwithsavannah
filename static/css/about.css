@@ -7,35 +7,53 @@ h1{text-align: center;}
 
 #about-profile{
 	position: relative;  
-	width: 75%;
-	margin: 0 auto;
-	
+	/*width: 75%;*/
+	/*margin: 0 auto;*/
 	margin: 50px 0 50px 0;
 }	
-
+	
 	#about-profile img{
 		width: 100%;
+		height: auto;
 		border-radius: 10px;
 		margin: 0 auto;
+		display: block;
+		padding: 0;
+		border : solid 8px #d0d0d0;
 	}
 
 	#about-overlay{
 		position: absolute;
 		top: 0;
-		left: 40% ;
-		transform: translate(50%, -50%);
+		left: 0 ;
+		right: 0 ;
+	/*	margin-left: auto;
+		margin-right: auto;*/
+		padding: 0 ;
+
+	/*	transform: translate(50%, -50%);*/
 		z-index: 2;
+
+		
 	}
 
-	#about-overlay h1{color: #fff !important;}
+	#about-overlay h1{
+		color: #fff !important;
+		margin: 0;
+		padding: 0;
+	}
 	
 
 
-#about-headline-wrapper{
+/*#about-headline-wrapper{
 	position: absolute;
 	display: none;
   	top: 0;
   	left: 50%;
   	transform: translate(-50%, -50%);
-}
+}*/
 	#about-headline{color: #fff;}	
+
+
+
+

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/contact.css" %}'>
+{% endblock %}
+
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1 id="contact-header">{{ contact.headline }}</h1>
+				<p id="contact-info">{{ contact.description }}</p>
+				<hr>
+				<form method="POST" action="" id="contact-form">{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Send" id="send-email" class="more-btn" />
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 offset-lg-8 offset-md-8 offset-sm-8">
+				<div id="phone">
+					<a href="#phone number here" class="more-btn">650-123-4567</a>
+					<p>Call to book a session!</p>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block js_adds %}
+	<script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}

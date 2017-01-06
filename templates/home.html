@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/home.css" %}'>
 {% endblock %}
 
-
+{% block mobile-hamburger %}
+	<div id="mobile-hamburger">{% include "hamburger.html" %}</div>
+{% endblock %}
 {% block banner %}
 	<div id="topbanner">
 
@@ -13,27 +15,24 @@
 
 		<div id="headline-wrapper">
 			<div>
-				<img class="center img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'>
+				<img class="img-responsive" id="sws-logo" src='{% static "images/sing_w_savannah_logo.png" %}'>
 				<!-- <img class="center img-responsive" id="sws-logo" src='{% static "images/sws_logo_two.png" %}'> -->
 			</div>
 			<div id="sub-headline">
-				<p>"Create Your Own Sunshine", the new albumn available Fall 2016</p>
+				<p>{{ home.homepage_headline }}</p>
 			</div>
 			<a id="listen-btn" class="btn-outline-white center" href="{% url 'music' %}">LISTEN NOW</a>
 		</div>
 	</div>
-
-
 {% endblock %}
 
 {% block content %}
 	
-
 	<div class="container">
 		<div class="row center-text">
 			<div class="col-lg-12">
 				<div class="header">
-					<h1>BEING A MOTHER INSPIRES MUSIC.</h1>
+					<h1>{{ about.homepage_headline }}</h1>
 				</div>
 			</div>
 		</div>
@@ -61,21 +60,41 @@
 					</div>
 				</div>
 			</div>
-			{% for i in services %}
-				<div class="row" id="gallery-row">		
-					<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-						<img class="service-img" src='{{ i.icon.url }}'>
-						<div class="overlay">
-							<a href="#" id="gallery-title">{{ i.service }}</a>
-						    <a href="#gallery-detail" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
-		        		</div>
-					</div>
-			{% endfor %}
+			<div class="row" id="gallery-row">		
+				{% for i in services %}
+				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
+					<img class="service-img" src='{{ i.icon.url }}'>
+					<div class="overlay">
+						<a href="{% url 'service_detail' slug=i.slug %}" class="gallery-title">{{ i.service }}</a>
+					    <a href="{% url 'service_detail' slug=i.slug %}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
+	        		</div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 
-	<div class="spacer"></div>
+	<div class="container" id="mini-music">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="header">
+					<h1>{{ home.mini_music_headline }}</h1>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<p>{{ home.mini_music_description }}</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<a href="{{ home.mini_music_url }}">
+					<img class="img-responsive" src='{{ home.mini_music_img.url }}'>
+				</a>
+			</div>
+		</div>
+	</div>
+
 			
 	
 

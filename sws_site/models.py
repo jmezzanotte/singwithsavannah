@@ -1,9 +1,45 @@
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.conf import settings
 import uuid
+import shutil
+import os
 
-# Create your models here.
+
+def get_upload_path(instance, filename):
+    """ creates unique-Path & filename for upload """
+    return os.path.join('audio', 'albums', slugify(instance.name), filename)
+
+def get_track_upload_path(instance, filename):
+	return os.path.join('audio', 'albums', slugify(instance.album.name), filename)
+
+def get_file_name(instance, filename):
+	return filename
+
+
+class Home(models.Model):
+	homepage_headline = models.CharField(max_length=500)
+	mini_music_headline = models.CharField(max_length=500)
+	mini_music_description = models.TextField()
+	mini_music_url = models.CharField(max_length=500)
+	mini_music_img = models.ImageField(upload_to='home')
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.homepage_headline
+
+	def __str__(self):
+		return self.homepage_headline
+
+	class Meta:
+		verbose_name = 'Home Page'
+		verbose_name_plural = 'Home Page'
+		get_latest_by = 'timestamp'
+
+
 class ServicesLandingPage(models.Model):
 	services_headline=models.CharField(max_length=250)
 	services_desc=models.TextField()
@@ -25,8 +61,6 @@ class ServicesLandingPage(models.Model):
 			Specifying get latest by will allow us to use only the 
 			latest record later on. 
 
-			test
-
 		'''
 		verbose_name = 'Services Landing Page'
 		verbose_name_plural = 'Services Landing Page'
@@ -37,8 +71,8 @@ class Services(models.Model):
 	slug = models.SlugField(unique=True, default=uuid.uuid4)
 	description = models.TextField()
 	headline = models.CharField(max_length=250)
-	image = models.ImageField()
-	icon = models.ImageField()
+	image = models.ImageField(upload_to='services')
+	icon = models.ImageField(upload_to='services')
 	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -51,9 +85,22 @@ class Services(models.Model):
 		verbose_name = 'Services'
 		verbose_name_plural = 'Services'
 
+class Contact(models.Model):
+	headline = models.CharField(max_length=200)
+	description = models.TextField()
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	
+	class Meta:
+		verbose_name = 'Contact'
+		verbose_name_plural = 'Contact'
+		get_latest_by = 'timestamp'
+
+
 
 class About(models.Model):
 	headline = models.CharField(max_length=500)
+	homepage_headline = models.CharField(max_length=500)
 	summary = models.TextField()
 	description = models.TextField()
 	image = models.ImageField(upload_to='about')
@@ -65,17 +112,68 @@ class About(models.Model):
 	def __str__(self):
 		return self.headline
 
-
 	class Meta:
 		verbose_name = 'About'
 		verbose_name_plural = 'About'
 		get_latest_by = 'timestamp'
 
+class Album(models.Model):
 
+	name = models.CharField(max_length=200)
+	image = models.ImageField(upload_to=get_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
+	def __unicode__(self):
+		return self.name
 
+	def __str__(self):
+		return self.name
 
+class AlbumTrack(models.Model):
 
+	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
+	track = models.FileField(upload_to=get_track_upload_path)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return os.path.basename(self.track.name)
+
+	def __str__(self):
+		return os.path.basename(self.track.name)
+
+@receiver(pre_delete, sender=AlbumTrack)
+def pre_delete_album_track(sender, instance, *args, **kwargs):
+	instance.track.delete(False)
+	
+
+@receiver(pre_delete, sender=Album)
+def pre_delete_album_folder(sender, instance, *args, **kwargs):
+	'''This function will remove the directory of the album if the user deletes it.
+		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
+		associated with an album.'''
+	try:
+		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
+	except FileNotFoundError as e :
+		print(e)
+
+@receiver(pre_delete, sender=Services)
+def pre_delete_service_image(sender, instance, *args, **kwargs):
+	'''Method to delete the images from the server when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+		os.remove(instance.icon.path)
+	except FileNotFoundError as e:
+		print(e)
+
+@receiver(pre_delete, sender=About)
+def pre_delete_about_image(sender, instance, *args, **kwargs):
+	'''Method to delete images from the about folder when user deletes image from admin'''
+	try:
+		os.remove(instance.image.path)
+	except FileNotFoundError as e:
+		print(e)
+
+@receiver(pre_save, sender=Services)
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
 	
 	# slugify ther service title
@@ -89,6 +187,6 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 	instance.slug = slug
 
 
-
-pre_save.connect(pre_save_post_receiver, sender=Services)
+# The decorator is replacint this step
+#pre_save.connect(pre_save_post_receiver, sender=Services)
 
