@@ -10,11 +10,11 @@ h1{text-align: center;}
 	/*width: 75%;*/
 	/*margin: 0 auto;*/
 	margin: 50px 0 50px 0;
+	padding: 0;
 }	
 	
 	#about-profile img{
 		width: 100%;
-		height: auto;
 		border-radius: 10px;
 		margin: 0 auto;
 		display: block;
@@ -29,9 +29,7 @@ h1{text-align: center;}
 		right: 0 ;
 	/*	margin-left: auto;
 		margin-right: auto;*/
-		padding: 0 ;
-
-	/*	transform: translate(50%, -50%);*/
+		transform: translate(0%, -50%);
 		z-index: 2;
 
 		

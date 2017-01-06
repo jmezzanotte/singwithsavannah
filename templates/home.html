@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div id="about-content-home">
 					<p>{{ about.summary }}</p>
 					<a href="{% url 'about' %}" class="more-btn btn">READ MORE</a>
@@ -89,7 +89,7 @@
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4">
 				<a href="{{ home.mini_music_url }}">
-					<img class="img-responsive" src='{{ home.mini_music_img.url }}'>
+					<img class="img-responsive" id="mini-music-img" src='{{ home.mini_music_img.url }}'>
 				</a>
 			</div>
 		</div>
