@@ -62,8 +62,10 @@ def home(request):
 	except About.DoesNotExist:
 		#raise Http404("Cannot find data") 
 		about = None
+		home = None
 	except Home.DoesNotExist:
 		home = None
+		about =None
 
 
 	context ={
