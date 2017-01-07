@@ -1,0 +1,188 @@
+#services-header{
+	color: #000;
+	margin:100px 0 50px 0;
+}
+
+#black-bg{	
+	width: 100%;
+	margin: 100px auto;
+	background-color: #e95e6b;
+	border-top: solid 10px #aF4654;
+	border-bottom: solid 10px #aF4654;
+}
+
+
+#about-content-home{
+	margin-bottom: 50px ;
+}
+
+#about-content-home p {
+	margin-bottom: 125px;
+}
+
+#about-content-home a {
+	display: block;
+	width: 150px;
+
+}
+
+.service-img{
+	width: 200px;
+}
+
+.service-caption{
+	font-family: 'clicker-script';
+	font-size: 28px;
+	
+}
+
+
+
+#read-more-parent{
+	margin: 0 auto;
+}
+
+#services-header-home{
+	text-align: center;
+	margin: 50px auto;
+	border-bottom: solid 1px #a6a6a6;
+	border-top: solid 1px #a6a6a6;
+	padding: 10px;
+}
+
+
+
+#effect {	
+	padding: 0;
+}
+
+
+
+.modal-body img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gallery-row{
+	margin: 20px 50px 100px 50px;
+	border: solid 10px #000;
+	border-radius: 10px;
+}
+
+
+
+#effect img{
+	display: block;
+	width: 100%;
+}
+
+
+
+.overlay {
+	display: block;
+  	position: absolute;
+  	z-index: 20;
+  	background: rgba(0, 0, 0, 0.8);
+  	overflow: hidden;
+  	transition: all 0.5s;
+}
+
+.gallery-title {
+	font-family: 'clicker-script';
+	font-size: 52px;
+	text-decoration: none;
+	display: block;
+	position: absolute;
+	z-index: 100;
+	height: 60px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	left: 0;
+	right: 0;
+	bottom: 70%;
+	margin: 0 auto -20px auto;
+	padding: 10px;	
+}
+	.gallery-title:visited{
+		text-decoration: none;
+		color: #ffffff;
+	}
+
+	.gallery-title:hover{
+		text-decoration: none; 
+		color: #ffffff;
+	}
+
+
+
+a.expand {
+	display: block;
+	position: absolute;
+	z-index: 100;
+	width: 60px;
+	height: 60px;
+	border: solid 5px #fff;
+	text-align: center;
+	color: #fff;
+	line-height: 55px;
+	font-weight: 700;
+	font-size: 20px;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+#effect .overlay {
+	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	width: 100%;
+  	height: 0;
+}
+
+#effect .overlay a.expand {
+ 	left: 0;
+  	right: 0;
+  	bottom: 50%;
+  	margin: 0 auto -30px auto;
+}
+
+
+#effect:hover .overlay {
+	height: 100%;
+  	cursor: pointer;
+}
+
+
+
+#services-header-row h1{
+	text-align: center;
+	margin-top:50px;
+}
+
+#services-header{
+	color: #fff;
+}
+
+
+.spacer{
+	height: 200px;
+}
+
+
+#music-edu-header {
+	margin: 50px auto;
+}
+
+#mini-music{
+	margin: 50px auto;
+}
+
+#mini-music-img{
+	
+	margin: 0 auto;
+}
+
+
+
