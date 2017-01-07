@@ -152,6 +152,7 @@ def pre_delete_album_folder(sender, instance, *args, **kwargs):
 		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
 		associated with an album.'''
 	try:
+		#shutil.rmtree(os.path.join(settings.PROJECT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
 		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
 	except FileNotFoundError as e :
 		print(e)

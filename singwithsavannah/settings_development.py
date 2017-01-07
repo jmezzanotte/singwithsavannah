@@ -25,9 +25,9 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sws_site',
     'blog',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -131,8 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # This is the relative browser URL to be used when accessing our media files in the browser.
 MEDIA_URL = '/media/'
