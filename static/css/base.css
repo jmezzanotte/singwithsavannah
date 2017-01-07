@@ -66,6 +66,11 @@ p{
 	/*font-family: 'Raleway', sans-serif;*/
 }
 
+
+.text-content{
+	margin: 50px;
+}
+
 .hidden{
 	display: none;
 }

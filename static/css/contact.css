@@ -32,9 +32,7 @@ textarea:focus{
 	text-align: center;
 }
 
-#contact-info{
-	margin: 50px ;
-}
+
 
 #contact-form{
 	margin: 20px;
@@ -46,7 +44,7 @@ textarea:focus{
 	width: 200px;
 }
 
-#contact-info{margin: 50px auto;}
+
 
 #phone p, #phone a {margin: 30px auto; text-align: center }
 #phone a{ display: block; width: 200px;}

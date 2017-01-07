@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<h1 id="contact-header">{{ contact.headline }}</h1>
-				<p id="contact-info">{{ contact.description }}</p>
+				<p id="contact-info" class="text-content">{{ contact.description }}</p>
 				<hr>
 				<form method="POST" action="" id="contact-form">{% csrf_token %}
 					{{ form.as_p }}
