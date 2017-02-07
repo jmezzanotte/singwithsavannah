@@ -1,10 +1,12 @@
 awsebcli==3.9.0
 blessed==1.9.5
+boto==2.45.0
 botocore==1.4.93
 cement==2.8.2
 colorama==0.3.7
 dj-database-url==0.2.2
 Django==1.10.2
+django-storages==1.5.2
 docker-py==1.7.2
 dockerpty==0.4.1
 docopt==0.6.2
@@ -23,4 +25,3 @@ tabulate==0.7.5
 wcwidth==0.1.7
 websocket-client==0.40.0
 whitenoise==3.2
-MySQL-python==1.2.3
