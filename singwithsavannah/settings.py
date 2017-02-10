@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
-import custom_storages
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 #AWS_CUSTOM_DOMAIN =  'http://singwithsavannah.s3.amazonaws.com'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 #STATIC_URL = 'https://%s/%s/' % (AWS_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 STATICFILES_DIRS = [
@@ -143,9 +143,9 @@ STATICFILES_DIRS = [
 
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-# if not DEBUG:
-#     AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-#     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+if not DEBUG:
+    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # This is the relative browser URL to be used when accessing our media files in the browser.
 MEDIA_URL = '/media/'
