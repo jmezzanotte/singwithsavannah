@@ -27,7 +27,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -140,19 +140,19 @@ STATICFILES_DIRS = [
 ]
 
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 MEDIA_URL = '/media/'
 
-if not DEBUG:
-    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-    # redefine MEDIA_ROOT if we are in production 
-    MEDIA_ROOT = '/media/'
-    S3_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
-    MEDIA_URL = S3_URL + MEDIA_ROOT
-    DEFAULT_FILE_STORAGE = 'singwithsavannah.s3utils.MediaRootS3BotoStorage'
-    STATICFILES_STORAGE = 'singwithsavannah.s3utils.StaticRootS3BotoStorage'
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+# if not DEBUG:
+AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+# redefine MEDIA_ROOT if we are in production 
+MEDIA_ROOT = '/media/'
+S3_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+MEDIA_URL = S3_URL + MEDIA_ROOT
+DEFAULT_FILE_STORAGE = 'singwithsavannah.s3utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'singwithsavannah.s3utils.StaticRootS3BotoStorage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
     #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
