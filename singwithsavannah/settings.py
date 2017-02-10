@@ -129,11 +129,12 @@ DATABASES['default'].update(db_from_env)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
+#AWS_CUSTOM_DOMAIN =  'http://singwithsavannah.s3.amazonaws.com'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATIC_URL = 'https://%s/%s/' % (AWS_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+#STATIC_URL = 'https://%s/%s/' % (AWS_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
