@@ -26,7 +26,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -129,10 +129,11 @@ DATABASES['default'].update(db_from_env)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
-
-
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATIC_URL = 'https://%s/%s/' % (AWS_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -140,9 +141,9 @@ STATICFILES_DIRS = [
 
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-if not DEBUG:
-    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# if not DEBUG:
+#     AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+#     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # This is the relative browser URL to be used when accessing our media files in the browser.
 MEDIA_URL = '/media/'
