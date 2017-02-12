@@ -1,6 +1,15 @@
 @media only screen 
   and (max-width: 600px) {
 
+    h1 {
+        font-size:32px;
+      }
+
+    h2 {
+
+      font-size: 22px;
+    }
+
     .show-nav #site-canvas {
         -webkit-transform: translateX(250px);
         transform: translateX(250px);
@@ -8,9 +17,8 @@
         transform: translate3d(250px, 0, 0);
     }
 
-
     #site-nav {
-      width: 250px;
+        width: 250px;
         height: 100%;
         position: absolute;
         top: 0;
