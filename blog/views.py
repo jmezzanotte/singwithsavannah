@@ -16,7 +16,8 @@ def blog(request):
 	#the '-' in front of created_at tells python to filter in reverse order
 
 	all_blog_posts_list = BlogPost.objects.order_by('-created_at')
-	archive = BlogPost.objects.filter(usr=1).order_by('-created_at')
+	#archive = BlogPost.objects.filter(usr=1).order_by('-created_at')
+	archive = BlogPost.objects.order_by('-created_at')
 
 	#pagination for index of blog_posts
 
