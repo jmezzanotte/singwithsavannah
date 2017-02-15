@@ -4,7 +4,7 @@
 	function labelHighlight(){
 		
 		console.log($(this));
-		$(this).prev().animate({color: '#e95e6b'}, 300);
+		$(this).prev().animate({color: '#CEA2CB'}, 300);
 
 		$(this).animate({
 			// borderBottomColor : '#99ccff', 

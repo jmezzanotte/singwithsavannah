@@ -1,14 +1,15 @@
 #services-header{
-	color: #000;
+	color: #23519F !important;
 	margin:100px 0 50px 0;
 }
 
 #black-bg{	
 	width: 100%;
 	margin: 100px auto;
-	background-color: #e95e6b;
-	border-top: solid 10px #aF4654;
-	border-bottom: solid 10px #aF4654;
+	/*background-color: #e95e6b;*/
+	background-color: #CFD9EF;
+	border-top: solid 10px #CEA2CB;
+	border-bottom: solid 10px #CEA2CB;
 }
 
 
@@ -52,6 +53,10 @@
 
 
 
+
+
+
+
 #effect {	
 	padding: 0;
 }
@@ -66,7 +71,7 @@
 
 #gallery-row{
 	margin: 20px 50px 100px 50px;
-	border: solid 10px #000;
+	border: solid 10px #CEA2CB;
 	border-radius: 10px;
 }
 
