@@ -30,23 +30,23 @@
 
 
 #twitter-footer{
-	background-image: url("../images/twitter_line_black.png");
+	background-image: url("../images/twitter_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 
 #facebook-footer{
-	background-image: url("../images/facebook_line_black.png");
+	background-image: url("../images/facebook_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #instagram-footer{
-	background-image: url("../images/ig_line_black.png");
+	background-image: url("../images/instagram_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #youtube-footer{
-	background-image: url("../images/youtube_line_black.png");
+	background-image: url("../images/youtube_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 

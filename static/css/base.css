@@ -298,24 +298,24 @@ p{
 }
 
 #twitter{
-	background-image: url("../images/twitter_line.png");
+	background-image: url("../images/twitter_white_hover_blue_theme.png");
 	background-position: 0 0;
 
 }
 
 
 #facebook{
-	background-image: url("../images/fb_line.png");
+	background-image: url("../images/facebook_white_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #instagram{
-	background-image: url("../images/ig_line.png");
+	background-image: url("../images/instagram_white_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #youtube{
-	background-image: url("../images/youtube_line.png");
+	background-image: url("../images/youtube_white_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
@@ -359,8 +359,7 @@ p{
 	display: block;
     width: 0;
     height: 5px;
-    /*background:  #e95e6b;*/
-    background: #FAD5E5; /*light pink */
+    background: #cea2cb;
     transition: width .5s;
 }
 
