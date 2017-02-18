@@ -58,16 +58,11 @@
 	text-align: center;	
 }
 
-.service-btn{
+.more-btn{
 	display: inline-block;
 	padding: 10px;
-	color: #fff;
-	font-family: 'Quicksand', sans-serif;
-	border-radius: 10px;
 	font-size: 18px;
 	margin: 20px auto;
-	background-color: #e95e6b;
-	border: solid 1px #e95e6b;
 	
 }
 

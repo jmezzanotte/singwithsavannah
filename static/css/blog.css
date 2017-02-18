@@ -14,56 +14,24 @@ h1{
 	padding: 10px;
 	border : none;
 	background-color: #CFD9EF; 
-	border-bottom: solid 2px #d0d0d0;
+	border-bottom: solid 2px #CEA2CB;
 	border-bottom: solid 6px #CEA2CB;
 }
 
 #search{
 	border-radius: 10px;
+	margin: 10px;
 	padding: 10px;
 	border: none;
-	border-bottom: solid 6px #CEA2CB;
 	font-family: 'Raleway', sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 }
 	#search:focus{
 		outline: none;
 	}
 
 
-#search-submit {
-  background: #aF4654;
-  background-image: -webkit-linear-gradient(top, #aF4654, #aF4654);
-  background-image: -moz-linear-gradient(top, #aF4654, #aF4654);
-  background-image: -ms-linear-gradient(top, #aF4654, #aF4654);
-  background-image: -o-linear-gradient(top, #aF4654, #aF4654);
-  background-image: linear-gradient(to bottom, #aF4654, #aF4654);
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  font-family: 'Raleway', sans-serif;
-  color: #ffffff;
-  margin: 10px;
-  border: none;
-  border-bottom: solid 6px #aF4654;
-  font-size: 14px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
 
-#search-submit:hover {
-  background: #aF4654;
-  background-image: -webkit-linear-gradient(top, #aF4654, #801f2c);
-  background-image: -moz-linear-gradient(top, #aF4654, #801f2c);
-  background-image: -ms-linear-gradient(top, #aF4654, #801f2c);
-  background-image: -o-linear-gradient(top, #aF4654, #801f2c);
-  background-image: linear-gradient(to bottom, #aF4654, #801f2c);
-  text-decoration: none;
-}
-
-#search-submit:focus{
-	outline: none;
-}
 
 
 #blog-header{
@@ -145,10 +113,10 @@ h1{
 	#blog-archive li:nth-child(odd){background-color: #d0d0d0;}
 
 	#blog-archive li a:hover {
-		background-color:  #e95e6b; 
-		border:solid 5px #aF4654;
+		background-color:  #CFD9EF; 
+		border:solid 5px #CEA2CB;
 		cursor:pointer;
-		color: #fff;
+		color: #23519F;
 	    font-weight: 700;
 	}
 
