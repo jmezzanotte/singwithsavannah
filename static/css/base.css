@@ -23,9 +23,11 @@
 
 	SECOND THEME 
 	light purple: #FAD5E5;
+	dark purple outline around heart 7F5B7E
 	purple : CEA2CB;
 	light blue : #CFD9EF;
-	dark-blue: 23519F
+	dark-blue: #23519F;
+
 */
 
 /*FONTS*/
@@ -47,13 +49,9 @@ ul{
 
 
 h1{
-	/*font-family: 'Quicksand', sans-serif;*/
-	/*font-family: 'Chewy', cursive;*/
 	font-family: 'Fredoka One', cursive;
-	
 	font-size:42px;
 	color: #23519F;
-	/*color: #000;*/
 }
 
 h2{
@@ -63,7 +61,6 @@ h2{
 
 p{
 	font-size: 20px;
-	/*font-family: 'Raleway', sans-serif;*/
 }
 
 
@@ -144,7 +141,6 @@ p{
 	}
 
 .submenu{
-	/*color: #fff;*/
 	color: #23519F;
 	border-radius: 10px;
 	height: 0px;
@@ -158,9 +154,7 @@ p{
 	}
 
 	.submenu li{
-		/*background-color: #e95e6b; */
 		background-color: #FAD5E5;
-		/*border: solid 4px #aF4654; */
 		border: solid 4px #cea2cb; 
 		padding: 10px; 
 		border-radius: 10px;
@@ -172,6 +166,7 @@ p{
 		.submenu li:hover{
 			margin: 0px;
 		}
+
 
 		.submenu li a {
 			color: #23519F;
@@ -273,9 +268,6 @@ p{
 	padding: 10px;
 	margin: 10px auto;
 	font-family: 'Fredoka One', cursive;
-
-
-
 }
 
 
@@ -284,8 +276,6 @@ p{
 	border-bottom: solid 1px #fff;
 	margin: 20px 0 20px 0;
 }
-
-
 
 #nav-list li{
 	list-style: none;
@@ -300,9 +290,7 @@ p{
 #twitter{
 	background-image: url("../images/twitter_white_hover_blue_theme.png");
 	background-position: 0 0;
-
 }
-
 
 #facebook{
 	background-image: url("../images/facebook_white_hover_blue_theme.png");
@@ -319,12 +307,9 @@ p{
 	background-position: 0 0;
 }
 
-
-
 #instagram:hover{
 	background-position: 0 100%;
 	cursor: pointer;
-
 }
 
 #twitter:hover{
@@ -368,10 +353,6 @@ p{
 	width:100%;
 }
 
-
-.nav-item a:visited{
-	color: #fff;
-}
 
 
 /*NAV SOCIAL LOGOS */

@@ -21,10 +21,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href='{% static "favicons/apple-touch-icon.png" %}'>
-	<link rel="icon" type="image/png" href='{% static "favicons/favicon-32x32.png" sizes="32x32" %}'>
-	<link rel="icon" type="image/png" href='{% static "favicons/favicon-16x16.png" sizes="16x16" %}'>
+	<link rel="icon" type="image/png" href='{% static "favicons/favicon-32x32.png" %}' sizes="32x32">
+	<link rel="icon" type="image/png" href='{% static "favicons/favicon-16x16.png" %}'' sizes="16x16">
 	<link rel="manifest" href='{% static "favicons/manifest.json" %}'>
-	<link rel="mask-icon" href='{% static "favicons/safari-pinned-tab.svg" color="#5bbad5" %}'>
+	<link rel="mask-icon" href='{% static "favicons/safari-pinned-tab.svg" %}' color="#ebc335">
 	<meta name="theme-color" content="#ffffff">
 	{% block css_adds %}{% endblock %}
 </head>
@@ -50,8 +50,7 @@
 		<div id="site-canvas">
 			<div id="site-nav">
 				{% block mobile-hamburger%}{% endblock %}
-				<h2 id="sing-from-your-heart">Sing From Your Heart</h2>
-				<!-- <img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart.png" %}'> -->
+				<img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart_blue_theme.png" %}'>
 				<ul id="nav-list">
 					<li class="nav-item sliding-border"><a href="{% url 'home' %}">HOME</a></li>
 					<li class="nav-item sliding-border"><a href="{% url 'about' %}">ABOUT</a></li>
