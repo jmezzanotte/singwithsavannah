@@ -6,7 +6,6 @@
 #black-bg{	
 	width: 100%;
 	margin: 100px auto;
-	/*background-color: #e95e6b;*/
 	background-color: #CFD9EF;
 	border-top: solid 10px #CEA2CB;
 	border-bottom: solid 10px #CEA2CB;
@@ -52,15 +51,9 @@
 }
 
 
-
-
-
-
-
 #effect {	
 	padding: 0;
 }
-
 
 
 .modal-body img{
@@ -75,13 +68,10 @@
 	border-radius: 10px;
 }
 
-
-
 #effect img{
 	display: block;
 	width: 100%;
 }
-
 
 
 .overlay {
