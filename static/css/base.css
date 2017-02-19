@@ -253,9 +253,7 @@ p{
   	top: 0;
   	left: -500px;
   	color: #fff;
-  	/*font-family: 'Raleway', sans-serif;*/
   	font-family: 'Fredoka One', cursive;
-  	/*background-color: #000;*/
   	background-color: #23519F;
 
 }
@@ -425,7 +423,7 @@ p{
 	width: 400px;
 	padding: 0 ;
 	display: block; 
-	margin: 30px auto;
+	margin: 20px auto;
 	padding: 20px;
 }
 
