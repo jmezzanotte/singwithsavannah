@@ -27,6 +27,7 @@
 							<img id="footer-bird" class="img-responsive" src='{{i.image.url}}'>
 						</div>
 						<audio class="audio-player" id={{i.name|slugify}} controls></audio>
+						<p class='now-playing'></p>
 						<div class="trackbox">	
 							{% for j in i.album.all %}
 								<div class="trackbar" id="{{j.track.name|filename|slugify}}">
