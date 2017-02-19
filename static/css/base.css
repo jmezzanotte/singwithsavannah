@@ -447,9 +447,7 @@ p{
 
 #listen-btn:hover{
 	cursor: pointer;
-	/*color: #e95e6b;
-*/	color : #FAD5E5;
-	/*border-color: #e95e6b;*/
+	color : #FAD5E5;
 	border-color: #FAD5E5;
 }
 

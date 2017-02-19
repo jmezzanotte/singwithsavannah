@@ -11,6 +11,11 @@
       font-size: 22px;
     }
 
+    #listen-btn {
+      width: 150px;
+      font-size: 16px;
+    }
+
     .show-nav #site-canvas {
         -webkit-transform: translateX(250px);
         transform: translateX(250px);
@@ -36,7 +41,6 @@
       position: relative;
       background: url("../images/singer_songwriter_mobile_414_736.jpg") center center;
       background-size: cover;
-      /*background-attachment: fixed;*/
       overflow: hidden;
       text-align: center;
       width: 100% ;
@@ -46,7 +50,6 @@
     #about-overlay h1{
       font-size: 24px;
     }
-
 
     .overlay a {
       font-size: 26px;
