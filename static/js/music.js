@@ -17,13 +17,15 @@
 		// This line will get you to the appropriate audio player
 		//console.log($(e.target).parent().prev()[0]);
 		// var audio = $(e.target).parent().prev()[0];
+
 		var audio = null;
-		console.log($($(e.target).parent().prev()[0]).is('audio'));
 		if($($(e.target).parent().prev()[0]).is('audio')){
 			audio = $(e.target).parent().prev()[0];
 		}else{
 			audio = $(e.target).parent().prev().prev()[0];
 		}
+
+		$($(audio).next()[0]).text('');
 
 		if(currentSongObj){
 			currentSongObj.removeClass('active-song');
@@ -48,6 +50,7 @@
 			audio.pause();
 			currentSong = '';
 			currentAudioPlayer = null;
+			$($(audio).next()[0]).text('');
 		}
 		
 		currentSongObj = $(e.target);

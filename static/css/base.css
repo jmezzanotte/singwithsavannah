@@ -27,6 +27,10 @@
 	purple : CEA2CB;
 	light blue : #CFD9EF;
 	dark-blue: #23519F;
+	dar-yellow: #f1b67a;
+	light-yellow: fac57f;
+	dark-green: 444f3e;
+	guitar-blue: 89cbed;
 
 */
 
@@ -119,6 +123,7 @@ p{
 	display: block;
 	text-align: center;
 }*/
+
 
 .nav-btn{
 	color: #fff;
@@ -252,9 +257,8 @@ p{
   	position: absolute;
   	top: 0;
   	left: -500px;
-  	color: #fff;
   	font-family: 'Fredoka One', cursive;
-  	background-color: #23519F;
+  	background-color: #89cbed;
 
 }
 	#site-nav h1{
@@ -287,22 +291,22 @@ p{
 }
 
 #twitter{
-	background-image: url("../images/twitter_white_hover_blue_theme.png");
+	background-image: url("../images/twitter_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #facebook{
-	background-image: url("../images/facebook_white_hover_blue_theme.png");
+	background-image: url("../images/facebook_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #instagram{
-	background-image: url("../images/instagram_white_hover_blue_theme.png");
+	background-image: url("../images/instagram_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
 #youtube{
-	background-image: url("../images/youtube_white_hover_blue_theme.png");
+	background-image: url("../images/youtube_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
 
@@ -335,7 +339,7 @@ p{
 
 .nav-item a {
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 }
 
 .sliding-border::after{
@@ -384,7 +388,7 @@ p{
 
 #topbanner{
 	position: relative;
-	background: url("../images/singer_songwriter.jpg") center center;
+	background: url("../images/create_your_own_sunshine_banner.jpg") center center;
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
