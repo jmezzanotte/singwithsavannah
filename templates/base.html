@@ -54,18 +54,18 @@
 				<img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart_blue_theme.png" %}'>
 				</div>
 				<ul id="nav-list">
-					<li class="nav-item sliding-border"><a href="{% url 'home' %}">HOME</a></li>
-					<li class="nav-item sliding-border"><a href="{% url 'about' %}">ABOUT</a></li>
-					<li class="nav-item"><a href="{% url 'music' %}" class="sliding-border">MUSIC</a></li>
-					<li class="nav-item submenu-parent"><a class="sliding-border" href="{% url 'services' %}">SERVICES</a>
+					<li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
+					<li class="nav-item"><a href="{% url 'about' %}">ABOUT</a></li>
+					<li class="nav-item"><a href="{% url 'music' %}">MUSIC</a></li>
+					<li class="nav-item submenu-parent"><a href="{% url 'services' %}">SERVICES</a>
 						<ul class="submenu">
 							{% for i in services %}
 								<li><a href="{% url 'service_detail' slug=i.slug %}">{{i.service}}</a></li>
 							{% endfor %}
 						</ul>
 					</li>
-					<li class="nav-item sliding-border"><a href="{% url 'contact' %}">CONTACT</a></li>
-					<li class="nav-item sliding-border"><a href="{% url 'blog' %}">BLOG</a></li>
+					<li class="nav-item"><a href="{% url 'contact' %}">CONTACT</a></li>
+					<li class="nav-item"><a href="{% url 'blog' %}">BLOG</a></li>
 				</ul>
 
 				<div class="social-logos">

@@ -4,9 +4,16 @@ from django.db.models.signals import pre_save
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 import uuid
 import shutil
 import os
+
+
+if settings.DEBUG:
+	fs = FileSystemStorage(location=settings.STATICFILES_DIRS[0])
+else:
+	fs = FileSystemStorage(location=settings.STATIC_ROOT)
 
 
 def get_upload_path(instance, filename):
@@ -25,7 +32,7 @@ class Home(models.Model):
 	mini_music_headline = models.CharField(max_length=500)
 	mini_music_description = models.TextField()
 	mini_music_url = models.URLField(max_length=500)
-	mini_music_img = models.ImageField(upload_to='home')
+	mini_music_img = models.ImageField(upload_to='home', storage=fs)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -71,8 +78,8 @@ class Services(models.Model):
 	slug = models.SlugField(unique=True, default=uuid.uuid4)
 	description = models.TextField()
 	headline = models.CharField(max_length=250)
-	image = models.ImageField(upload_to='services')
-	icon = models.ImageField(upload_to='services')
+	image = models.ImageField(upload_to='services', storage=fs)
+	icon = models.ImageField(upload_to='services', storage=fs)
 	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -103,7 +110,7 @@ class About(models.Model):
 	homepage_headline = models.CharField(max_length=500)
 	summary = models.TextField()
 	description = models.TextField()
-	image = models.ImageField(upload_to='about')
+	image = models.ImageField(upload_to='about', storage=fs)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -120,7 +127,7 @@ class About(models.Model):
 class Album(models.Model):
 
 	name = models.CharField(max_length=200)
-	image = models.ImageField(upload_to=get_upload_path)
+	image = models.ImageField(upload_to=get_upload_path, storage=fs)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -132,7 +139,7 @@ class Album(models.Model):
 class AlbumTrack(models.Model):
 
 	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
-	track = models.FileField(upload_to=get_track_upload_path)
+	track = models.FileField(upload_to=get_track_upload_path, storage=fs)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -153,7 +160,9 @@ def pre_delete_album_folder(sender, instance, *args, **kwargs):
 		associated with an album.'''
 	try:
 		#shutil.rmtree(os.path.join(settings.PROJECT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
-		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
+		#shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
+		shutil.rmtree(os.path.join(settings.PROJECT_DIR, 'static_cdn', 'audio', 'albums', slugify(instance.name)))
+		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'static', 'audio', 'albums', slugify(instance.name)))
 	except FileNotFoundError as e :
 		print(e)
 

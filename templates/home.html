@@ -62,7 +62,7 @@
 			<div class="row" id="gallery-row">		
 				{% for i in services %}
 				<div id="effect" class="col-lg-4 col-md-4 col-sm-12">
-					<img class="service-img" src='{{ i.icon.url }}'>
+					<img class="service-img" src='/static/{{ i.icon.url }}'>
 					<div class="overlay">
 						<a href="{% url 'service_detail' slug=i.slug %}" class="gallery-title">{{ i.service }}</a>
 					    <a href="{% url 'service_detail' slug=i.slug %}" data-toggle="modal" class="expand" ><span class="glyphicon glyphicon-plus"></span></a>
@@ -88,7 +88,7 @@
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4">
 				<a href="{{ home.mini_music_url }}">
-					<img class="img-responsive" id="mini-music-img" src='{{ home.mini_music_img.url }}'>
+					<img class="img-responsive" id="mini-music-img" src="{% static '' %}{{ home.mini_music_img.url }}">
 				</a>
 			</div>
 		</div>

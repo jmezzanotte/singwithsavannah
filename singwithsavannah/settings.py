@@ -131,30 +131,22 @@ DATABASES['default'].update(db_from_env)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-#AWS_CUSTOM_DOMAIN =  'http://singwithsavannah.s3.amazonaws.com'
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+
+
 STATICFILES_LOCATION = 'static'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
-# if not DEBUG:
-AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-# redefine MEDIA_ROOT if we are in production 
-MEDIA_ROOT = '/media/'
-S3_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
-MEDIA_URL = S3_URL + MEDIA_ROOT
-DEFAULT_FILE_STORAGE = 'singwithsavannah.s3utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'singwithsavannah.s3utils.StaticRootS3BotoStorage'
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-
-    #STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    
 
 # This is the relative browser URL to be used when accessing our media files in the browser.
 
