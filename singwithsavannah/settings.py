@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'sws_site',
     'blog',
     'whitenoise.runserver_nostatic',
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'singwithsavannah.urls'
@@ -133,14 +135,19 @@ DATABASES['default'].update(db_from_env)
 STATIC_URL = '/static/'
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
-
-
-STATICFILES_LOCATION = 'static'
-
+# This is the input, where we input files, STATIC_ROOT is the output, where the files are moved to 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# This is where static files are collected into 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATICFILES_LOCATION = 'static'
+
+# Static cdn the static root should live outside of the django project outside of src. This is because once the 
+# static files are collected there, django shouldn't have any involvment with this directory.
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
