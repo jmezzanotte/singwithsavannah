@@ -13,7 +13,7 @@ import os
 if settings.DEBUG:
 	fs = FileSystemStorage(location=settings.STATICFILES_DIRS[0])
 else:
-	fs = FileSystemStorage(location=settings.STATICFILES_STORAGE)
+	fs = FileSystemStorage(location=settings.STATIC_ROOT)
 
 
 def get_upload_path(instance, filename):
