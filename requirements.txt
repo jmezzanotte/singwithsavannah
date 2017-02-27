@@ -25,3 +25,4 @@ tabulate==0.7.5
 wcwidth==0.1.7
 websocket-client==0.40.0
 whitenoise==3.2
+
