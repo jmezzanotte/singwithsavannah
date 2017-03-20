@@ -13,12 +13,10 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import dj_database_url
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.dirname(BASE_DIR)
-
+PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ENVIRON = os.path.dirname(PROJECT_SRC)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -27,10 +25,9 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -44,7 +41,6 @@ INSTALLED_APPS = [
     'sws_site',
     'blog',
     'whitenoise.runserver_nostatic',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +59,7 @@ ROOT_URLCONF = 'singwithsavannah.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(PROJECT_SRC, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,11 +79,10 @@ WSGI_APPLICATION = 'singwithsavannah.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(PROJECT_SRC, 'db.sqlite3'),
     }
 }
 
@@ -136,11 +131,11 @@ STATIC_URL = '/static/'
 
 # This is the input, where we input files, STATIC_ROOT is the output, where the files are moved to 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(PROJECT_SRC, 'static'),
 ]
 
 # This is where static files are collected into 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+STATIC_ROOT = os.path.join(PROJECT_ENVIRON, 'static_cdn')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #STATICFILES_LOCATION = 'static'
@@ -149,20 +144,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 # static files are collected there, django shouldn't have any involvment with this directory.
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
-# MEDIA_URL = '/media/'
-
-    
-
-# This is the relative browser URL to be used when accessing our media files in the browser.
-
-#absolute path to the foler that will hold our user uploads
-#MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_cdn')
-#MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media_cdn')
-
-
-
-
-
-
 

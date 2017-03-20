@@ -4,27 +4,27 @@ from django.db.models.signals import pre_save
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.conf import settings
-from django.core.files.storage import FileSystemStorage
+# from django.core.files.storage import FileSystemStorage
 import uuid
-import shutil
+# import shutil
 import os
 
 
-if settings.DEBUG:
-	fs = FileSystemStorage(location=settings.STATICFILES_DIRS[0])
-else:
-	fs = FileSystemStorage(location=settings.STATIC_ROOT)
+# if settings.DEBUG:
+# 	fs = FileSystemStorage(location=settings.STATICFILES_DIRS[0])
+# else:
+# 	fs = FileSystemStorage(location=settings.STATIC_ROOT)
 
 
-def get_upload_path(instance, filename):
-    """ creates unique-Path & filename for upload """
-    return os.path.join('audio', 'albums', slugify(instance.name), filename)
+# def get_upload_path(instance, filename):
+#     """ creates unique-Path & filename for upload """
+#     return os.path.join('audio', 'albums', slugify(instance.name), filename)
 
-def get_track_upload_path(instance, filename):
-	return os.path.join('audio', 'albums', slugify(instance.album.name), filename)
+# def get_track_upload_path(instance, filename):
+# 	return os.path.join('audio', 'albums', slugify(instance.album.name), filename)
 
-def get_file_name(instance, filename):
-	return filename
+# def get_file_name(instance, filename):
+# 	return filename
 
 
 class Home(models.Model):
@@ -32,7 +32,7 @@ class Home(models.Model):
 	mini_music_headline = models.CharField(max_length=500)
 	mini_music_description = models.TextField()
 	mini_music_url = models.URLField(max_length=500)
-	mini_music_img = models.ImageField(upload_to='home', storage=fs)
+	mini_music_img = models.CharField(max_length=100)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -78,8 +78,8 @@ class Services(models.Model):
 	slug = models.SlugField(unique=True, default=uuid.uuid4)
 	description = models.TextField()
 	headline = models.CharField(max_length=250)
-	image = models.ImageField(upload_to='services', storage=fs)
-	icon = models.ImageField(upload_to='services', storage=fs)
+	service_img = models.CharField(max_length=200)
+	service_icon = models.CharField(max_length=200)
 	timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -110,7 +110,7 @@ class About(models.Model):
 	homepage_headline = models.CharField(max_length=500)
 	summary = models.TextField()
 	description = models.TextField()
-	image = models.ImageField(upload_to='about', storage=fs)
+	about_img = models.CharField(max_length=200)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -127,7 +127,7 @@ class About(models.Model):
 class Album(models.Model):
 
 	name = models.CharField(max_length=200)
-	image = models.ImageField(upload_to=get_upload_path, storage=fs)
+	album_img = models.CharField(max_length=200)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -139,7 +139,6 @@ class Album(models.Model):
 class AlbumTrack(models.Model):
 
 	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
-	track = models.FileField(upload_to=get_track_upload_path, storage=fs)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
@@ -148,10 +147,9 @@ class AlbumTrack(models.Model):
 	def __str__(self):
 		return os.path.basename(self.track.name)
 
-@receiver(pre_delete, sender=AlbumTrack)
-def pre_delete_album_track(sender, instance, *args, **kwargs):
-	instance.track.delete(False)
-	
+# @receiver(pre_delete, sender=AlbumTrack)
+# def pre_delete_album_track(sender, instance, *args, **kwargs):
+# 	instance.track.delete(False)
 
 @receiver(pre_delete, sender=Album)
 def pre_delete_album_folder(sender, instance, *args, **kwargs):
@@ -159,29 +157,27 @@ def pre_delete_album_folder(sender, instance, *args, **kwargs):
 		Deleting and albumn is a dangerous operation for this site. It will delete all the files 
 		associated with an album.'''
 	try:
-		#shutil.rmtree(os.path.join(settings.PROJECT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
-		#shutil.rmtree(os.path.join(settings.ROOT_DIR, 'media_cdn', 'audio', 'albums', slugify(instance.name)))
-		shutil.rmtree(os.path.join(settings.PROJECT_DIR, 'static_cdn', 'audio', 'albums', slugify(instance.name)))
-		shutil.rmtree(os.path.join(settings.ROOT_DIR, 'static', 'audio', 'albums', slugify(instance.name)))
+		shutil.rmtree(os.path.join(settings.PROJECT_ENVIRON, 'static_cdn', 'audio', 'albums', slugify(instance.name)))
+		shutil.rmtree(os.path.join(settings.PROJECT_SRC, 'static', 'audio', 'albums', slugify(instance.name)))
 	except FileNotFoundError as e :
 		print(e)
 
-@receiver(pre_delete, sender=Services)
-def pre_delete_service_image(sender, instance, *args, **kwargs):
-	'''Method to delete the images from the server when user deletes image from admin'''
-	try:
-		os.remove(instance.image.path)
-		os.remove(instance.icon.path)
-	except FileNotFoundError as e:
-		print(e)
+# @receiver(pre_delete, sender=Services)
+# def pre_delete_service_image(sender, instance, *args, **kwargs):
+# 	'''Method to delete the images from the server when user deletes image from admin'''
+# 	try:
+# 		os.remove(instance.image.path)
+# 		os.remove(instance.icon.path)
+# 	except FileNotFoundError as e:
+# 		print(e)
 
-@receiver(pre_delete, sender=About)
-def pre_delete_about_image(sender, instance, *args, **kwargs):
-	'''Method to delete images from the about folder when user deletes image from admin'''
-	try:
-		os.remove(instance.image.path)
-	except FileNotFoundError as e:
-		print(e)
+# @receiver(pre_delete, sender=About)
+# def pre_delete_about_image(sender, instance, *args, **kwargs):
+# 	'''Method to delete images from the about folder when user deletes image from admin'''
+# 	try:
+# 		os.remove(instance.image.path)
+# 	except FileNotFoundError as e:
+# 		print(e)
 
 @receiver(pre_save, sender=Services)
 def pre_save_post_receiver(sender, instance, *args, **kwargs):

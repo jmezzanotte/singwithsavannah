@@ -54,8 +54,10 @@ ul{
 
 
 h1{
-	font-family: 'Fredoka One', cursive;
-	font-size:42px;
+	/*font-family: 'Fredoka One', cursive;*/
+	/*font-family: 'Pangolin', cursive;*/
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size:52px;
 	color: #23519F;
 }
 
@@ -268,6 +270,9 @@ p{
   	left: -500px;
   	/*font-family: 'Fredoka One', cursive;*/
   	font-family: 'Raleway';
+  	/*font-family: 'Pangolin', cursive;*/
+  	/*font-family: 'Love Ya Like A Sister', cursive;*/
+  	font-size: 50px;
   	background-color: #CFD9EF; 
   	border: solid 10px #CEA2CB;
   	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
@@ -277,7 +282,6 @@ p{
 }
 	#site-nav h1{
 		text-align: center;
-		color:#FAD5E5;
 	}
 
 #sing-from-your-heart{
@@ -337,7 +341,6 @@ p{
 #facebook:hover{
 	background-position: 0 100%;
 	cursor: pointer;
-
 }
 
 #youtube:hover{
@@ -345,14 +348,10 @@ p{
 	cursor:pointer;
 }
 
-
 .nav-item{
 	padding: 20px;
 	cursor: pointer;
-
 }
-
-
 
 .nav-item a {
 	text-decoration: none;
@@ -365,7 +364,6 @@ p{
 .nav-item a:hover{
 	margin-left: 12px;
 	font-size:30px;
-	
 }
 
 .sliding-border::after{
@@ -527,7 +525,6 @@ p{
    
     margin: 0 auto;
 }
-
 
 
 

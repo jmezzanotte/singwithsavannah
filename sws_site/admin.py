@@ -48,8 +48,6 @@ class AlbumTrackAdmin(admin.ModelAdmin):
 		model = AlbumTrack
 
 
-
-
 admin.site.register(Home, HomeAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Services, ServicesAdmin)

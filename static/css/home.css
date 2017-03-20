@@ -31,7 +31,8 @@
 }
 
 .service-caption{
-	font-family: 'clicker-script';
+	/*font-family: 'clicker-script';*/
+	font-family: 'Love Ya Like A Sister', cursive;
 	font-size: 28px;
 	
 }
@@ -84,8 +85,9 @@
 }
 
 .gallery-title {
-	font-family: 'clicker-script';
-	font-size: 52px;
+	/*font-family: 'clicker-script';*/
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 42px;
 	text-decoration: none;
 	display: block;
 	position: absolute;

@@ -30,10 +30,6 @@ h1{
 		outline: none;
 	}
 
-
-
-
-
 #blog-header{
 	margin: 75px;
 }
@@ -72,7 +68,9 @@ h1{
 }
 
 	.blog-post h1{
-		font-family: 'clicker-script';
+		/*font-family: 'clicker-script';*/
+		/*font-family: 'Pangolin', cursive;*/
+		font-family: 'Love Ya Like A Sister', cursive;
 		font-size: 60px;
 		margin: 70px 0 0 0;
 	}
@@ -94,7 +92,8 @@ h1{
 	margin: 20px;
 }
 	#blog-archive h1{
-		font-family: 'clicker-script';
+		/*font-family: 'clicker-script';*/
+		font-family: 'Love Ya Like A Sister', cursive;
 		font-size: 60px;
 		text-align: center;
 	}

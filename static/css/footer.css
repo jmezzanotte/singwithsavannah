@@ -84,11 +84,12 @@
 
 
 #service-location-header{
-	font-family: 'clicker-script';
+	/*font-family: 'clicker-script';*/
+	font-family: 'Love Ya Like A Sister', cursive;
 	/*font-family: 'Fredoka One', cursive;*/
 	font-size: 42px;
-	/*color: #23519F;*/
-	color : #000;
+	color: #23519F;
+	/*color : #000;*/
 }
 
 #service-location-content{
