@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from .models import Services, ServicesLandingPage, About, Album, Home, Contact
+from .models import Services, ServicesLandingPage, About, Album, Home, Contact, SocialMediaURLs
 from django.http import Http404
 from .forms import ContactForm
 
@@ -59,6 +59,7 @@ def home(request):
 	try:
 		about = About.objects.latest()
 		home = Home.objects.latest()
+		social_media = SocialMediaURLs.objects.latest()
 	except About.DoesNotExist:
 		#raise Http404("Cannot find data") 
 		about = None
@@ -66,12 +67,17 @@ def home(request):
 	except Home.DoesNotExist:
 		home = None
 		about =None
+	except SocialMediaURLs.DoesNotExist:
+		about=None
+		home=None
+		social_media=None
 
 
 	context ={
 		'services' : get_services(),
 		'about' : about, 
-		'home' : home
+		'home' : home, 
+		'social_media' : social_media,
 	}
 
 	return render(request, 'home.html', context)

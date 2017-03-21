@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home, Contact
+from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home, Contact, SocialMediaURLs
 
 # Register your models here.
 
@@ -47,6 +47,9 @@ class AlbumTrackAdmin(admin.ModelAdmin):
 	class Meta: 
 		model = AlbumTrack
 
+class SocialMediaURLsAdmin(admin.ModelAdmin):
+	class Meta:
+		model = SocialMediaURLs
 
 admin.site.register(Home, HomeAdmin)
 admin.site.register(Contact, ContactAdmin)
@@ -55,3 +58,4 @@ admin.site.register(ServicesLandingPage, ServicesLandingPageAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(AlbumTrack, AlbumTrackAdmin)
+admin.site.register(SocialMediaURLs, SocialMediaURLsAdmin)

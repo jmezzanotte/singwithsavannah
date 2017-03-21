@@ -147,6 +147,21 @@ class AlbumTrack(models.Model):
 	def __str__(self):
 		return os.path.basename(self.track.name)
 
+class SocialMediaURLs(models.Model):
+
+	facebook = models.URLField(max_length=350)
+	twitter = models.URLField(max_length=350)
+	youtube = models.URLField(max_length=350)
+	instagram = models.URLField(max_length=350)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+
+	class Meta:
+		verbose_name = 'Social Media URL'
+		verbose_name_plural = 'Social Media URLS'
+		get_latest_by = 'timestamp'
+
+
 # @receiver(pre_delete, sender=AlbumTrack)
 # def pre_delete_album_track(sender, instance, *args, **kwargs):
 # 	instance.track.delete(False)

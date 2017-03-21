@@ -54,7 +54,7 @@
 				{% block mobile-hamburger%}{% endblock %}
 				<div id="nav-header">
 				<!-- <img id="sing-from-your-heart" class="img-responsive" src='{% static "images/sing-from-your-heart_blue_theme.png" %}'> -->
-				<h1>SING FROM YOUR HEART</h1>
+				<h1 id="sing-from-your-heart">SING FROM YOUR HEART</h1>
 				</div>
 				<ul id="nav-list">
 					<li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
@@ -73,10 +73,10 @@
 
 				<div class="social-logos">
 					<ul class="side-by-side">
-						<li><div class="soc-media" id="facebook"></div></li>
-						<li><div class="soc-media" id="twitter"></div></li>
-						<li><div class="soc-media" id="instagram"></div></li>
-						<li><div class="soc-media" id="youtube"></div></li>
+						<li><a href="{{ social_media.facebook }}"><div class="soc-media" id="facebook"></div></a></li>
+						<li><a href="{{ social_media.twitter }}"><div class="soc-media" id="twitter"></div></a></li>
+						<li><a href="{{ social_media.instagram }}"><div class="soc-media" id="instagram"></div></a></li>
+						<li><a href="{{ social_media.youtube }}"><div class="soc-media" id="youtube"></div></a></li>
 					</ul>
 				</div>
 			</div>
@@ -95,10 +95,10 @@
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<div class="social-logos">
 							<ul class="side-by-side">
-								<li><div class="soc-media" id="facebook-footer"></div></li>
-								<li><div class="soc-media" id="twitter-footer"></div></li>
-								<li><div class="soc-media" id="instagram-footer"></div></li>
-								<li><div class="soc-media" id="youtube-footer"></div></li>
+								<li><a href="{{ social_media.facebook}}"><div class="soc-media" id="facebook-footer"></div></a></li>
+								<li><a href="{{ social_media.twitter }}"><div class="soc-media" id="twitter-footer"></div></a></li>
+								<li><a href="{{ social_media.instagram}}"><div class="soc-media" id="instagram-footer"></div></a></li>
+								<li><a href="{{ social_media.youtube }}"><div class="soc-media" id="youtube-footer"></div></a></li>
 							</ul>
 						</div>
 					</div>	
