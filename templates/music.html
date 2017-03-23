@@ -25,7 +25,7 @@
 						<div class="albumn-cover">
 							<!-- image size 763x622  -->
 							<!-- Very hacky use of static here, I had to do it as a work around though -->
-							<img id="footer-bird" class="img-responsive" src='{% static "" %}{{i.image.url}}'>
+							<img id="footer-bird" class="img-responsive" src='{% static "audio/create_your_own_sunshine/" %}{{ i.album_img }}'>
 						</div>
 						<audio class="audio-player" id={{i.name|slugify}} controls></audio>
 						<p class='now-playing'></p>
