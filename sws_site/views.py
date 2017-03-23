@@ -55,7 +55,9 @@ def contact(request):
 
 def home(request):
 
-
+	social_media = None
+	about = None
+	home = None
 	try:
 		about = About.objects.latest()
 		home = Home.objects.latest()
