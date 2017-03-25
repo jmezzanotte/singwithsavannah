@@ -27,7 +27,7 @@ SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['singwithsavannah.herokuapp.com/']
 
 # Application definition
 
