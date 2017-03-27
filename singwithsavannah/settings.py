@@ -51,7 +51,7 @@ if hostname in LOCAL_HOSTS :
     _LOGGER.info('Debug has been set to True. Hostname = {}'.format(hostname))
 else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS=LOCAL_HOSTS
     
 
