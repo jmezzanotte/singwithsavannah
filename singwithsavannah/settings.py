@@ -13,11 +13,27 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import socket
 import dj_database_url
+import logging
+
+# Setup a logger 
+_LOGGER = logging.getLogger(__name__)
+_LOGGER.setLevel(logging.INFO)
+handler = logging.FileHandler('summary.log')
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+_LOGGER.addHandler(handler)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ENVIRON = os.path.dirname(PROJECT_SRC)
+
+_LOGGER.info('Current working directory : {}'.format(os.getcwd()))
+_LOGGER.info('PROJECT_SRC DIRECTORY : {}'.format(PROJECT_SRC))
+_LOGGER.info('PROJECT_SETTINGS_DIR DIRECTORY : {}'.format(PROJECT_SETTINGS_DIR))
+_LOGGER.info('PROJCT_ENVIRON DIRECTORY: {}'.format(PROJECT_ENVIRON))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -32,14 +48,15 @@ hostname = socket.gethostname()
 
 if hostname in LOCAL_HOSTS : 
     DEBUG=True
+    _LOGGER.info('Debug has been set to True. Hostname = {}'.format(hostname))
 else:
-    print ('Debug has been set to false. Hostname = {0}'.format(hostname))
+    _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = False
     ALLOWED_HOSTS=LOCAL_HOSTS
     
 
-
-ALLOWED_HOSTS = ['herokuapp.com']
+ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com']
+_LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
 # Application definition
 
@@ -131,9 +148,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+
+_LOGGER.info('db_from_env : {}'.format(db_from_env))
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
