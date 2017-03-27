@@ -45,6 +45,7 @@ SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 LOCAL_HOSTS = ['Macintosh.local']
 
 hostname = socket.gethostname()
+ip_addreess = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
     DEBUG=True
@@ -52,12 +53,11 @@ if hostname in LOCAL_HOSTS :
 else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = False
-    ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
-    'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
-    
-
-
-_LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
+    #attempting to use IP address of heroku server
+    ALLOWED_HOSTS = [ip_addreess]
+    # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
+    # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
+    _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
 # Application definition
 
