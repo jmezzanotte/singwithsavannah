@@ -54,7 +54,7 @@ else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = False
     #attempting to use IP address of heroku server
-    ALLOWED_HOSTS = [ip_addreess]
+    ALLOWED_HOSTS = [ip_addreess, 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com']
     # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
     # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
