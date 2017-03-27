@@ -28,14 +28,15 @@ SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 LOCAL_HOSTS = ['Macintosh.local']
 
-# Add logger statements here
-print (LOCAL_HOSTS)
-print (socket.gethostname())
-if socket.gethostname() in LOCAL_HOSTS : 
+hostname = socket.gethostname()
+
+if hostname in LOCAL_HOSTS : 
     DEBUG=True
 else:
+    print ('Debug has been set to false. Hostname = {0}'.format(hostname))
     DEBUG = False
-
+    ALLOWED_HOSTS=LOCAL_HOSTS
+    
 
 
 ALLOWED_HOSTS = ['herokuapp.com']
