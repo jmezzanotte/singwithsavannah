@@ -52,10 +52,10 @@ if hostname in LOCAL_HOSTS :
 else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = False
-    ALLOWED_HOSTS=[hostname]
+    ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname]
     
 
-ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com']
+
 _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
 # Application definition
