@@ -139,13 +139,14 @@ class Album(models.Model):
 class AlbumTrack(models.Model):
 
 	album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
+	track_name = models.CharField(max_length=200)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __unicode__(self):
-		return os.path.basename(self.track.name)
+		return os.path.basename(self.track_name)
 
 	def __str__(self):
-		return os.path.basename(self.track.name)
+		return os.path.basename(self.track_name)
 
 class SocialMediaURLs(models.Model):
 

@@ -38,7 +38,16 @@
 		if(currentSong != e.target.id) {
 			var audioURL = $(e.target).find('.hidden').text();
 			audio.src = audioURL;
-			audio.play();
+			var playPromise = audio.play();
+			if(playPromise !== undefined){
+				playPromise.then(function(){
+
+				}).catch(function(error){
+					console.log(error.message);
+					console.log('show UI element to play');
+					audio.play();
+				});
+			}
 			var nowPlaying = 'Now playing: ' + e.target.id;
 			nowPlaying = nowPlaying.replace(/-/gi, ' ').toProperCase();
 			currentSong = e.target.id;
