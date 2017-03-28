@@ -52,7 +52,7 @@ if hostname in LOCAL_HOSTS :
     _LOGGER.info('Debug has been set to True. Hostname = {}'.format(hostname))
 else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
-    DEBUG = False
+    DEBUG = True
     #attempting to use IP address of heroku server
     ALLOWED_HOSTS = [ip_addreess]
     # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
