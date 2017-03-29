@@ -364,6 +364,7 @@ p{
 .nav-item a:hover{
 	margin-left: 12px;
 	font-size:30px;
+	color : #CEA2CB;
 }
 
 .sliding-border::after{
