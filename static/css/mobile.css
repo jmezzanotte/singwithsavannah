@@ -11,6 +11,16 @@
       font-size: 22px;
     }
 
+    #sing-from-your-heart{
+      font-size: 28px;
+    }
+
+    #sws-logo{
+      display: none;
+    }
+
+
+
     #listen-btn {
       width: 150px;
       font-size: 16px;
@@ -39,7 +49,7 @@
 
     #topbanner{
       position: relative;
-      background: url("../images/singer_songwriter_mobile_414_736.jpg") center center;
+      background: url("../images/sws_logo_mobile.png") center center, linear-gradient(#fac57f, #CFD9EF) ;
       background-size: cover;
       overflow: hidden;
       text-align: center;
