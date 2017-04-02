@@ -49,7 +49,7 @@
 
     #topbanner{
       position: relative;
-      background: url("../images/sws_logo_mobile.png") center center, linear-gradient(#fac57f, #CFD9EF) ;
+      background: url("../images/mobile-cloud.jpg") center center;
       background-size: cover;
       overflow: hidden;
       text-align: center;
