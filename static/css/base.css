@@ -507,10 +507,16 @@ p{
 	color: #fff;
 }
 
-#sws-logo{
+#sws-logo, #sws-logo-mobi, #sws-cloud-mobi{
 	width: 800px;
 	margin: 20px auto;
 	padding: 20px;
+	position: absolute;
+	/*width: 100%;*/
+	display: none;
+  	top: 0;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
 }
 
 .box {

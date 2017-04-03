@@ -15,11 +15,9 @@
       font-size: 28px;
     }
 
-    #sws-logo{
-      display: none;
-    }
+    #sws-logo{display: none !important}
 
-
+    #sws-cloud-mobi, #sws-logo-mobi{display: block !important;}
 
     #listen-btn {
       width: 150px;
@@ -49,7 +47,7 @@
 
     #topbanner{
       position: relative;
-      background: url("../images/mobile-cloud.jpg") center center;
+      background: url("../images/sunshine-background-mobile.png") center center;
       background-size: cover;
       overflow: hidden;
       text-align: center;
@@ -83,6 +81,11 @@
     .submenu li a{
       font-size: 16px;
     }
+
+
+    #blog-archive h1{
+      font-size: 40px;
+    } 
 
 }
 
