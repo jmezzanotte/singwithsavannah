@@ -131,14 +131,17 @@
 	border-top : solid 1px #F3EBEB;
 }
 
-#email-footer a, #phone-footer a{
+#email-footer a, #phone-footer a, #cd-baby-footer a{
 	display: block;
 }
 
-#email-footer, #phone-footer{
+
+#email-footer, #phone-footer, #cd-baby-footer{
 	
 	margin: 20px;
 	text-align: center;
 }
+
+
 
 
