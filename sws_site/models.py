@@ -129,6 +129,7 @@ class Album(models.Model):
 	name = models.CharField(max_length=200)
 	album_img = models.CharField(max_length=200)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+	market_place = models.URLField(max_length=250, blank=True)
 
 	def __unicode__(self):
 		return self.name
