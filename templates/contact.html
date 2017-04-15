@@ -24,14 +24,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-4 offset-lg-8 offset-md-8 offset-sm-8">
+			<div class="col-lg-4 col-md-4 col-sm-4 offset-lg-4 offset-md-4 offset-sm-4">
 				<div id="phone">
-					<a href="#phone number here" class="more-btn">650-123-4567</a>
+					<a href="tel:5303010543" class="more-btn">650-123-4567</a>
 					<p>Call to book a session!</p>
 				</div>
 			</div>
-			
-
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				{% for message in messages %}
+				<div {%if message.tags %} class="{{message.tags}}" {% endif %} id="email-message">
+					<p>{{message}}</p>
+				</div>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 

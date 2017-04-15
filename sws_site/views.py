@@ -1,18 +1,16 @@
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
 from .models import Services, ServicesLandingPage, About, Album, Home, Contact, SocialMediaURLs
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.mail import EmailMessage
+from django.contrib import messages
+from django.conf import settings
 from django.http import Http404
 from .forms import ContactForm
 
 
-# Create your views here.
-
-
 def process_contact_form(request, contact_form, redirect_target):
 
-	form_class = contact_form
 
-	form = form_class(data=request.POST)
+	form = contact_form(data=request.POST)
 
 	if form.is_valid():
 		contact_name = request.POST.get('name', '')
@@ -22,7 +20,21 @@ def process_contact_form(request, contact_form, redirect_target):
 		message_format = 'Email from %s\nEmail: %s\nMessage\n%s\n'
 
 		final_message = message_format % (contact_name, contact_email, email_message)
+		
+		email = EmailMessage(
+			message_subject,
+			final_message,
+			"johnmezzanotte.com" +'',
+			[settings.EMAIL_HOST_USER],
+			headers = {'Reply-To': contact_email }
+		)
 
+		email.send()
+		messages.success(request, "Thank you for your email!")
+		return redirect(redirect_target)
+	else: 
+		messages.error(request, "Oops! Your email was not sent.")
+		return redirect(redirect_target)
 
 def get_services():
 	
@@ -42,7 +54,12 @@ def contact(request):
 	except Contact.DoesNotExist: 
 		contact = None
 
-	form = ContactForm()
+	form = ContactForm
+
+	if request.method == 'POST' : 
+		print ("Request method POST")
+		print (request)
+		return process_contact_form(request, form, "contact/#id_message")
 
 	context = {
 		'contact' : contact,
@@ -140,5 +157,14 @@ def service_detail(request, slug=None):
 	}
 	
 	return render(request, 'service_detail.html', context)
+
+
+def page_not_found(request):
+
+	context = {
+		'services' : get_services()
+	}
+
+	return render(request, "404.html", context, status=400)
 
 

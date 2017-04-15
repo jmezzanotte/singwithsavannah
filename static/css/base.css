@@ -80,14 +80,15 @@ p{
 	display: none;
 }
 
-/*#nav-header{
-	background-color: #23519F;
-	width:100%;
-	border-radius: 10px;
-	margin: 10px;
 
+
+/*#base-spacer{
+	margin-bottom: 700px;
 }*/
+	
 
+
+.invisible{visibility: hidden;}
 /*BUTTON CLASSES*/
 
 .hamburger{
@@ -269,10 +270,6 @@ p{
   	position: absolute;
   	top: 0;
   	left: -500px;
-  	/*font-family: 'Fredoka One', cursive;*/
-  	/*font-family: 'Raleway';*/
-  	/*font-family: 'Pangolin', cursive;*/
-  	/*font-family: 'Love Ya Like A Sister', cursive;*/
   	font-size: 50px;
   	background-color: #CFD9EF; 
   	border: solid 10px #CEA2CB;
@@ -533,6 +530,8 @@ p{
    
     margin: 0 auto;
 }
+
+
 
 
 

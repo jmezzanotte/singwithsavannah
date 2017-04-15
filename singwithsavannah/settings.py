@@ -49,7 +49,8 @@ ip_addreess = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
     DEBUG=True
-    _LOGGER.info('Debug has been set to True. Hostname = {}'.format(hostname))
+    ALLOWED_HOSTS=['*']
+    _LOGGER.info('Debug has been set to {0}. Hostname = {1}'.format(DEBUG, hostname))
 else:
     _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = True
@@ -59,8 +60,16 @@ else:
     # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
-# Application definition
 
+# Email setup
+# Rememeber to unlock captcha
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'johnmezzportfolio@gmail.com'
+EMAIL_HOST_PASSWORD = 'prunePortfolio22'
+EMAIL_PORT = 587
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

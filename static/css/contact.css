@@ -32,8 +32,6 @@ textarea:focus{
 	text-align: center;
 }
 
-
-
 #contact-form{
 	margin: 20px;
 	text-align: center;
@@ -44,14 +42,30 @@ textarea:focus{
 	width: 200px;
 }
 
+#email-message{
+	padding: 20px;
+	background-color: #74F777; 
+	border-radius: 10px;
+	text-align: center; 
+	border: solid 5px #499E4B;
+	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+}
 
+.error{
+	padding: 20px;
+	background-color: #ea7366;
+	border-radius: 10px;
+	text-align: center; 
+	border: solid 5px #499E4B;
+	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+}
 
 #phone p, #phone a {margin: 30px auto; text-align: center }
 #phone a{ display: block; width: 200px;}
-
-	
-
-
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
 	background-color: #000;
