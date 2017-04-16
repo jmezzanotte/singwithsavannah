@@ -17,6 +17,7 @@
 
       #topbanner{
         height: 375px;
+        overflow: hidden;
       }
 }
 
