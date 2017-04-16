@@ -20,7 +20,12 @@ $(function(){
 	//   console.log(window.matchMedia("(orientation: landscape)").matches);
 	//   if (window.matchMedia("(orientation: landscape)").matches){
 	//   	console.log("In correct block")
-	//   	$('#sws-logo-mobi').show().animate({'top' : '10%', 'visibility' : 'visible'}, 1000);
+	//   	console.log("yo");
+	//   	$('#sws-logo-mobi').css('visibility', 'hidden'); 
+	//   	//$('#sws-logo-mobi').show().animate({'top' : '80%', 'visibility' : 'visible'}, 1000);
+	//   }else{
+
+	//   	$('#sws-logo-mobi').show().animate({'top' : '60%', 'visibility' : 'visible'}, 1000);
 	//   }
 	// }, false);
 	// Sticky nav bar 

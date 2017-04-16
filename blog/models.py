@@ -9,6 +9,19 @@ import uuid
 # Create your models here.
 #user refrences User.id as foreign key
 #another comment
+class BlogMain(models.Model):
+	 blog_header=models.CharField(max_length=250)
+	 timestamp=models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	 def __str__(self):
+	 	return self.blog_header
+
+	 class Meta:
+	 	get_latest_by='timestamp'
+	 	verbose_name='Blog Main'
+	 	verbose_name_plural='Blog Main'
+
+
 class BlogPost(models.Model):
 	usr = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=250)

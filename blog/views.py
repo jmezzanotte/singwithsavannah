@@ -1,9 +1,8 @@
 #from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import BlogPost
+from .models import BlogPost, BlogMain
 from django.shortcuts import render
 from django.template import loader
-
 from sws_site.models import Services
 from sws_site.views import get_services
 from django.core.urlresolvers import reverse
@@ -16,6 +15,7 @@ def blog(request):
 	#the '-' in front of created_at tells python to filter in reverse order
 
 	all_blog_posts_list = BlogPost.objects.order_by('-created_at')
+	blog_main = BlogMain.objects.latest()
 	#archive = BlogPost.objects.filter(usr=1).order_by('-created_at')
 	archive = BlogPost.objects.order_by('-created_at')
 
@@ -49,6 +49,7 @@ def blog(request):
 
 	context= {
 		'all_blog_posts': all_blog_posts,
+		'blog_main' : blog_main,
 		'archive' : archive,
 		'services' : get_services()
 	}
