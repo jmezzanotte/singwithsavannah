@@ -29,6 +29,8 @@ $(function(){
 	//   }
 	// }, false);
 	// Sticky nav bar 
+
+	
 	$('.secondary-topbanner').sticky({
 		topSpacing : 0, 
 		zIndex: 999
