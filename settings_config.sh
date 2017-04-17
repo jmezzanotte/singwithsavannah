@@ -18,7 +18,7 @@ if [ -f test.txt ]; then
 	USER=$(cat test.txt | grep EMAIL_HOST_USER)
 	echo "current user set to $USER"
 	#sed -i '.bak' 's/EMAIL_HOST_USER/EMAIL_HOST_USER="Dude"/g' test.txt
-	sed -i '.bak' 's/EMAIL_HOST_USER\([ =a-zA-Z1-9]*)\/EMAIL_HOST_USER="dude"/g' test.txt
+	sed -i '.bak' -E  's/[ =a-zA-Z0-9]$/EMAIL_HOST_USER="dude"/g' test.txt
 
 
 	echo "Looking for email password information"

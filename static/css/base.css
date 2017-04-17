@@ -212,6 +212,7 @@ p{
 .side-by-side {
 	display: -webkit-flex;
    	display: flex;
+   	display: -ms-flexbox;
     -webkit-flex-direction: row;
    	flex-direction: row;
     -webkit-align-items: center;
