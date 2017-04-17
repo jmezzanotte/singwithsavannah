@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # author : John Mezzanotte 
 # purpose : Shell script to add the email information as well as set debug status. 
@@ -17,7 +17,8 @@ if [ -f test.txt ]; then
 	echo "Looking for email user information..."
 	USER=$(cat test.txt | grep EMAIL_HOST_USER)
 	echo "current user set to $USER"
-	sed -i 's/EMAIL_HOST_USER*[=a-zA-Z1-9]*/EMAIL_HOST_USER="$EMAIL_USER"/g' test.txt
+	#sed -i '.bak' 's/EMAIL_HOST_USER/EMAIL_HOST_USER="Dude"/g' test.txt
+	sed -i '.bak' 's/EMAIL_HOST_USER\([ =a-zA-Z1-9]*)\/EMAIL_HOST_USER="dude"/g' test.txt
 
 
 	echo "Looking for email password information"
