@@ -19,15 +19,17 @@
 </div> -->
 
 <div class="container-fluid">
-	<div class="col-ls-4 col-md-4 col-sm-4">
-		<div>{% include "hamburger.html" %}</div>
-	</div>
-	<div class="col-ls-4 col-md-4 col-sm-4">
-		<a href="{% url 'home' %}">
-			<img id="sws-black" class="center img-responsive" width="500" src='{% static "images/sws_logo_two.png" %}'>
-		</a>
-	</div>
-	<div class="col-ls-4 col-md-4 col-sm-4">
-		<div id="hidden-spacer"></div>
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2">
+			<div>{% include "hamburger.html" %}</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-sm-8">
+			<a href="{% url 'home' %}">
+				<img id="sws-black" class="img-responsive center"  src='{% static "images/sws_logo_two.png" %}'>
+			</a>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2">
+			<div id="hidden-spacer"></div>
+		</div>
 	</div>
 </div>
