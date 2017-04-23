@@ -8,9 +8,7 @@
     h1 {font-size:32px;}
 
     h2 {font-size: 22px;}
-/*
-    #sws-black{width: 200px !important;}*/
-
+   
     #sing-from-your-heart{font-size: 24px;}
 
     #service-location-header{font-size: 26px}
@@ -32,6 +30,8 @@
       -webkit-transform: translate3d(250px, 0, 0);
       transform: translate3d(250px, 0, 0);
     }
+
+    #sws-black{margin-top: 30px;}
 
     #site-nav {
       width: 250px;
@@ -98,7 +98,6 @@
       height: 430px;
     }
 
-    /*#sws-black{width: 200px !important;}*/
 
     #sws-cloud-mobi, #sws-logo-mobi{
       display: block !important; 

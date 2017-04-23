@@ -422,14 +422,14 @@ p{
 	margin-bottom: 100px;
 }
 
-
 .secondary-topbanner{
 	border-bottom: solid 3px #d0d0d0;
 	background-color: #FBFBFB;	
 	margin-bottom : 50px;
-	z-index: 100;
-	
+	z-index: 100;	
 }
+
+.hamburger{padding-top: 30px;}
 
 #hidden-spacer{
 	margin: 10px;
@@ -527,7 +527,7 @@ p{
     text-align: left;
 }
 
-
+#sws-black-mobile{ display: none; }
 
 .left {
     /*padding: 10px;*/
