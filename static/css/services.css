@@ -1,5 +1,3 @@
-
-
 .slick-prev:before, .slick-next:before { 
     color: #d0d0d0 !important;
 }
@@ -37,12 +35,6 @@
 
 	.slider-overlay h1, .slider-overlay-left h1{color: #fff !important;}
 	
-.center{
-	text-align: center;
-	display: inline-block;
-	margin: 0 auto;
-}
-
 .service-headline{
 	text-align: center;	
 }
