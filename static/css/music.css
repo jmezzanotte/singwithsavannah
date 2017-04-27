@@ -5,9 +5,7 @@
 
 */
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-	background-color: #000;
-}
+
 
 .nav-btn {
 	color: #000;

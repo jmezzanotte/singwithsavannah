@@ -67,6 +67,3 @@ textarea:focus{
 #phone p, #phone a {margin: 30px auto; text-align: center }
 #phone a{ display: block; width: 200px;}
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-	background-color: #000;
-}

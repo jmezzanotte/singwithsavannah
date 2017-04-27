@@ -8,14 +8,37 @@
     h1 {font-size:32px;}
 
     h2 {font-size: 22px;}
+
+    .logo-center{text-align: center;}
    
     #sing-from-your-heart{font-size: 24px;}
 
     #service-location-header{font-size: 26px}
 
     #sws-logo{display: none !important}
+ 
+/*    #cloud-mobi-banner{
+      width: 50px;
+      margin-top: 30px;
+      padding: 0px;
+      text-align: center;
+    }*/
 
-    #sws-cloud-mobi, #sws-logo-mobi{display: block !important;}
+    #sws-cloud-mobi, #sws-logo-mobi{
+      display: block !important; 
+      width : 500px !important;
+    }
+
+    .hamburger{
+      margin-left: 5px;
+      padding: 10px 0 0 0 ;
+
+    }
+
+    #sws-black{
+      padding: 0px; 
+      margin: 15px;
+    }
 
     #listen-btn {
       width: 150px;
@@ -31,7 +54,6 @@
       transform: translate3d(250px, 0, 0);
     }
 
-    #sws-black{margin-top: 30px;}
 
     #site-nav {
       width: 250px;
@@ -99,7 +121,9 @@
     }
 
 
-    #sws-cloud-mobi, #sws-logo-mobi{
+    #cloud-mobi-banner{display: block; width: 150px; margin-top: 20px}
+
+    #sws-cloud-mobi{
       display: block !important; 
       width : 500px !important;
     }

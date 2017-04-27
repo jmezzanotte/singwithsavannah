@@ -103,7 +103,7 @@ p{
 	outline: none;
 	}
 	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-		background-color: #fff;
+		background-color: #000;
 	}
 
 	.is-active{
@@ -263,7 +263,6 @@ p{
   	transform: translate3d(500px, 0, 0);
 }
 
-
 #site-nav {
 	width: 500px;
   	height: 100%;
@@ -272,7 +271,8 @@ p{
   	left: -500px;
   	font-size: 50px;
   	background-color: #CFD9EF; 
-  	border: solid 10px #CEA2CB;
+  	border: solid 5px #CEA2CB;
+  	border-top: solid 0px #CEA2CB;
   	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
 	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
 	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
@@ -423,8 +423,10 @@ p{
 }
 
 .secondary-topbanner{
-	border-bottom: solid 3px #d0d0d0;
-	background-color: #FBFBFB;	
+	border-bottom: solid 5px #cea2cb;
+	background: url("../images/sunshine_banner.png") center center;
+	background-size: cover;
+	overflow: hidden;
 	margin-bottom : 50px;
 	z-index: 100;	
 }
@@ -537,9 +539,10 @@ p{
    
     margin: 0 auto;
 }
-/*
-#sws-black{width: 500px !important;}*/
 
+#cloud-mobi-banner{
+	width: 200px;
+}
 
 
 
