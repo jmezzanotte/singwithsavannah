@@ -16,17 +16,20 @@
     #service-location-header{font-size: 26px}
 
     #sws-logo{display: none !important}
- 
-/*    #cloud-mobi-banner{
-      width: 50px;
-      margin-top: 30px;
-      padding: 0px;
-      text-align: center;
-    }*/
 
     #sws-cloud-mobi, #sws-logo-mobi{
       display: block !important; 
       width : 500px !important;
+    }
+
+    #blog-search, #blog-submit{
+      font-size: 10px;
+      width: 100px;
+      margin: 0 auto;
+    }
+
+    #search-bar{
+      text-align: center;
     }
 
     .hamburger{
