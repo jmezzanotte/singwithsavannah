@@ -8,11 +8,9 @@ h1{text-align: center;}
 	
 	#about-profile img{
 		width: 100%;
-		border-radius: 10px;
 		margin: 0 auto;
 		display: block;
 		padding: 0;
-		border : solid 8px #CEA2CB;;
 	}
 
 	#about-overlay{

@@ -89,7 +89,10 @@ p{
 	margin-bottom: 700px;
 }*/
 	
-
+.frame{
+	border : solid 8px #CEA2CB;
+	border-radius: 10px;
+}
 
 .invisible{visibility: hidden;}
 /*BUTTON CLASSES*/
@@ -302,28 +305,30 @@ p{
 }
 
 .soc-media{
-	width:50px;
+	width: 50px;
 	height: 50px;
+	margin: 0 auto;
+	text-align: center; 
 }
 
-#twitter{
+.twitter{
 	background-image: url("../images/twitter_line_hover_blue_theme.png");
-	background-position: 0 0;
+	background-position: center 0;
 }
 
-#facebook{
+.facebook{
 	background-image: url("../images/facebook_line_hover_blue_theme.png");
-	background-position: 0 0;
+	background-position: center 0;
 }
 
-#instagram{
+.instagram{
 	background-image: url("../images/instagram_line_hover_blue_theme.png");
-	background-position: 0 0;
+	background-position: center 0;
 }
 
-#youtube{
+.youtube{
 	background-image: url("../images/youtube_line_hover_blue_theme.png");
-	background-position: 0 0;
+	background-position: center 0;
 }
 
 #instagram:hover{
@@ -331,17 +336,17 @@ p{
 	cursor: pointer;
 }
 
-#twitter:hover{
+.twitter:hover{
 	background-position: 0 100%;
 	cursor: pointer;
 }
 
-#facebook:hover{
+.facebook:hover{
 	background-position: 0 100%;
 	cursor: pointer;
 }
 
-#youtube:hover{
+.youtube:hover{
 	background-position: 0 100%;
 	cursor:pointer;
 }
@@ -384,9 +389,9 @@ p{
 /*NAV SOCIAL LOGOS */
 
 .social-logos{
-	margin: 50px auto;
+	/*margin: 50px auto;*/
 }
-
+/*
 .social-logos ul{
 	list-style: none;
 	width: 100%;
@@ -398,7 +403,7 @@ p{
 	margin: 0 auto;
 	height: 100%;
 	text-align:center;
-}
+}*/
 
 
 
