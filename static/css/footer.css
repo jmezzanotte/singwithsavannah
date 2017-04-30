@@ -31,7 +31,7 @@
 	margin: 20px;
 }
 
-#twitter-footer{
+/*#twitter-footer{
 	background-image: url("../images/twitter_line_hover_blue_theme.png");
 	background-position: 0 0;
 }
@@ -52,9 +52,9 @@
 	background-position: 0 0;
 }
 
+*/
 
-
-#instagram-footer:hover{
+/*#instagram-footer:hover{
 	background-position: 0 100%;
 	cursor: pointer;
 
@@ -75,7 +75,7 @@
 #youtube-footer:hover{
 	background-position: 0 100%;
 	cursor:pointer;
-}
+}*/
 
 
 #service-location{
@@ -84,12 +84,9 @@
 }
 
 #service-location-header{
-	/*font-family: 'clicker-script';*/
 	font-family: 'Love Ya Like A Sister', cursive;
-	/*font-family: 'Fredoka One', cursive;*/
 	font-size: 42px;
 	color: #23519F;
-	/*color : #000;*/
 }
 
 #service-location-content{

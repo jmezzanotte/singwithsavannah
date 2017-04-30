@@ -117,6 +117,20 @@
     .text-content{margin:10px 50px;}
 
     #copyright p{font-size:17px }
+
+    #home-nav-close{
+      display: block; 
+    }
+
+    .glyphicon-remove{
+      color : #d0d0d0;
+      font-size: 30px;
+      padding-left: 10px ;
+    }
+
+    #nav-header .filigree{
+      margin-top: 0px;
+    }
 }
 
 @media only screen 

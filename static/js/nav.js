@@ -5,6 +5,7 @@
         // Calling a function in case you want to expand upon this.
         toggleNav();
         $('.hamburger').toggleClass('is-active');
+        $('#home-nav-close').toggleClass('is-active');
     });
 
     function toggleNav() {

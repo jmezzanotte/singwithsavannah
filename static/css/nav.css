@@ -22,6 +22,10 @@
   	transform: translate3d(500px, 0, 0);
 }
 
+#home-nav-close{
+	display: none;
+}
+
 #nav-list{
 	color: #FAD5E5;
 	list-style: none;
@@ -35,14 +39,17 @@
 }
 
 .nav-item:nth-child(1){
-	border-top: solid 3px #FFF;
+	border-top: solid 10px #FFF;
+} 
+.nav-item:nth-child(6){
+	border-bottom: solid 10px #FFF;
 } 
 
 .nav-item{
 	padding: 20px;
 	cursor: pointer;
 	text-align: center;
-	border-bottom: solid 3px #FFF;
+	border-bottom: solid 1px #FFF;
 	border-radius: 10px;
 }
 	.nav-item a {
@@ -55,7 +62,6 @@
 		.nav-item a:hover{
 			margin-left: 12px;
 			font-size:40px;
-			/*color : #CEA2CB;*/
 			color: #0e203f;
 		}
 
