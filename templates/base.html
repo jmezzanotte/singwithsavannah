@@ -1,180 +1,185 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--Sets the pagewidth to the size of the device and set zoom level to 1 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% block title %} {% endblock %}</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href='{% static "css/hamburgers.min.css"%}'>
-	<link rel="stylesheet" type="text/css" href='{% static "css/base.css" %}'>
-	<link rel="stylesheet" type="text/css" href='{% static "css/footer.css" %}'>
-	{% block css_adds %}{% endblock %}
-	<link rel="stylesheet" type="text/css" href='{% static "css/mobile.css" %}'>
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href='{% static "favicons/apple-touch-icon.png" %}'>
-	<link rel="icon" type="image/png" href='{% static "favicons/favicon-32x32.png" %}' sizes="32x32">
-	<link rel="icon" type="image/png" href='{% static "favicons/favicon-16x16.png" %}'' sizes="16x16">
-	<link rel="manifest" href='{% static "favicons/manifest.json" %}'>
-	<link rel="mask-icon" href='{% static "favicons/safari-pinned-tab.svg" %}' color="#ebc335">
-	<meta name="theme-color" content="#ffffff">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--Sets the pagewidth to the size of the device and set zoom level to 1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% block title %} {% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href='{% static "css/nav.css" %}'>
+		<link rel="stylesheet" type="text/css" href='{% static "css/hamburgers.min.css"%}'>
+		<link rel="stylesheet" type="text/css" href='{% static "css/base.css" %}'>
+		<link rel="stylesheet" type="text/css" href='{% static "css/footer.css" %}'>
+		{% block css_adds %}{% endblock %}
+		<link rel="stylesheet" type="text/css" href='{% static "css/mobile.css" %}'>
+		<!-- START FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+		<!-- START FAVICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href='{% static "favicons/apple-touch-icon.png" %}'>
+		<link rel="icon" type="image/png" href='{% static "favicons/favicon-32x32.png" %}' sizes="32x32">
+		<link rel="icon" type="image/png" href='{% static "favicons/favicon-16x16.png" %}'' sizes="16x16">
+		<link rel="manifest" href='{% static "favicons/manifest.json" %}'>
+		<link rel="mask-icon" href='{% static "favicons/safari-pinned-tab.svg" %}' color="#ebc335">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<!-- FACEBOOK SHARE BUTTON IMPLEMENTATION -->
+		<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 
-</head>
-<body>
-	<div id="fb-root"></div>
-
-	<!-- Facebook shar button implementation -->
-	<script>
-		(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-
-	<!-- off canvas nav implementation  -->
-	
-	{% block fixed_bar %}{% endblock %}
-	
-	<div id="site-wrapper">
-		<div id="site-canvas">
-			<div id="site-nav">
-				{% block mobile-hamburger%}{% endblock %}
-				<div id="nav-header">
-				<h1 id="sing-from-your-heart">SING FROM YOUR HEART</h1>
-				</div>
-				<ul id="nav-list">
-					<li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
-					<li class="nav-item"><a href="{% url 'about' %}">ABOUT</a></li>
-					<li class="nav-item"><a href="{% url 'music' %}">MUSIC</a></li>
-					<li class="nav-item submenu-parent"><a href="{% url 'services' %}">SERVICES</a>
-						<ul class="submenu">
-							{% for i in services %}
-								<li><a href="{% url 'service_detail' slug=i.slug %}">{{i.service}}</a></li>
-							{% endfor %}
-						</ul>
-					</li>
-					<li class="nav-item"><a href="{% url 'contact' %}">CONTACT</a></li>
-					<li class="nav-item"><a href="{% url 'blog' %}">BLOG</a></li>
-				</ul>
-				{% include "social_media_logos.html" %}
-			</div>
-			{% block banner %}{% endblock  %}
-			{% block content %}{% endblock %}
-		</div>
-	</div>
-
-	<div id="footer">
-		<div id="footer-social-wrapper">
-			<div class="container">
-				<div class="row" id="footer-social-row">
-					<div class="col-lg-4 col-md-4 col-sm-4">
-						<span></span>
+		<!-- off canvas nav implementation  -->
+		
+		{% block fixed_bar %}{% endblock %}
+		
+		<div id="site-wrapper">
+			<div id="site-canvas">
+				<div id="site-nav">
+					{% block mobile-hamburger%}{% endblock %}
+					<div id="nav-header">
+						<!-- <h1 id="sing-from-your-heart">SING FROM YOUR HEART</h1> -->
+						<img class="img-responsive filigree" src='{% static "images/sws_about_filigree_blue_theme.png" %}'>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
-						{% include "social_media_logos.html" %}
-					</div>	
-					<div class="col-lg-4 col-md-4 col-sm-4"><span></span></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container" id="footer-nav-wrapper">
-			<div class="row" id="footer-nav">
-				<div class="col-lg-2">
-					<a href="{% url 'home' %}">HOME</a>
-				</div>
-				<div class="col-lg-2">
-					<a href="{% url 'about' %}">ABOUT</a>
-				</div>
-				<div class="col-lg-2">
-					<a href="{% url 'music' %}">MUSIC</a>
-				</div>
-				<div class="col-lg-2">
-					<a href="{% url 'services' %}">SERVICES</a>
-				</div>
-				<div class="col-lg-2">
-					<a href="{% url 'contact' %}">CONTACT</a>
-				</div>
-				<div class="col-lg-2">
-					<a href="{% url 'blog' %}">BLOG</a>
-				</div>
-			</div>
-		</div>
-		<div id="service-location">
-			<p id="service-location-header">Proudly Serving the North Bay</p>
-			<p id="service-location-content"> NAPA&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;SONOMA&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;PETALLUMA</p>
-		</div>
-		<img id="footer-bird" class="img-responsive" width="300" src='{% static "images/cloud.png" %}'>
-		<div id="copyright">
-			<p>COPYRIGHT 2016 &copy; SAVANNAH AUSTIN</p>
-		</div>
-		<div id="sub-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-12">
-						<div id="email-footer"><a href="#phone number here">savannahaustin@gmail.com</a></div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-12">
-						<div id="phone-footer"><a href=tel:5303010543>650-123-4567</a></div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-12">
-						<a href="https://www.cdbaby.com/cd/singwithsavannah">
-							<ul id="cd-baby-footer" class="side-by-side">
-								<li>Music available on &nbsp;</li>
-								<li>
-									<img id="cd-baby-logo" width="100" class="img-responsive" src='{% static "images/cdbaby-music-store-logo.png" %}'>
-								</li>
+					<div id="item-frame">
+					<ul id="nav-list">
+						<li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
+						<li class="nav-item"><a href="{% url 'about' %}">ABOUT</a></li>
+						<li class="nav-item"><a href="{% url 'music' %}">MUSIC</a></li>
+						<li class="nav-item submenu-parent"><a href="{% url 'services' %}">SERVICES</a>
+							<ul class="submenu">
+								{% for i in services %}
+									<li><a href="{% url 'service_detail' slug=i.slug %}">{{i.service}}</a></li>
+								{% endfor %}
 							</ul>
-						</a>
-					</div>					
+						</li>
+						<li class="nav-item"><a href="{% url 'contact' %}">CONTACT</a></li>
+						<li class="nav-item"><a href="{% url 'blog' %}">BLOG</a></li>
+					</ul>
+					</div>
+					<img class="img-responsive filigree" src='{% static "images/sws_about_filigree_blue_theme.png" %}'>
+					{% include "social_media_logos.html" %}
 				</div>
+				{% block banner %}{% endblock  %}
+				{% block content %}{% endblock %}
 			</div>
 		</div>
-		<div id="company-footer">
-			<div class="container">
-				<div class="row" id="builder">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div id="company">
-							<p>Built by&nbsp;| &nbsp;<a href="http://www.johnmezzanotte.com">John Mezzanotte</a> and Robin Pennock</p>
+
+		<!-- START FOOTER -->
+
+		<div id="footer">
+			<div id="footer-social-wrapper">
+				<div class="container">
+					<div class="row" id="footer-social-row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<span></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							{% include "social_media_logos.html" %}
+						</div>	
+						<div class="col-lg-4 col-md-4 col-sm-4"><span></span></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container" id="footer-nav-wrapper">
+				<div class="row" id="footer-nav">
+					<div class="col-lg-2">
+						<a href="{% url 'home' %}">HOME</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="{% url 'about' %}">ABOUT</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="{% url 'music' %}">MUSIC</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="{% url 'services' %}">SERVICES</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="{% url 'contact' %}">CONTACT</a>
+					</div>
+					<div class="col-lg-2">
+						<a href="{% url 'blog' %}">BLOG</a>
+					</div>
+				</div>
+			</div>
+			<div id="service-location">
+				<p id="service-location-header">Proudly Serving the North Bay</p>
+				<p id="service-location-content"> NAPA&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;SONOMA&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;PETALLUMA</p>
+			</div>
+			<img id="footer-bird" class="img-responsive" width="300" src='{% static "images/cloud.png" %}'>
+			<div id="copyright">
+				<p>COPYRIGHT 2016 &copy; SAVANNAH AUSTIN</p>
+			</div>
+			<div id="sub-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							<div id="email-footer"><a href="#phone number here">savannahaustin@gmail.com</a></div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							<div id="phone-footer"><a href=tel:5303010543>650-123-4567</a></div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							<a href="https://www.cdbaby.com/cd/singwithsavannah">
+								<ul id="cd-baby-footer" class="side-by-side">
+									<li>Music available on &nbsp;</li>
+									<li>
+										<img id="cd-baby-logo" width="100" class="img-responsive" src='{% static "images/cdbaby-music-store-logo.png" %}'>
+									</li>
+								</ul>
+							</a>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<div id="company-footer">
+				<div class="container">
+					<div class="row" id="builder">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div id="company">
+								<p>Built by&nbsp;| &nbsp;<a href="http://www.johnmezzanotte.com">John Mezzanotte</a> and Robin Pennock</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script>window.twttr = (function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0],
-		    t = window.twttr || {};
-		  if (d.getElementById(id)) return t;
-		  js = d.createElement(s);
-		  js.id = id;
-		  js.src = "https://platform.twitter.com/widgets.js";
-		  fjs.parentNode.insertBefore(js, fjs);
+		<script>window.twttr = (function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0],
+			    t = window.twttr || {};
+			  if (d.getElementById(id)) return t;
+			  js = d.createElement(s);
+			  js.id = id;
+			  js.src = "https://platform.twitter.com/widgets.js";
+			  fjs.parentNode.insertBefore(js, fjs);
 
-		  t._e = [];
-		  t.ready = function(f) {
-		    t._e.push(f);
-		  };
+			  t._e = [];
+			  t.ready = function(f) {
+			    t._e.push(f);
+			  };
 
-		  return t;
-		}(document, "script", "twitter-wjs"));
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
-	<script src='{% static "js/jquery.sticky.js" %}'></script>
-	<script src='{% static "js/base.js" %}'></script>
-	<script src='{% static "js/nav.js" %}'></script>
-	{% block js_adds %}{% endblock %}
-</body>
+			  return t;
+			}(document, "script", "twitter-wjs"));
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+		<script src='{% static "js/jquery.sticky.js" %}'></script>
+		<script src='{% static "js/base.js" %}'></script>
+		<script src='{% static "js/nav.js" %}'></script>
+		{% block js_adds %}{% endblock %}
+	</body>
 </html>

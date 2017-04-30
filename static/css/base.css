@@ -29,7 +29,7 @@
 	purple : CEA2CB;
 	light blue : #CFD9EF;
 	dark-blue: #23519F;
-	dar-yellow: #f1b67a;
+	dark-yellow: #f1b67a;
 	light-yellow: fac57f;
 	dark-green: 444f3e;
 	guitar-blue: 89cbed;
@@ -55,8 +55,6 @@ ul{
 
 
 h1{
-	/*font-family: 'Fredoka One', cursive;*/
-	/*font-family: 'Pangolin', cursive;*/
 	font-family: 'Love Ya Like A Sister', cursive;
 	font-size:52px;
 	color: #23519F;
@@ -84,10 +82,6 @@ p{
 	width: 500px !important;
 	padding-top: 10px;
 }
-
-/*#base-spacer{
-	margin-bottom: 700px;
-}*/
 	
 .frame{
 	border : solid 8px #CEA2CB;
@@ -95,6 +89,7 @@ p{
 }
 
 .invisible{visibility: hidden;}
+
 /*BUTTON CLASSES*/
 
 .hamburger{
@@ -138,64 +133,12 @@ p{
 }
 /************************************/
 
-/*#hamburger{
-	margin: 0 auto;
-	display: block;
-	text-align: center;
-}*/
 
+	#item-frame{
 
-.nav-btn{
-	color: #fff;
-	float: left;
-	height: auto;
-	margin: 0 auto;
-	margin: 50px;
-}
-	.nav-btn span{
-
-		font-size: 36px;
-	}
-	#nav-close{
-		margin: 20px;
-		font-size: 24px;
-	}
-	#nav-close:hover{
-		cursor:pointer;
-		color : #e95e6b;
+		margin-bottom: 20px;
 	}
 
-.submenu{
-	color: #23519F;
-	border-radius: 10px;
-	height: 0px;
-	overflow: hidden;
-	-webkit-transition: 600ms ease all;
-  	transition: 600ms ease all;
-}
-	.submenu-parent:hover .submenu{
-		height: 300px;
-		
-	}
-
-	.submenu li{
-		background-color: #FAD5E5;
-		border: solid 4px #cea2cb; 
-		padding: 10px; 
-		border-radius: 10px;
-		margin: 10px;
-		-webkit-transition: 400ms ease all;
-  		transition: 400ms ease all;
-	}
-
-		.submenu li:hover{
-			margin: 0px;
-		}
-
-
-		.submenu li a {
-			color: #23519F;
-		}
 
 
 .font-white{
@@ -203,7 +146,7 @@ p{
 }
 
 
-.toggle-nav:hover{cursor:pointer;}
+/*.toggle-nav:hover{cursor:pointer;}*/
 
 /*POSITION CLASSES*/
 
@@ -259,50 +202,18 @@ p{
 }
 
 
-.show-nav #site-canvas {
-    -webkit-transform: translateX(500px);
-  	transform: translateX(500px);
-    -webkit-transform: translate3d(500px, 0, 0);
-  	transform: translate3d(500px, 0, 0);
-}
-
-#site-nav {
-	width: 500px;
-  	height: 100%;
-  	position: absolute;
-  	top: 0;
-  	left: -500px;
-  	font-size: 50px;
-  	background-color: #CFD9EF; 
-  	border: solid 5px #CEA2CB;
-  	border-top: solid 0px #CEA2CB;
-  	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
-	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
-	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
-
-}
-	#site-nav h1{
+	
+	#sing-from-your-heart{
 		text-align: center;
+		padding: 10px;
+		margin: 10px auto;
+		font-size: 42px;
+		text-align: center;
+		color: #23519F
 	}
 
-#sing-from-your-heart{
-	text-align: center;
-	padding: 10px;
-	margin: 10px auto;
-	font-size: 42px;
-}
 
 
-#nav-list{
-	border-top: solid 1px #fff;
-	border-bottom: solid 1px #fff;
-	margin: 20px 0 20px 0;
-}
-
-#nav-list li{
-	list-style: none;
-	font-size: 24px;
-}
 
 .soc-media{
 	width: 50px;
@@ -351,24 +262,6 @@ p{
 	cursor:pointer;
 }
 
-.nav-item{
-	padding: 20px;
-	cursor: pointer;
-}
-
-.nav-item a {
-	text-decoration: none;
-	color: #23519F;
-	margin-left: 0px;
-	-webkit-transition: 600ms ease all;
-  	transition: 600ms ease all;
-}
-
-.nav-item a:hover{
-	margin-left: 12px;
-	font-size:30px;
-	color : #CEA2CB;
-}
 
 .sliding-border::after{
 	content:'';
@@ -388,22 +281,6 @@ p{
 
 /*NAV SOCIAL LOGOS */
 
-.social-logos{
-	/*margin: 50px auto;*/
-}
-/*
-.social-logos ul{
-	list-style: none;
-	width: 100%;
-	margin: 0 auto;
-	
-}
-
-.social-logos li{
-	margin: 0 auto;
-	height: 100%;
-	text-align:center;
-}*/
 
 
 
@@ -515,7 +392,6 @@ p{
 }
 
 #sws-logo, #sws-logo-mobi, #sws-cloud-mobi{
-	width: 800px;
 	margin: 20px auto;
 	padding: 20px;
 	position: absolute;
@@ -524,6 +400,9 @@ p{
   	top: 0;
   	left: 50%;
   	transform: translate(-50%, -50%);
+}
+#sws-logo{
+	width: 1000px;
 }
 
 .box {
@@ -548,6 +427,10 @@ p{
 #cloud-mobi-banner{
 	width: 200px;
 }
+
+
+/*#nav-list li:nth-child(odd){background-color:#FAD5E5 ;}
+#nav-list li:nth-child(even){background-color: #d0d0d0;}*/
 
 
 

@@ -13,7 +13,6 @@
 
 #sws-cloud-mobi, #sws-logo-mobi{display: none !important;}
 
-
 #about-content-home{
 	margin-bottom: 50px ;
 }
@@ -33,13 +32,9 @@
 }
 
 .service-caption{
-	/*font-family: 'clicker-script';*/
 	font-family: 'Love Ya Like A Sister', cursive;
 	font-size: 28px;
-	
 }
-
-
 
 #read-more-parent{
 	margin: 0 auto;
