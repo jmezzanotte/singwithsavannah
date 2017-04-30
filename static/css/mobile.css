@@ -131,6 +131,11 @@
     #nav-header .filigree{
       margin-top: 0px;
     }
+
+
+    #store-callout p{
+      font-size:14px;
+    }
 }
 
 @media only screen 
@@ -212,6 +217,10 @@
       display: block;
     }
 
+
+    #store-callout p{
+      font-size: 16px;
+    }
 }
 
 /* ipad portrait */

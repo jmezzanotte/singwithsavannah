@@ -31,53 +31,6 @@
 	margin: 20px;
 }
 
-/*#twitter-footer{
-	background-image: url("../images/twitter_line_hover_blue_theme.png");
-	background-position: 0 0;
-}
-
-
-#facebook-footer{
-	background-image: url("../images/facebook_line_hover_blue_theme.png");
-	background-position: 0 0;
-}
-
-#instagram-footer{
-	background-image: url("../images/instagram_line_hover_blue_theme.png");
-	background-position: 0 0;
-}
-
-#youtube-footer{
-	background-image: url("../images/youtube_line_hover_blue_theme.png");
-	background-position: 0 0;
-}
-
-*/
-
-/*#instagram-footer:hover{
-	background-position: 0 100%;
-	cursor: pointer;
-
-}
-
-#twitter-footer:hover{
-	background-position: 0 100%;
-	cursor: pointer;
-
-}
-
-#facebook-footer:hover{
-	background-position: 0 100%;
-	cursor: pointer;
-
-}
-
-#youtube-footer:hover{
-	background-position: 0 100%;
-	cursor:pointer;
-}*/
-
-
 #service-location{
 	margin: 50px 0 20px 0;
 	text-align: center; 
@@ -122,6 +75,14 @@
 	color: #fff;
 }
 
+	#company a:visited{
+		color: #fff;
+	}
+
+	#company a:hover{
+		color: #fac57f;
+		text-decoration: none;
+	}
 
 #sub-footer{
 	/*padding: 35px;*/

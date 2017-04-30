@@ -81,7 +81,14 @@
 		.trackbar:nth-child(odd){background-color: #d0d0d0;}
 
 
+#store-callout a:hover{
+	text-decoration: none;
+}
 
+
+.artist-info{
+	margin-top: 20px !important;
+}
 
 
 

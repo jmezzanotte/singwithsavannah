@@ -42,7 +42,7 @@ textarea:focus{
 	width: 200px;
 }
 
-#email-message{
+.success{
 	padding: 20px;
 	background-color: #74F777; 
 	border-radius: 10px;
@@ -55,10 +55,10 @@ textarea:focus{
 
 .error{
 	padding: 20px;
-	background-color: #ea7366;
+	background-color: #ffc2b3;
 	border-radius: 10px;
 	text-align: center; 
-	border: solid 5px #499E4B;
+	border: solid 5px #ff704d;
 	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
 	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
 	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
