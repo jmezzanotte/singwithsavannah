@@ -60,6 +60,9 @@ else:
     # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
+# Need this for CSRF Token 
+CSRF_COOKIE_DOMAIN = '*.herokuapp.com'
+_LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
 
 # Email setup
 # Rememeber to unlock captcha
