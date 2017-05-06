@@ -38,16 +38,14 @@
 								<a href="{% url 'show' slug=blog_post.slug %}">View</a>
 							</div>
 							<hr>
-
 							<div class="blog-content">	
 							{% if blog_post.image %}
 								<div class="blog-img">
 									<img class="img-responsive" src='{{ blog_post.image.url }}' >
 								</div>
 							{% endif %}
-
-								<p>{{ blog_post.blog_text}} </p>
-	
+								<!-- safe filter allows us to add html to the blog text -->
+								<p>{{ blog_post.blog_text | safe }} </p>
 							</div>
 						</div>
 						<div class="fb-share-button" id="facebook-share" data-href="http://{{request.META.HTTP_HOST}}{% url 'show' slug=blog_post.slug %}" data-layout="box_count" data-mobile-iframe="true">

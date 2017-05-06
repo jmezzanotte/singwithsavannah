@@ -9,21 +9,14 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
-import os
-import socket
+from dev_utils.SiteLogger import * 
 import dj_database_url
 import logging
+import socket
+import os
 
 # Setup a logger 
-_LOGGER = logging.getLogger(__name__)
-_LOGGER.setLevel(logging.INFO)
-handler = logging.FileHandler('summary.log')
-handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-_LOGGER.addHandler(handler)
-
+_LOGGER = create_logger(__name__, 'settings.log', FORMAT_1)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,24 +38,28 @@ SECRET_KEY = '(n&3hk9#qi5g!1aj!w-x=(2j$ylra_ugy1+@_@4htvg=ie4b$4'
 LOCAL_HOSTS = ['Macintosh.local']
 
 hostname = socket.gethostname()
-ip_addreess = socket.gethostbyname(hostname)
+ip_address = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
     DEBUG=True
     ALLOWED_HOSTS=['*']
-    _LOGGER.info('Debug has been set to {0}. Hostname = {1}'.format(DEBUG, hostname))
+    _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG))
+    _LOGGER.info('Host name : {host}'.format(host=hostname))
+   
 else:
-    _LOGGER.info('Debug has been set to False. Hostname = {}'.format(hostname))
     DEBUG = True
+    _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG)) 
+    _LOGGER.info('Host name : {host}'.format(host=hostname))
+    _LOGGER.info('Host ip address : {ip}'.format(ip=ip_address))
     #attempting to use IP address of heroku server
-    ALLOWED_HOSTS = [ip_addreess]
+    ALLOWED_HOSTS = [ip_address]
+    # Need this for CSRF Token 
+    CSRF_COOKIE_DOMAIN = '*.herokuapp.com'
     # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
     # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
 
-# Need this for CSRF Token 
-CSRF_COOKIE_DOMAIN = '*.herokuapp.com'
-_LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
+    _LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
 
 # Email setup
 # Rememeber to unlock captcha
