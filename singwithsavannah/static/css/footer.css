@@ -74,6 +74,10 @@
 	font-size: 14px;
 	color: #fff;
 }
+	
+	#company a:active{
+		color: #fff;
+	}
 
 	#company a:visited{
 		color: #fff;
