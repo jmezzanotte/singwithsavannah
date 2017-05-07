@@ -18,6 +18,9 @@ import os
 # Setup a logger 
 _LOGGER = create_logger(__name__, 'settings.log', FORMAT_1)
 
+# Add Admins, will be emailed when debug is set to False 
+ADMINS = [('John', 'johnjmezzanotte@gmail.com')]
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -43,8 +46,8 @@ hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
-    DEBUG=True
-    ALLOWED_HOSTS=['*']
+    DEBUG=False
+    ALLOWED_HOSTS=['127.0.0.1']
     _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG))
     _LOGGER.info('Host name : {host}'.format(host=hostname))
    
