@@ -38,9 +38,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="test">
 				<div id="about-content-home">
-					<p class="text-content">{{ about.summary | linebreaks }}</p>
+					<p>{{ about.summary | linebreaksbr }}</p>
 					<a href="{% url 'about' %}" class="more-btn btn">READ MORE</a>
 				</div>
 			</div>
