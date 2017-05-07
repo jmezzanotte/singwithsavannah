@@ -58,7 +58,7 @@ else:
     _LOGGER.info('Host ip address : {ip}'.format(ip=ip_address))
     #attempting to use IP address of heroku server
     #ALLOWED_HOSTS = ['*.herokuapp.com', '*.com.herokudns.com', ip_address, 'singwithsavannah.herokuapp.com']
-    ALLOWED_HOSTS = ['*.herokuapp.com', ip_address]
+    ALLOWED_HOSTS = ['.singwithsavannah.herokuapp.com']
     # Need this for CSRF Token 
     CSRF_COOKIE_DOMAIN = '*.herokuapp.com'
     # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
