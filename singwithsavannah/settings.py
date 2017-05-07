@@ -19,7 +19,7 @@ import os
 _LOGGER = create_logger(__name__, 'settings.log', FORMAT_1)
 
 # Add Admins, will be emailed when debug is set to False 
-ADMINS = [('John', 'johnjmezzanotte@gmail.com')]
+ADMINS = [('John', 'johnmezzportfolio@gmail.com')]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
