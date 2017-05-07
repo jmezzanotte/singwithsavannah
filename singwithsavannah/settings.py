@@ -22,14 +22,11 @@ _LOGGER = create_logger(__name__, 'settings.log', FORMAT_1)
 ADMINS = [('John', 'johnmezzportfolio@gmail.com')]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-PROJECT_SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_SETTINGS_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ENVIRON = os.path.dirname(PROJECT_SRC)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__)) # should be at src 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-_LOGGER.info('Current working directory : {}'.format(os.getcwd()))
-_LOGGER.info('PROJECT_SRC DIRECTORY : {}'.format(PROJECT_SRC))
-_LOGGER.info('PROJECT_SETTINGS_DIR DIRECTORY : {}'.format(PROJECT_SETTINGS_DIR))
-_LOGGER.info('PROJCT_ENVIRON DIRECTORY: {}'.format(PROJECT_ENVIRON))
+_LOGGER.info('BASE_DIR = {}'.format(BASE_DIR))
+_LOGGER.info('PROJECT_ROOT = {}'.format(PROJECT_ROOT))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -46,7 +43,7 @@ hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
-    DEBUG=False
+    DEBUG=True
     ALLOWED_HOSTS=['127.0.0.1', 'localhost']
     _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG))
     _LOGGER.info('Host name : {host}'.format(host=hostname))
@@ -103,7 +100,7 @@ ROOT_URLCONF = 'singwithsavannah.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_SRC, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +123,7 @@ WSGI_APPLICATION = 'singwithsavannah.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_SRC, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -169,21 +166,13 @@ DATABASES['default'].update(db_from_env)
 _LOGGER.info('db_from_env : {}'.format(db_from_env))
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+# This is where static files are collected into 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-
-
 # This is the input, where we input files, STATIC_ROOT is the output, where the files are moved to 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_SRC, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 ]
-
-# This is where static files are collected into 
-STATIC_ROOT = os.path.join(PROJECT_ENVIRON, 'staticfiles')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 #STATICFILES_LOCATION = 'static'
 
 # Static cdn the static root should live outside of the django project outside of src. This is because once the 
