@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}500 Error{% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/error.css" %}'>
+{% endblock %}
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
+				<div id="page-not-found">
+					<h1>I'm sorry, I can't find the page you requested.</h1>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+{% endblock %}

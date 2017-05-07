@@ -47,7 +47,7 @@ ip_address = socket.gethostbyname(hostname)
 
 if hostname in LOCAL_HOSTS : 
     DEBUG=False
-    ALLOWED_HOSTS=['127.0.0.1']
+    ALLOWED_HOSTS=['127.0.0.1', 'localhost']
     _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG))
     _LOGGER.info('Host name : {host}'.format(host=hostname))
    
@@ -181,7 +181,7 @@ STATICFILES_DIRS = [
 ]
 
 # This is where static files are collected into 
-STATIC_ROOT = os.path.join(PROJECT_ENVIRON, 'static_cdn')
+STATIC_ROOT = os.path.join(PROJECT_ENVIRON, 'staticfiles')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #STATICFILES_LOCATION = 'static'

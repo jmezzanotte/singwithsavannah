@@ -167,4 +167,19 @@ def page_not_found(request):
 
 	return render(request, "404.html", context, status=400)
 
+def server_error(request):
+
+	context = {
+		'services' : get_services()
+	}
+
+	return render(request, "500.html", context, status=500)
+
+def bad_request(request):
+
+	context = {
+		'services' : get_services()
+	}
+
+	return render(request, "404.html", context, status=500)
 
