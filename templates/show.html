@@ -20,7 +20,7 @@
 					<img class="img-responsive filigree" src='{% static "images/sws_about_filigree_blue_theme.png" %}'>
 					</br>
 					<!-- Allower bloger to use html tags. -->
-					<p>{{blog_post.blog_text | safe }}</p>
+					<p>{{blog_post.blog_text | safe | linebreaks }}</p>
 					<hr>
 					<div class="fb-share-button" id="facebook-share" data-href="http://{{request.META.HTTP_HOST}}{% url 'show' slug=blog_post.slug %}" data-layout="box_count" data-mobile-iframe="true">
 						<a class="fb-xfbml-parse-ignore" target="_blank" href="">Share this post</a>
