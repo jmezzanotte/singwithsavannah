@@ -1,4 +1,4 @@
-from .models import Services, ServicesLandingPage, About, Album, Home, Contact, SocialMediaURLs
+from .models import Services, ServicesLandingPage, About, Album, Home, Contact, SocialMediaURLs, Testimonials
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import EmailMessage
 from django.contrib import messages
@@ -106,7 +106,6 @@ def music(request):
 	#album.albumtrack_set.all()#
 	albums = Album.objects.all()
 
-
 	context = {
 		'albums' : albums,
 		'services' : get_services()
@@ -114,8 +113,21 @@ def music(request):
 
 	return render(request, 'music.html', context)
 
-def about(request):
+def testimonials(request):
 
+	try:
+		testimonies = Testimonials.objects.all()
+	except:
+		testimonies = None
+
+	context = {
+		'services' : get_services(),
+		'testimonies' : testimonies
+	}
+
+	return render(request, 'testimonials.html', context)
+
+def about(request):
 
 	try:
 		about = About.objects.latest()

@@ -1,9 +1,0 @@
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-	background-color: #000;
-}
-
-
-#page-not-found{
-	margin-bottom: 500px;
-	border : solid 1px red;
-}

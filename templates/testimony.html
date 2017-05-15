@@ -1,0 +1,11 @@
+{% load static %}
+<div class="testimony">
+	<img class="img-responsive filigree" src='{% static "images/sws_about_filigree_blue_theme.png" %}'>
+	<p><em>{{ testimony.testimony }}</em></p>
+	<hr>
+	<div class="client-container">
+		<p class="written-by">{{ testimony.written_by}}</p>
+		<p class="location">From {{ testimony.location }}</p>
+	</div>
+	<img class="img-responsive filigree" src='{% static "images/sws_about_filigree_blue_theme.png" %}'>
+</div>

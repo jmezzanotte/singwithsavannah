@@ -1,0 +1,37 @@
+/*Styles for testimonials page*/
+
+
+.testimony{
+	margin: 20px;
+	background-color: #CFD9EF;
+	padding: 20px;
+	border-radius: 10px;
+	display: table; /* Will set the width only equal to the content*/
+	-webkit-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	-moz-box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	box-shadow: -2px 9px 47px -2px rgba(105,105,105,1);
+	border: solid 5px #CEA2CB;
+}
+
+.client-container{
+	overflow: hidden;
+	margin: 0 auto;
+	border-radius: 10px; 
+	text-align: center;
+}
+
+.written-by, .location{
+	margin: 20px;
+	text-align: center;
+}
+.written-by{
+	float: left;
+}
+
+.location{float: right;}
+
+
+.testimony img{
+	clear: both;
+}
+

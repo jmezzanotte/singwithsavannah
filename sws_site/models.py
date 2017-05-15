@@ -164,6 +164,23 @@ class SocialMediaURLs(models.Model):
 		get_latest_by = 'timestamp'
 
 
+class Testimonials(models.Model):
+	testimony = models.TextField()
+	written_by = models.CharField(max_length=150)
+	location = models.TextField(max_length=150)
+	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+	def __unicode__(self):
+		return self.written_by
+
+	def __str__(self):
+		return self.written_by
+
+	class Meta:
+		verbose_name = 'Testimonials'
+		verbose_name_plural = 'Testimonials'
+
+
 # @receiver(pre_delete, sender=AlbumTrack)
 # def pre_delete_album_track(sender, instance, *args, **kwargs):
 # 	instance.track.delete(False)

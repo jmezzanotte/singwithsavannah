@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}What people are saying{% endblock %}
+{% block css_adds %}
+	<link rel="stylesheet" type="text/css" href='{% static "css/testimonies.css" %}'>
+{% endblock %}
+{% block fixed_bar %}
+	{% include "banner.html" %}
+{% endblock %}
+{% block content%}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1>What clients are saying</h1>
+			</div>
+		</div>
+		{% if testimonies %}
+			{% for testimony in testimonies %}
+				{% if forloop.counter|divisibleby:4 %}
+					<div class="row">
+						<div class="col-lg-5 col-lg-offset-7 text-center">
+							{% include "testimony.html" %}
+						</div>
+					</div>
+				{% elif forloop.counter|divisibleby:2%}
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							{% include "testimony.html" %}
+						</div>
+					</div>
+				{% else %}
+					<div class="row center">
+						<div class="col-lg-offset-1 col-lg-10 text-center">
+							{% include "testimony.html" %}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home, Contact, SocialMediaURLs
+from .models import Services, ServicesLandingPage, About, Album, AlbumTrack, Home, Contact, SocialMediaURLs, Testimonials
 
 # Register your models here.
 
@@ -51,6 +51,10 @@ class SocialMediaURLsAdmin(admin.ModelAdmin):
 	class Meta:
 		model = SocialMediaURLs
 
+class TestimonialAdmin(admin.ModelAdmin):
+	class Meta: 
+		list_display = ['written_by']	
+
 admin.site.register(Home, HomeAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Services, ServicesAdmin)
@@ -59,3 +63,4 @@ admin.site.register(About, AboutAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(AlbumTrack, AlbumTrackAdmin)
 admin.site.register(SocialMediaURLs, SocialMediaURLsAdmin)
+admin.site.register( Testimonials, TestimonialAdmin)
