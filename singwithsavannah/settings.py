@@ -50,7 +50,7 @@ if hostname in LOCAL_HOSTS :
     _LOGGER.info('Host name : {host}'.format(host=hostname))
    
 else:
-    DEBUG = True
+    DEBUG = False
     _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG)) 
     _LOGGER.info('Host name : {host}'.format(host=hostname))
     _LOGGER.info('Host ip address : {ip}'.format(ip=ip_address))
