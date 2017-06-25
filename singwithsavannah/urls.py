@@ -17,11 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import (
-    handler400, handler403, handler404, handler500
-)
+from django.conf.urls import handler400, handler403, handler404, handler500
+
 
 handler404='sws_site.views.page_not_found'
+handler403='sws_site.views.bad_request'
+handler500='sws_site.views.server_error'
 
 
 urlpatterns = [

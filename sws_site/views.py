@@ -193,5 +193,5 @@ def bad_request(request):
 		'services' : get_services()
 	}
 
-	return render(request, "404.html", context, status=500)
+	return render(request, "403.html", context, status=500)
 
