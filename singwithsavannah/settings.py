@@ -58,6 +58,7 @@ else:
     ALLOWED_HOSTS = ['*']
     # Need this for CSRF Token 
     CSRF_COOKIE_DOMAIN = ip_address
+    CSRF_COOKIE_SECURE = False
     # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
     # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
