@@ -40,7 +40,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12" id="test">
 				<div id="about-content-home">
-					<p>{{ about.summary | linebreaksbr }}</p>
+					<p>{{ about.summary|safe|linebreaksbr}}</p>
 					<a href="{% url 'about' %}" class="more-btn btn">READ MORE</a>
 				</div>
 			</div>
@@ -81,7 +81,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-md-8 col-sm-8">
-				<p class="text-content">{{ home.mini_music_description | linebreaks }}</p>
+				<p class="text-content">{{ home.mini_music_description|safe|linebreaks }}</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4">
 				<a href="{{ home.mini_music_url }}">
