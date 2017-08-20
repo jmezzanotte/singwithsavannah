@@ -65,12 +65,11 @@ else:
     _LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
 
 # Email setup
-# Rememeber to unlock captcha
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'singwithsavannah'
+EMAIL_HOST_PASSWORD = 'mu$icSing65'
 EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 INSTALLED_APPS = [
