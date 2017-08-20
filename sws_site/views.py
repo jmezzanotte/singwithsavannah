@@ -24,7 +24,7 @@ def process_contact_form(request, contact_form, redirect_target):
             message_subject,
             final_message,
             "johnmezzanotte.com" + '',
-            "johnjmezzanotte@gmail.com",
+            ["johnjmezzanotte@gmail.com"],
             headers={'Reply-To': contact_email}
         )
 
