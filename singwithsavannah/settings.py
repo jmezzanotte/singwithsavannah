@@ -49,7 +49,7 @@ if hostname in LOCAL_HOSTS :
     _LOGGER.info('Host name : {host}'.format(host=hostname))
    
 else:
-    DEBUG = True
+    DEBUG = False
     _LOGGER.info('Debug has been set to {debug}'.format(debug=DEBUG)) 
     _LOGGER.info('Host name : {host}'.format(host=hostname))
     _LOGGER.info('Host ip address : {ip}'.format(ip=ip_address))
@@ -59,8 +59,8 @@ else:
     # Need this for CSRF Token 
     CSRF_COOKIE_DOMAIN = ip_address
     CSRF_COOKIE_SECURE = False
-    # ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname, 
-    # 'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
+    ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname,
+    'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
     _LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
     _LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
 
