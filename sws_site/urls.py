@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'^services/$', views.services, name='services'),
     url(r'^contact', views.contact, name='contact'),
     url(r'^testimonies', views.testimonials, name='testimonies'),
-    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon/favicon.ico')),
+    url(r'^favicon\.ico$', RedirectView.as_view(url='/favicon.ico')),
     url(r'^services/(?P<slug>[\w-]+)/$', views.service_detail, name='service_detail')   
 ]
