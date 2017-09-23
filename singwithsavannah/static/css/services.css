@@ -1,4 +1,8 @@
-.slick-prev:before, .slick-next:before { 
+ul li {
+    display: list-item;
+}
+
+.slick-prev:before, .slick-next:before {
     color: #d0d0d0 !important;
 }
 
