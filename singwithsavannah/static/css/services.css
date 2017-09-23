@@ -1,6 +1,6 @@
 ul li {
     display: list-item;
-    list-style-type: circle;
+    list-style-type: initial;
 }
 
 .slick-prev:before, .slick-next:before {
