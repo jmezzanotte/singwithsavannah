@@ -419,9 +419,10 @@ p{
 }
 
 
-.formatted-list{
+.formatted-list li{
     display: list-item;
     list-style-type: initial;
+    font-size : 20px;
 }
 
 
