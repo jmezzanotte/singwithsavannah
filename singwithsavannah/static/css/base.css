@@ -419,6 +419,12 @@ p{
 }
 
 
+.formatted-list{
+    display: list-item;
+    list-style-type: initial;
+}
+
+
 
 
 
