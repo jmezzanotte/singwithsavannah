@@ -420,8 +420,7 @@ p{
 
 
 .formatted-list li{
-    display: list-item;
-    list-style-type: initial;
+    text-align: center
     font-size : 20px;
 }
 

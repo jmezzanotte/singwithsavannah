@@ -16,7 +16,7 @@ def process_contact_form(request, contact_form, redirect_target):
         contact_email = request.POST.get('email', '')
         message_subject = request.POST.get('subject', '')
         email_message = request.POST.get('message', '')
-        message_format = 'Email from %s\nEmail: %s\nMessage\n%s\n\n\nSent through singwithsavannah.com'
+        message_format = 'Email from %s\n\nEmail: %s\n\nMessage:\n\n%s\n\n\nSent through singwithsavannah.com'
 
         final_message = message_format % (contact_name, contact_email, email_message)
 
