@@ -23,8 +23,8 @@ def process_contact_form(request, contact_form, redirect_target):
         email = EmailMessage(
             message_subject,
             final_message,
-            "johnmezzanotte.com" + '',
-            ["johnjmezzanotte@gmail.com"],
+            "singwithsavannah.com" + '',
+            ["singwithsavannah@gmail.com"],
             headers={'Reply-To': contact_email}
         )
 
