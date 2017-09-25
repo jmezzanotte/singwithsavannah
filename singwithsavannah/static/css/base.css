@@ -418,12 +418,16 @@ p{
 	background-color: 
 }
 
-
-.formatted-list li{
-    display: list-item;
-    list-style-type: initial;
-    font-size : 20px;
+.formatted-list{
+    padding : 0;
 }
+
+    .formatted-list li{
+        display: list-item;
+        list-style-type: initial;
+        font-size : 20px;
+
+    }
 
 
 
