@@ -36,6 +36,7 @@
 	border-top: solid 5px #CEA2CB; 
 	border-bottom:solid 7px #CEA2CB;
 	font-family: 'Raleway', sans-serif;
+	padding: 0;
 }
 
 .nav-item:nth-child(1){
