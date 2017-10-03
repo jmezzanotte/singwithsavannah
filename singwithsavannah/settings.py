@@ -60,7 +60,7 @@ else:
     #CSRF_COOKIE_DOMAIN = ip_address
     #CSRF_COOKIE_SECURE = False
     ALLOWED_HOSTS = ['herokuapp.com', 'singwithsavannah.herokuapp.com', '.singwithsavannah.herokuapp.com', hostname,
-    'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com']
+    'https://singwithsavannah.herokuapp.com/', 'www.singwithsavannah.herokuapp.com', 'www.singwithsavannah.com']
     #_LOGGER.info('Using the following allowed hosts {0}'.format(ALLOWED_HOSTS))
     #_LOGGER.info('CSRF_COOKIE_DOMAIN set to {0}'.format(CSRF_COOKIE_DOMAIN))
 
